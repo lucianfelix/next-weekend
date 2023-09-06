@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { cache } from 'react';
-import {AdventureClient} from "../../../lib/adventures";
+import {AdventureClient} from "../../../../lib/adventures";
 
 export const revalidate = 60; // revalidate this page every 60 seconds
 

@@ -35,6 +35,8 @@ export class AdventureClient {
 
   async getAllAdventures() {
     const queryAdventuresAll = 'aem-demo-assets/adventures-all';
+    // const res1 = await this.aemHeadlessClient.listPersistedQueries()
+    // console.log('res1', res1);
     const res = await this.aemHeadlessClient.runPersistedQuery(queryAdventuresAll);
     return res;
   }

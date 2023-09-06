@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2023 Adobe. All rights reserved.
  * This file is licensed to you under the Apache License, Version 2.0 (the "License");
@@ -17,26 +16,30 @@ import Image from 'next/image';
 
 function SearchBox() {
     return (
-        <input type="text" placeholder="Search" className="border-2 border-black" />
+        <input type="text" placeholder="Search" className="border-2 bg-gray-50 m-2"/>
     )
 }
 
 export default async function Menu() {
-  return (
-    <header>
-        <div className="bg-black">
-            <a href="https://www.adobe.com/" className="text-white">Sign in</a>
-        </div>
-        <div className="bg-white flex">
-            <span className="text-black text-xl uppercase">Your Next Weekend</span>
-            <div className="flex justify-between ml-auto">
-                <Link href="magazine/" className="p-4 hover:bg-yellow uppercase">Magazine</Link>
-                <Link href="adventures/" className="p-4 hover:bg-yellow uppercase">Adventures</Link>
-                <Link href="faqs/" className="p-4 hover:bg-yellow uppercase">Faqs</Link>
-                <Link href="abuutus/" className="p-4 hover:bg-yellow uppercase">About Us</Link>
+    return (
+        <nav className="sticky top-0 z-50">
+            <div className="bg-black p-1 px-3">
+                <a href="https://www.adobe.com/" className="text-white uppercase text-s">Sign in</a>
             </div>
-            <SearchBox />
-        </div>
-    </header>
-  )
+            <div className="bg-white flex p-2">
+                <Image
+                    src="https://wknd.site/content/experience-fragments/wknd/language-masters/en/site/header/master/_jcr_content/root/container/container_1195249223/image.coreimg.svg/1594412560447/wknd-logo-dk.svg"
+                    width={96}
+                    height={35}
+                    alt="WKND Logo"/>
+                <div className="flex justify-between ml-auto">
+                    <Link href="magazine/" className="p-4 hover:bg-yellow uppercase">Magazine</Link>
+                    <Link href="adventures/" className="p-4 hover:bg-yellow uppercase">Adventures</Link>
+                    <Link href="faqs/" className="p-4 hover:bg-yellow uppercase">Faqs</Link>
+                    <Link href="abuutus/" className="p-4 hover:bg-yellow uppercase">About Us</Link>
+                </div>
+                <SearchBox/>
+            </div>
+        </nav>
+    )
 }
