@@ -30,7 +30,7 @@ export default async function Footer() {
                     <Link href="abuutus/" className="p-4 hover:underline uppercase">About Us</Link>
                 </div>
                 <div className="flex justify-between ml-auto">
-                    <div>Follow Us</div>
+                    <div className="p-4">Follow Us</div>
                     <Link href="#facebookwknd" className="p-4 hover:bg-yellow uppercase">Facebook</Link>
                     <Link href="#twitter/" className="p-4 hover:bg-yellow uppercase">Twitter</Link>
                     <Link href="#instagram/" className="p-4 hover:bg-yellow uppercase">Instagram</Link>
