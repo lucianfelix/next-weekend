@@ -27,17 +27,17 @@ export default async function Menu() {
                 <a href="https://www.adobe.com/" className="text-white uppercase text-s">Sign in</a>
             </div>
             <div className="bg-white flex p-2">
-                <Link href="/" className=""><Image
+                <Link href="/en-US" className=""><Image
                     src="https://wknd.site/content/experience-fragments/wknd/language-masters/en/site/header/master/_jcr_content/root/container/container_1195249223/image.coreimg.svg/1594412560447/wknd-logo-dk.svg"
                     width={96}
                     height={35}
                     alt="WKND Logo"/>
                 </Link>
                 <div className="flex justify-between ml-auto">
-                    <Link href="/magazine/" className="p-4 hover:bg-yellow uppercase">Magazine</Link>
-                    <Link href="/adventures/" className="p-4 hover:bg-yellow uppercase">Adventures</Link>
-                    <Link href="/faqs/" className="p-4 hover:bg-yellow uppercase">Faqs</Link>
-                    <Link href="/aboutus/" className="p-4 hover:bg-yellow uppercase">About Us</Link>
+                    <Link href="/en-US/magazine/" className="p-4 hover:bg-yellow uppercase">Magazine</Link>
+                    <Link href="/en-US/adventures/" className="p-4 hover:bg-yellow uppercase">Adventures</Link>
+                    <Link href="/en-US/faqs/" className="p-4 hover:bg-yellow uppercase">Faqs</Link>
+                    <Link href="/en-US/aboutus/" className="p-4 hover:bg-yellow uppercase">About Us</Link>
                 </div>
                 <SearchBox/>
             </div>
