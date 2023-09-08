@@ -35,8 +35,11 @@ export default async function Page({params: {lang}}) {
                         <div className="text-2xl font-extrabold tracking-tight text-gray-900">Adventures</div>
                         <div className="mx-0 lg:relative">
                             <Image className="mx-0 w-full"
+                                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                   quality={75}
                                    eager={true}
                                    priority={true}
+                                   loading={'eager'}
                                    src="https://wknd.site/us/en/adventures/_jcr_content/root/container/teaser.coreimg.60.1600.jpeg/1660323801921/adobestock-216674449.jpeg"
                                    width={1275}
                                    height={717}
