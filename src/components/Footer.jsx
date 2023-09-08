@@ -16,7 +16,7 @@ import Image from 'next/image';
 
 export default async function Footer() {
     return (
-        <div className="bg-black text-white px-20 pb-20">
+        <footer className="bg-black text-white px-20 pb-20">
             <div className="flex pt-16 pb-2">
                 <Image
                     src="https://wknd.site/content/experience-fragments/wknd/language-masters/en/site/footer/master/_jcr_content/root/container/container/image.coreimg.svg/1594412963641/wknd-logo-light.svg"
@@ -52,6 +52,6 @@ export default async function Footer() {
                     href="https://stock.adobe.com/">Adobe Stock</a>.
                 </div>
             </div>
-        </div>
+        </footer>
     )
 }
