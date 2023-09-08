@@ -35,6 +35,8 @@ export default async function Page({params: {lang}}) {
                         <div className="text-2xl font-extrabold tracking-tight text-gray-900">Adventures</div>
                         <div className="mx-0 lg:relative">
                             <Image className="mx-0 w-full"
+                                   eager={true}
+                                   priority={true}
                                    src="https://wknd.site/us/en/adventures/_jcr_content/root/container/teaser.coreimg.60.1600.jpeg/1660323801921/adobestock-216674449.jpeg"
                                    width={1275}
                                    height={717}
@@ -56,12 +58,13 @@ export default async function Page({params: {lang}}) {
                     <div
                         className="grid grid-cols-1 p-6 mt-6 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
                         {adventures.map(
-                            ({_path, title, price, tripLength, primaryImage}) => {
+                            ({_path, title, price, tripLength, primaryImage, index}) => {
                                 const pathItems = _path.split('/');
                                 const cfPath = pathItems.slice(Math.max(pathItems.length - 2, 0)).join('/');
                                 const href = `/adventures/${cfPath}`;
                                 return (
                                     <AdventureCard
+                                        eager={index < 0}
                                         key={_path}
                                         href={href}
                                         title={title}

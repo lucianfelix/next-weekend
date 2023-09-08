@@ -16,7 +16,8 @@ import Link from 'next/link'
 import Image from 'next/image';
 
 export default async function AdventureCard({ _path, href, title, price, duration, imageSrc }) {
-  const aboveFold = imageSrc.includes("bali-surf-camp");
+  const aboveFold = false;
+  // imageSrc.includes("bali-surf-camp");
   return (
     <div key={_path} className="group relative">
       <div className="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">

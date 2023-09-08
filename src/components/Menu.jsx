@@ -34,10 +34,10 @@ export default async function Menu() {
                     alt="WKND Logo"/>
                 </Link>
                 <div className="flex justify-between ml-auto">
-                    <Link href="magazine/" className="p-4 hover:bg-yellow uppercase">Magazine</Link>
-                    <Link href="adventures/" className="p-4 hover:bg-yellow uppercase">Adventures</Link>
-                    <Link href="faqs/" className="p-4 hover:bg-yellow uppercase">Faqs</Link>
-                    <Link href="aboutus/" className="p-4 hover:bg-yellow uppercase">About Us</Link>
+                    <Link href="/magazine/" className="p-4 hover:bg-yellow uppercase">Magazine</Link>
+                    <Link href="/adventures/" className="p-4 hover:bg-yellow uppercase">Adventures</Link>
+                    <Link href="/faqs/" className="p-4 hover:bg-yellow uppercase">Faqs</Link>
+                    <Link href="/aboutus/" className="p-4 hover:bg-yellow uppercase">About Us</Link>
                 </div>
                 <SearchBox/>
             </div>
