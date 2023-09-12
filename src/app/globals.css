@@ -40,3 +40,25 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+h1 {
+  color: rgb(32, 32, 32);
+  font-family: "Asar", Georgia, "Times New Roman", Times, serif;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 60px;
+  margin-bottom: 13.5px;
+  margin-top: 27px;
+  text-align: left
+}
+
+h2 {
+  color: rgb(32, 32, 32);
+  font-family: "Asar", Georgia, "Times New Roman", Times, serif;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 54px;
+  margin-bottom: 13.5px;
+  margin-top: 27px;
+  text-align: left
+}

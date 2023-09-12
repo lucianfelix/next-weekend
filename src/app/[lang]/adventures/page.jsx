@@ -31,8 +31,8 @@ export default async function Page({params: {lang}}) {
         <main className="">
             <div className="bg-white">
                 <div className="py-10 mx-0 sm:py-16">
-                    <h2>
-                        <div className="text-2xl font-extrabold tracking-tight text-gray-900">Adventures</div>
+                    <h1 className="max-w-[1154px] mx-auto">Adventures</h1>
+                    <div>
                         <div className="mx-0 lg:relative">
                             <Image className="mx-0 w-full"
                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -53,13 +53,13 @@ export default async function Page({params: {lang}}) {
                                 </div>
                             </div>
                         </div>
-                    </h2>
+                    </div>
 
-                    <h2 className="text-2xl font-extrabold tracking-tight text-gray-900 pt-8">
+                    <h1 className="max-w-[1154px] mx-auto pt-8">
                         Current Adventures
-                    </h2>
+                    </h1>
                     <div
-                        className="grid grid-cols-1 p-6 mt-6 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+                        className="max-w-[1154px] mx-auto grid grid-cols-1 p-6 mt-6 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
                         {adventures.map(
                             ({_path, title, price, tripLength, primaryImage, index}) => {
                                 const pathItems = _path.split('/');
