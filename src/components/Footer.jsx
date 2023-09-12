@@ -27,7 +27,7 @@ export default async function Footer() {
                     <Link href="magazine/" className="p-4 hover:underline uppercase">Magazine</Link>
                     <Link href="adventures/" className="p-4 hover:underline uppercase">Adventures</Link>
                     <Link href="faqs/" className="p-4 hover:underline uppercase">Faqs</Link>
-                    <Link href="abuutus/" className="p-4 hover:underline uppercase">About Us</Link>
+                    <Link href="aboutus/" className="p-4 hover:underline uppercase">About Us</Link>
                 </div>
                 <div className="flex justify-between ml-auto">
                     <div className="p-4">Follow Us</div>
