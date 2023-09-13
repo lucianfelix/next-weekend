@@ -15,19 +15,17 @@
 import Link from 'next/link'
 import Image from 'next/image';
 
-export default async function AdventureCard({ _path, href, title, price, duration, imageSrc }) {
-  const aboveFold = false;
-  // imageSrc.includes("bali-surf-camp");
+export default async function AdventureCard({ eager, href, title, price, duration, imageSrc }) {
   return (
-    <div key={_path} className="group relative">
+    <div className="group relative">
       <div className="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
         <Image
           src={imageSrc}
           alt={title}
           width={542}
           height={605}
-          priority={aboveFold}
-          loading={aboveFold ? 'eager' : 'lazy'}
+          priority={eager}
+          loading={eager ? 'eager' : 'lazy'}
           sizes="50vw"
           className="w-full h-full object-center object-cover lg:w-full lg:h-full"
         />
