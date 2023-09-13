@@ -15,6 +15,13 @@ export const preferredRegion = 'auto';
 const NEXT_PUBLIC_AEM_HOST = process.env.NEXT_PUBLIC_AEM_HOST;
 const NEXT_PUBLIC_AEM_ROOT = process.env.NEXT_PUBLIC_AEM_ROOT;
 
+export async function generateStaticParams() {
+    console.log('generateStaticParams faq');
+    return ["en-US"].map((lang) => ({
+        lang: lang,
+    }))
+}
+
 const client = AdventureClient.fromEnv();
 
 const getAdventures = cache(async () => {
@@ -24,7 +31,6 @@ const getAdventures = cache(async () => {
 });
 
 export default async function Page({params: {lang}}) {
-
     const adventures = await getAdventures(lang);
 
     return (
@@ -40,6 +46,7 @@ export default async function Page({params: {lang}}) {
                                    eager={true}
                                    priority={true}
                                    loading={'eager'}
+                                   alt={'hero'}
                                    src="https://wknd.site/us/en/adventures/_jcr_content/root/container/teaser.coreimg.60.1600.jpeg/1660323801921/adobestock-216674449.jpeg"
                                    width={1275}
                                    height={717}

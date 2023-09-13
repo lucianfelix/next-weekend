@@ -30,7 +30,12 @@ const heroArticle = {
   href: '/en-US/adventures/beervana-portland/beervana-in-portland'
 }
 
-
+export async function generateStaticParams() {
+  console.log('generateStaticParams faq');
+  return ["en-US"].map((lang) => ({
+    lang: lang,
+  }))
+}
 
 export default async function Page({params: {lang}}) {
 

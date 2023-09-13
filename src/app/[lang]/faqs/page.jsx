@@ -35,7 +35,14 @@ const items = [
 ];
 
 
-export default function Faqs() {
+export async function generateStaticParams() {
+    console.log('generateStaticParams faq');
+    return ["en-US"].map((lang) => ({
+        lang: lang,
+    }))
+}
+
+export default async function Page({params: {lang}}) {
     return (
         <main className="bg-white text-lg">
             <div className="max-w-[1154px] mx-auto p-10 space-y-8">

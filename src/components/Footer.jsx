@@ -24,10 +24,10 @@ export default async function Footer() {
                     height={35}
                     alt="WKND Logo"/>
                 <div className="flex justify-between mr-auto ml-10">
-                    <Link href="magazine/" className="p-4 hover:underline uppercase">Magazine</Link>
-                    <Link href="adventures/" className="p-4 hover:underline uppercase">Adventures</Link>
-                    <Link href="faqs/" className="p-4 hover:underline uppercase">Faqs</Link>
-                    <Link href="aboutus/" className="p-4 hover:underline uppercase">About Us</Link>
+                    <Link href="/en-US/magazine/" className="p-4 hover:bg-yellow uppercase">Magazine</Link>
+                    <Link href="/en-US/adventures/" className="p-4 hover:bg-yellow uppercase">Adventures</Link>
+                    <Link href="/en-US/faqs/" className="p-4 hover:bg-yellow uppercase">Faqs</Link>
+                    <Link href="/en-US/aboutus/" className="p-4 hover:bg-yellow uppercase">About Us</Link>
                 </div>
                 <div className="flex justify-between ml-auto">
                     <div className="p-4">Follow Us</div>

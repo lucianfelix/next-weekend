@@ -21,20 +21,11 @@ const getFewAdventures = cache(async () => {
 
 export async function generateStaticParams() {
     return ["en-US"].map((lang) => ({
-        slug: lang,
+        lang: lang,
     }))
 }
 
 export default async function Page({params: {lang}}) {
-
-    // const adventures = await getFewAdventures(lang);
-    //
-    // const images = [
-    //     'path/to/image1.jpg',
-    //     'path/to/image2.jpg',
-    //     'path/to/image3.jpg',
-    //     // ... add more image URLs as needed
-    // ];
 
     return (
         <main className="bg-white px-0 mx-0">

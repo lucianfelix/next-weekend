@@ -1,7 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-        minimumCacheTTL: 12000,
+        formats: ['image/avif', 'image/webp'],
+        minimumCacheTTL: 600000,
         remotePatterns: [
             {
                 protocol: 'https',
@@ -22,10 +23,6 @@ const nextConfig = {
                 pathname: '/**',
             },
         ],
-        images: {
-            formats: ['image/avif', 'image/webp'],
-            minimumCacheTTL: 600000,
-        },
     },
 }
 
