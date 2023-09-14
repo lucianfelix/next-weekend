@@ -20,7 +20,7 @@ export default async function AdventureCard({eager, href, title, price, duration
             <Link href={href}>
                 <div
                     className="min-h-32 aspect-w-2 aspect-h-1  overflow-hidden group-hover:contrast-125 h-52 md:h-80 lg:aspect-none text-white">
-                    <div class="absolute top-0 left-0 right-0 bottom-0">
+                    <div className="absolute top-0 left-0 right-0 bottom-0">
                         <Image
                             src={imageSrc}
                             alt={title}
@@ -38,9 +38,9 @@ export default async function AdventureCard({eager, href, title, price, duration
                     <div className="absolute text-sm right-6 bottom-4">
                         {price}
                     </div>
-                    <h3 className="absolute left-6 top-4 font-semibold text-gray-100 inset-0">
+                    <h2 className="absolute left-6 top-4 font-semibold text-gray-100 text-3xl inset-0">
                         {title}
-                    </h3>
+                    </h2>
                 </div>
             </Link>
         </div>

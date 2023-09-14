@@ -16,24 +16,24 @@ import Image from 'next/image';
 
 export default async function Footer() {
     return (
-        <footer className="bg-black text-white px-20 pb-20">
-            <div className="flex pt-16 pb-2">
+        <footer className="bg-black text-white px-5 md:px-20 pb-20">
+            <div className="md:flex pt-16 pb-2">
                 <Image
                     src="https://wknd.site/content/experience-fragments/wknd/language-masters/en/site/footer/master/_jcr_content/root/container/container/image.coreimg.svg/1594412963641/wknd-logo-light.svg"
                     width={96}
                     height={35}
                     alt="WKND Logo"/>
-                <div className="flex justify-between mr-auto ml-10">
-                    <Link href="/en-US/magazine/" className="p-4 hover:bg-yellow uppercase">Magazine</Link>
-                    <Link href="/en-US/adventures/" className="p-4 hover:bg-yellow uppercase">Adventures</Link>
-                    <Link href="/en-US/faqs/" className="p-4 hover:bg-yellow uppercase">Faqs</Link>
-                    <Link href="/en-US/aboutus/" className="p-4 hover:bg-yellow uppercase">About Us</Link>
+                <div className="flex justify-between md:mr-auto md:ml-10">
+                    <Link href="/en-US/magazine/" className="p-4 hover:bg-yellow hover:text-black uppercase">Magazine</Link>
+                    <Link href="/en-US/adventures/" className="p-4 hover:bg-yellow hover:text-black uppercase">Adventures</Link>
+                    <Link href="/en-US/faqs/" className="p-4 hover:bg-yellow hover:text-black uppercase">Faqs</Link>
+                    <Link href="/en-US/aboutus/" className="p-4 hover:bg-yellow hover:text-black uppercase">About Us</Link>
                 </div>
-                <div className="flex justify-between ml-auto">
+                <div className="flex justify-between md:ml-auto">
                     <div className="p-4">Follow Us</div>
-                    <Link href="#facebookwknd" className="p-4 hover:bg-yellow uppercase">Facebook</Link>
-                    <Link href="#twitter/" className="p-4 hover:bg-yellow uppercase">Twitter</Link>
-                    <Link href="#instagram/" className="p-4 hover:bg-yellow uppercase">Instagram</Link>
+                    <Link href="#facebookwknd" className="p-4 hover:bg-yellow hover:text-black uppercase">Facebook</Link>
+                    <Link href="#twitter/" className="p-4 hover:bg-yellow hover:text-black uppercase">Twitter</Link>
+                    <Link href="#instagram/" className="p-4 hover:bg-yellow hover:text-black uppercase">Instagram</Link>
                 </div>
             </div>
             <div className="text-xs">
