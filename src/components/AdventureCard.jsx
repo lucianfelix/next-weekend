@@ -17,35 +17,32 @@ import Image from 'next/image';
 export default async function AdventureCard({eager, href, title, price, duration, imageSrc}) {
     return (
         <div className="group relative">
-            <div
-                className="min-h-80 aspect-w-2 aspect-h-1  overflow-hidden group-hover:contrast-125 h-80 lg:aspect-none text-white">
-                <div class="absolute top-0 left-0 right-0 bottom-0">
-                    <Image
-                        src={imageSrc}
-                        alt={title}
-                        width={542}
-                        height={605}
-                        priority={eager}
-                        loading={eager ? 'eager' : 'lazy'}
-                        sizes="50vw"
-                        className="rounded-md w-full h-full object-center object-cover lg:w-full lg:h-full"
-                    />
+            <Link href={href}>
+                <div
+                    className="min-h-32 aspect-w-2 aspect-h-1  overflow-hidden group-hover:contrast-125 h-52 md:h-80 lg:aspect-none text-white">
+                    <div class="absolute top-0 left-0 right-0 bottom-0">
+                        <Image
+                            src={imageSrc}
+                            alt={title}
+                            width={542}
+                            height={605}
+                            priority={eager}
+                            loading={eager ? 'eager' : 'lazy'}
+                            sizes="50vw"
+                            className="rounded-md w-full h-full object-center object-cover lg:w-full lg:h-full"
+                        />
+                    </div>
+                    <div className="absolute text-sm left-6 bottom-4">
+                        {duration}
+                    </div>
+                    <div className="absolute text-sm right-6 bottom-4">
+                        {price}
+                    </div>
+                    <h3 className="absolute left-6 top-4 font-semibold text-gray-100 inset-0">
+                        {title}
+                    </h3>
                 </div>
-                <div className="absolute text-sm left-6 bottom-4">
-                    {duration}
-                </div>
-                <div className="absolute text-sm right-6 bottom-4">
-                    {price}
-                </div>
-                <h3 className="absolute left-6 top-4 font-semibold text-gray-100">
-                    <Link href={href}>
-                        <div>
-                            <span aria-hidden="true" className="absolute inset-0"/>
-                            {title}
-                        </div>
-                    </Link>
-                </h3>
-            </div>
+            </Link>
         </div>
     )
 }
