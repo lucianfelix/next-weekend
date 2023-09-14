@@ -26,9 +26,9 @@ export default async function Page({params: {lang}}) {
                         <Image className="mx-0 w-full"
                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                quality={75}
-                               eager={"true"}
+                               eager={"false"}
                                priority={true}
-                               loading={'eager'}
+                               loading={'lazy'}
                                alt={'hero'}
                                src="https://wknd.site/us/en/adventures/_jcr_content/root/container/teaser.coreimg.60.1600.jpeg/1660323801921/adobestock-216674449.jpeg"
                                width={1275}

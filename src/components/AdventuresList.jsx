@@ -63,7 +63,7 @@ export default async function AdventuresList({lang = '', filterName = 'All'}) {
                     const href = `/adventures/${cfPath}`;
                     return (
                         <AdventureCard
-                            eager={false}
+                            eager={index === 0}
                             key={_path}
                             href={href}
                             title={title}
