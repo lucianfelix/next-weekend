@@ -26,9 +26,9 @@ export default async function Page({params: {lang}}) {
                         <Image className="mx-0 w-full"
                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                quality={75}
-                               eager={"false"}
-                               priority={false}
-                               loading={'lazy'}
+                               eager={"true"}
+                               priority={true}
+                               loading={'eager'}
                                alt={'hero'}
                                src="https://wknd.site/us/en/adventures/_jcr_content/root/container/teaser.coreimg.60.1600.jpeg/1660323801921/adobestock-216674449.jpeg"
                                width={1275}
@@ -46,9 +46,9 @@ export default async function Page({params: {lang}}) {
 
                     <h1 className="max-w-[1154px] mx-auto pt-9 md:px-5">Our Current Adventures</h1>
 
-                    <Suspense fallback={<div>Your adventures are on the way...</div>}>
-                        <AdventuresList lang={lang}/>
-                    </Suspense>
+                    {/*<Suspense fallback={<div>Your adventures are on the way...</div>}>*/}
+                    <AdventuresList lang={lang}/>
+                    {/*</Suspense>*/}
                 </div>
             </div>
         </main>)

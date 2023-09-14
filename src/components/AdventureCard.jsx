@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2023 Adobe. All rights reserved.
  * This file is licensed to you under the Apache License, Version 2.0 (the "License");
@@ -15,33 +14,38 @@
 import Link from 'next/link'
 import Image from 'next/image';
 
-export default async function AdventureCard({ eager, href, title, price, duration, imageSrc }) {
-  return (
-    <div className="group relative">
-      <div className="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
-        <Image
-          src={imageSrc}
-          alt={title}
-          width={542}
-          height={605}
-          priority={eager}
-          loading={eager ? 'eager' : 'lazy'}
-          sizes="50vw"
-          className="w-full h-full object-center object-cover lg:w-full lg:h-full"
-        />
-      </div>
-      <div className="mt-4 flex justify-between">
-        <p className="mt-1 text-sm text-gray-500">{duration}</p>
-        <p className="text-sm font-medium text-gray-900">{price}</p>
-      </div>
-      <h3 className="font-semibold text-gray-700">
-        <Link href={href}>
-          <div>
-            <span aria-hidden="true" className="absolute inset-0" />
-            {title}
-          </div>
-        </Link>
-      </h3>
-    </div>
-  )
+export default async function AdventureCard({eager, href, title, price, duration, imageSrc}) {
+    return (
+        <div className="group relative">
+            <div
+                className="min-h-80 aspect-w-2 aspect-h-1  overflow-hidden group-hover:contrast-125 h-80 lg:aspect-none text-white">
+                <div class="absolute top-0 left-0 right-0 bottom-0">
+                    <Image
+                        src={imageSrc}
+                        alt={title}
+                        width={542}
+                        height={605}
+                        priority={eager}
+                        loading={eager ? 'eager' : 'lazy'}
+                        sizes="50vw"
+                        className="rounded-md w-full h-full object-center object-cover lg:w-full lg:h-full"
+                    />
+                </div>
+                <div className="absolute text-sm left-6 bottom-4">
+                    {duration}
+                </div>
+                <div className="absolute text-sm right-6 bottom-4">
+                    {price}
+                </div>
+                <h3 className="absolute left-6 top-4 font-semibold text-gray-100">
+                    <Link href={href}>
+                        <div>
+                            <span aria-hidden="true" className="absolute inset-0"/>
+                            {title}
+                        </div>
+                    </Link>
+                </h3>
+            </div>
+        </div>
+    )
 }
