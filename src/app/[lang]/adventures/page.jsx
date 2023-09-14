@@ -44,7 +44,7 @@ export default async function Page({params: {lang}}) {
                         </div>
                     </div>
 
-                    <h1 className="max-w-[1154px] mx-auto pt-8  md:px-5">Current Adventures</h1>
+                    <h1 className="max-w-[1154px] mx-auto pt-9 md:px-5">Our Current Adventures</h1>
 
                     <Suspense fallback={<div>Your adventures are on the way...</div>}>
                         <AdventuresList lang={lang}/>

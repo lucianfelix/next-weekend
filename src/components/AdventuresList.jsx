@@ -27,12 +27,36 @@ const getAdventures = cache(async () => {
 const NEXT_PUBLIC_AEM_HOST = process.env.NEXT_PUBLIC_AEM_HOST;
 const NEXT_PUBLIC_AEM_ROOT = process.env.NEXT_PUBLIC_AEM_ROOT;
 
-export default async function AdventuresList({lang}) {
+let categoryFilters = [
+    {
+        name: 'All',
+        predicate: (adventure) => true,
+    },
+    {
+        name: 'One Day',
+        predicate: (adventure) => adventure.tripLength === '1 Day',
+    },
+    {
+        name: 'Sport',
+        predicate: (adventure) => adventure.title.includes('Ski') || adventure.title.includes('Cycling') || adventure.title.includes('Surf'),
+    },
+    {
+        name: 'Summer',
+        predicate: (adventure) => !adventure.title.includes('Ski'),
+    },
+    {
+        name: 'Winter',
+        predicate: (adventure) => adventure.title.includes('Ski'),
+    },
+];
+
+export default async function AdventuresList({lang = '', filterName = 'All'}) {
     const adventures = await getAdventures(lang);
+    const filteredAdventures = adventures.filter(categoryFilters.find((filter) => filter.name === filterName).predicate);
 
     return (<div
-            className="max-w-[1154px] md:px-5 mx-auto grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-            {adventures.map(
+            className="p-2 max-w-[1154px] md:px-5 mx-auto grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+            {filteredAdventures.map(
                 ({_path, title, price, tripLength, primaryImage, index}) => {
                     const pathItems = _path.split('/');
                     const cfPath = pathItems.slice(Math.max(pathItems.length - 2, 0)).join('/');
