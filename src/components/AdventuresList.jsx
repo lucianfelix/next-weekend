@@ -57,7 +57,7 @@ export default async function AdventuresList({lang = '', filterName = 'All'}) {
     return (<div
             className="p-2 max-w-[1154px] md:px-5 mx-auto grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
             {filteredAdventures.map(
-                ({_path, title, price, tripLength, primaryImage, index}) => {
+                ({_path, title, price, tripLength, primaryImage}, index) => {
                     const pathItems = _path.split('/');
                     const cfPath = pathItems.slice(Math.max(pathItems.length - 2, 0)).join('/');
                     const href = `/adventures/${cfPath}`;
