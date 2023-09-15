@@ -1,11 +1,8 @@
 import {cache} from 'react';
-import {Metadata} from 'next';
 import {AdventureClient} from "../../../lib/adventures";
-import AdventureCard from "../../../components/AdventureCard";
 import Image from "next/image";
 import HeroArticleCard from "@/components/HeroArticleCard";
-import Link from "next/link";
-import * as PropTypes from "prop-types";
+import AdventuresList from "../../../components/AdventuresList";
 
 export const revalidate = 43200; // 12 hours in seconds
 export const dynamic = 'force-static';
@@ -56,7 +53,7 @@ export default async function Page({params: {lang}}) {
                 <Image className="mx-0 w-full"
                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                        quality={75}
-                       eager={true}
+                       eager={"true"}
                        priority={true}
                        loading={'eager'}
                        src="https://wknd.site/us/en/adventures/_jcr_content/root/container/teaser.coreimg.60.1600.jpeg/1660323801921/adobestock-216674449.jpeg"
@@ -75,29 +72,9 @@ export default async function Page({params: {lang}}) {
             </div>
 
             <h1 className="max-w-[1154px] mx-auto pt-8">
-              Current Adventures
+              Our Most Popular Adventures
             </h1>
-            <div
-                className="max-w-[1154px] mx-auto grid grid-cols-1 p-6 mt-6 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-              {adventures.map(
-                  ({_path, title, price, tripLength, primaryImage, index}) => {
-                    const pathItems = _path.split('/');
-                    const cfPath = pathItems.slice(Math.max(pathItems.length - 2, 0)).join('/');
-                    const href = `/adventures/${cfPath}`;
-                    return (
-                        <AdventureCard
-                            eager={index < 0}
-                            key={_path}
-                            href={href}
-                            title={title}
-                            price={price}
-                            duration={tripLength}
-                            imageSrc={`${NEXT_PUBLIC_AEM_HOST}${primaryImage._path}`}
-                        />
-                    );
-                  }
-              )}
-            </div>
+            <AdventuresList lang={lang} collectionSlug={"popular"} showCategoryPicker={false}/>
           </div>
         </div>
       </main>)

@@ -1,23 +1,13 @@
-import {cache} from 'react';
-
 import Image from "next/image";
-import {AdventureClient} from "@/lib/adventures";
 import Carousel from "../../components/Carousel";
 import CarouselItem from "../../components/CarouselItem";
 import Link from "next/link";
+import AdventuresList from "../../components/AdventuresList";
 
 export const revalidate = 43200; // 12 hours in seconds
 export const dynamic = 'force-static';
 export const fetchCache = 'only-cache';
 export const preferredRegion = 'auto';
-
-
-const getFewAdventures = cache(async () => {
-    const client = AdventureClient.fromEnv();
-    const res = await client.getAllAdventures();
-    return res?.data?.adventureList?.items;
-});
-
 
 export async function generateStaticParams() {
     return ["en-US"].map((lang) => ({
@@ -109,5 +99,15 @@ export default async function Page({params: {lang}}) {
             <div className="p-20">
                 The Australian West coast is a camper’s heaven. Endless miles of desert roads leading to secret beaches, vast canyons and crystal clear rivers, and the very few people you are likely to meet on your journey will be some of the most easy-going characters you’ll find anywhere in the world.
             </div>
+
+            <h1 className="max-w-[1154px] mx-auto pt-8">
+                Our Most Popular Adventures
+            </h1>
+            <AdventuresList lang={lang} collectionSlug={"popular"} showCategoryPicker={false}/>
+
+            <div className="max-w-[1154px] mx-auto pb-12">
+                <Link href="/en-US/adventure-collection/all" className="ml-5 p-5 bg-yellow hover:bg-black hover:text-yellow uppercase">See All adventures</Link>
+            </div>
+
         </main>)
 }

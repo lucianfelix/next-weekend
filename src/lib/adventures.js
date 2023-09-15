@@ -40,6 +40,13 @@ export const adventureCollections = [
         slug: 'winter',
         predicate: (adventure) => adventure.title.includes('Ski'),
     },
+    {
+        name: 'Most Popular',
+        slug: 'popular',
+        predicate: (adventure) => adventure.title.includes('surf')
+            || adventure.title.includes('Tour')
+            || adventure.title.includes('Cycling'),
+    },
 ];
 
 export const getAdventures = cache(async (lang) => {

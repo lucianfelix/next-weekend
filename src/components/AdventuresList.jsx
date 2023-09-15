@@ -18,12 +18,13 @@ import {adventureCollections, getAdventures} from "../lib/adventures";
 const NEXT_PUBLIC_AEM_HOST = process.env.NEXT_PUBLIC_AEM_HOST;
 const NEXT_PUBLIC_AEM_ROOT = process.env.NEXT_PUBLIC_AEM_ROOT;
 ``
-export default async function AdventuresList({lang = '', collectionSlug = 'all'}) {
+export default async function AdventuresList({lang = '', collectionSlug = 'all', showCategoryPicker = true}) {
     const adventures = await getAdventures(lang);
     const activeCollection = adventureCollections.find((collection) => collection.slug === collectionSlug);
     const filteredAdventures = adventures.filter(activeCollection.predicate);
 
     return (<div className="mb-20">
+            {showCategoryPicker &&
             <ul className="flex p-2 max-w-[1154px] md:px-5 mx-auto ">
                 {adventureCollections.map((filter) => (
                     <li className="mr-3" key={filter.slug}>
@@ -35,7 +36,7 @@ export default async function AdventuresList({lang = '', collectionSlug = 'all'}
                         >{filter.name}</Link>
                     </li>
                 ))}
-            </ul>
+            </ul>}
             <div
                 className="p-2 max-w-[1154px] md:px-5 mx-auto grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
                 {filteredAdventures.map(

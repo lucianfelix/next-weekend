@@ -51,10 +51,13 @@ export default async function Page({params: {lang, collection}}) {
                     <AdventuresList lang={lang} collectionSlug={collection}/>
 
                     <h2 className="max-w-[1154px] mx-auto my-32 md:px-5 text-2xl">
-                        No matter which adventure you opt for from our offerings, our expert
-                        <Link href="/en-US/aboutus#guides" className="py-4 px-2 hover:bg-yellow">guides</Link>
-                        will ensure you have an unforgettable experience.
+                        No matter which adventure you opt for from our offerings, our expert guides will ensure you have an unforgettable experience.
                     </h2>
+
+
+                    <div className="max-w-[1154px] mx-auto pb-12">
+                        <Link href="/en-US/aboutus" className="ml-5 p-5 bg-yellow hover:bg-black hover:text-yellow uppercase">Meet our guides</Link>
+                    </div>
                 </div>
             </div>
         </main>)
