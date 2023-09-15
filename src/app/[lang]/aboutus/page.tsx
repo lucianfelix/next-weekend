@@ -2,7 +2,6 @@ import React from "react";
 import AvatarCard from "@/components/AvatarCard";
 
 export async function generateStaticParams() {
-    console.log('generateStaticParams faq');
     return ["en-US"].map((lang) => ({
         lang: lang,
     }))

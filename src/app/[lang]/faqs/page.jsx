@@ -36,7 +36,6 @@ const items = [
 
 
 export async function generateStaticParams() {
-    console.log('generateStaticParams faq');
     return ["en-US"].map((lang) => ({
         lang: lang,
     }))

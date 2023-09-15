@@ -9,7 +9,6 @@ export const fetchCache = 'only-cache';
 export const preferredRegion = 'auto';
 
 export async function generateStaticParams() {
-    console.log('generateStaticParams faq');
     return ["en-US"].map((lang) => ({
         lang: lang,
     }))
