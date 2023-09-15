@@ -25,7 +25,7 @@ export default async function Footer() {
                     alt="WKND Logo"/>
                 <div className="flex justify-between md:mr-auto md:ml-10">
                     <Link href="/en-US/magazine/" className="p-4 hover:bg-yellow hover:text-black uppercase">Magazine</Link>
-                    <Link href="/en-US/adventures/" className="p-4 hover:bg-yellow hover:text-black uppercase">Adventures</Link>
+                    <Link href="/en-US/adventure-collection/all/" className="p-4 hover:bg-yellow hover:text-black uppercase">Adventures</Link>
                     <Link href="/en-US/faqs/" className="p-4 hover:bg-yellow hover:text-black uppercase">Faqs</Link>
                     <Link href="/en-US/aboutus/" className="p-4 hover:bg-yellow hover:text-black uppercase">About Us</Link>
                 </div>

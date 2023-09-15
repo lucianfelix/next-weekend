@@ -1,7 +1,7 @@
-import {Suspense} from 'react';
 import Image from "next/image";
 import Link from "next/link";
-import AdventuresList from "../../../components/AdventuresList";
+import AdventuresList from "../../../../components/AdventuresList";
+import {adventureCollections} from "../../../../lib/adventures";
 
 export const revalidate = 43200; // 12 hours in seconds
 export const dynamic = 'force-static';
@@ -9,13 +9,16 @@ export const fetchCache = 'only-cache';
 export const preferredRegion = 'auto';
 
 export async function generateStaticParams() {
-    return ["en-US"].map((lang) => ({
-        lang: lang,
-    }))
+    return ["en-US"].map((lang) => {
+        return adventureCollections.map((filter) => (
+            {
+                lang: lang,
+                collection: filter.slug,
+            }))
+    }).flat();
 }
 
-
-export default async function Page({params: {lang}}) {
+export default async function Page({params: {lang, collection}}) {
     return (
         <main className="">
             <div className="bg-white md:px-0 px-5">
@@ -45,9 +48,13 @@ export default async function Page({params: {lang}}) {
 
                     <h1 className="max-w-[1154px] mx-auto pt-9 md:px-5">Our Current Adventures</h1>
 
-                    {/*<Suspense fallback={<div>Your adventures are on the way...</div>}>*/}
-                    <AdventuresList lang={lang}/>
-                    {/*</Suspense>*/}
+                    <AdventuresList lang={lang} collectionSlug={collection}/>
+
+                    <h2 className="max-w-[1154px] mx-auto my-32 md:px-5 text-2xl">
+                        No matter which adventure you opt for from our offerings, our expert
+                        <Link href="/en-US/aboutus#guides" className="py-4 px-2 hover:bg-yellow">guides</Link>
+                        will ensure you have an unforgettable experience.
+                    </h2>
                 </div>
             </div>
         </main>)

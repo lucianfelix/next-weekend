@@ -70,7 +70,7 @@ export default function AboutUs() {
                     }
                 </div>
 
-                <h2 className="border-5 border-b-yellow">WKND Guides</h2>
+                <h2 id="guides" className="border-5 border-b-yellow">WKND Guides</h2>
                 <div className="italic text-sm">
                     Meet our extraordinary travel guides. When you travel with a certified WKND guide you gain access to
                     attractions and perspectives not found on the pages of a guide book.
