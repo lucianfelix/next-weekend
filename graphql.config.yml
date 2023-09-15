@@ -1,0 +1,4 @@
+schema:
+#  - test/schema.graphql
+  - https://publish-p64257-e147834-cmstg.adobeaemcloud.com/content/_cq_graphql/aem-demo-assets/endpoint.json
+documents: '**/*.graphql'

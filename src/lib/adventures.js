@@ -103,7 +103,7 @@ export class AdventureClient {
         const query = `{
       adventureByPath (_path: "${path}") {
         item {
-          _path
+            _path
             title
             activity
             adventureType

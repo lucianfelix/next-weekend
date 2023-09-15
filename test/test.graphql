@@ -1,0 +1,144 @@
+
+query adventureByPath {
+    adventureByPath(_path: "/content/dam/aem-demo-assets/en/adventures/riverside-camping-australia/riverside-camping-australia") {
+        item {
+            _path
+            title
+            activity
+            administrator {
+                fullName
+                instructorExperienceLevel
+                profilePicture {
+                    ... on ImageRef {
+                        _path
+                        mimeType
+                        width
+                        height
+                    }
+                }
+                skills
+            }
+
+            instructorTeam {
+                _path
+                _variation
+                _variations
+                description {
+                    html
+                }
+                teamFoundingDate
+                teamMembers {
+                    fullName
+                    instructorExperienceLevel
+                    profilePicture {
+                        ... on ImageRef {
+                            _path
+                            mimeType
+                            width
+                            height
+                        }
+                    }
+                    skills
+                }
+            }
+            adventureType
+            price
+            tripLength
+            groupSize
+            difficulty
+            primaryImage {
+                ... on ImageRef {
+                    _path
+                    mimeType
+                    width
+                    height
+                }
+            }
+            description {
+                html
+            }
+            itinerary {
+                html
+            }
+        }
+    }
+}
+
+
+query getArticles {
+    articleList(_locale: "en") {
+        items {
+            _path,
+            _variation
+            _variations
+            author
+        }
+    }
+}
+
+query getArticles {
+    articleList(_locale: "en") {
+        items {
+            _path,
+            _variation
+            _variations
+            author
+        }
+    }
+}
+
+query getArticle {
+    articleByPath(_path: "/content/dam/aem-demo-assets/en/magazine/la-skateparks/ultimate-guide-to-la-skateparks") {
+        _references {
+            ... on ImageRef {
+                _path
+                mimeType
+                width
+                height
+            }
+        }
+        item {
+            _path,
+            _variation
+            _variations
+            author
+            main {
+                html
+            }
+        }
+    }
+}
+
+
+query getLocations {
+    locationList(_locale: "en") {
+        items {
+            _path,
+            _variation
+            _variations
+            address {
+                _path
+                city
+                country
+                state
+                streetAddress
+                zipCode
+            }
+            description {
+                html
+            }
+            locationImage {
+                ... on ImageRef {
+                    _path
+                    mimeType
+                    width
+                    height
+                }
+            }
+            name
+            weatherBySeason
+        }
+    }
+}
+
+

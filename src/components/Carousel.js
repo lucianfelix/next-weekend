@@ -33,6 +33,7 @@ const Carousel = ({children, className}) => {
                     {children.map((_, index) => (
                         <button
                             key={index}
+                            aria-label={`Go to slid slide-${index}`}
                             onClick={() => {
                                 setCurrent(index);
                             }}
@@ -41,11 +42,14 @@ const Carousel = ({children, className}) => {
                     ))}
                 </div>
                 <div className="h-5 flex space-x-1 flex-none w-25 hidden md:block">
-                    <button onClick={() => setCurrent(current === 0 ? size - 1 : current - 1)}
+                    <button
+                        aria-label="Go to previous slide"
+                        onClick={() => setCurrent(current === 0 ? size - 1 : current - 1)}
                             className="w-9 h-9 flex-none bg-yellow hover:bg-black hover:text-yellow text-2xl">
                         {"<"}
                     </button>
                     <button
+                        aria-label="Go to next slide"
                         onClick={() => setCurrent(current === size - 1 ? 0 : current + 1)}
                         className="w-9 h-9 flex-none bg-yellow hover:bg-black hover:text-yellow text-2xl">
                         {">"}

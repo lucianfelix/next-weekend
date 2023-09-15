@@ -1,0 +1,742 @@
+# This file was generated. Do not edit manually.
+
+schema {
+    query: QueryType
+}
+
+"Marks a connection type according to the Relay specification."
+directive @connection(
+    "The type for which the connection is created."
+    for: String!
+) on FIELD_DEFINITION
+
+directive @fetcher(name: String, options: String, source: String) on FIELD_DEFINITION
+
+directive @resolver(name: String, options: String, source: String) on UNION
+
+union AllFragmentModels = AddressModel | AdventureModel | AppModel | ArticleModel | LocationModel | PersonModel | TeamModel
+
+union Reference = AddressModel | AdventureModel | AppModel | ArchiveRef | ArticleModel | DocumentRef | ImageRef | LocationModel | MultimediaRef | PageRef | PersonModel | TeamModel
+
+type AddressModel {
+    _metadata: TypedMetaData
+    _model: ModelInfo
+    _path: ID
+    _variation: String
+    _variations: [String]
+    city: String
+    country: String
+    state: String
+    streetAddress: String
+    zipCode: String
+}
+
+type AddressModelResult {
+    _references: [Reference]
+    item: AddressModel!
+}
+
+type AddressModelResults {
+    _references: [Reference]
+    items: [AddressModel]!
+}
+
+type AdventureModel {
+    _metadata: TypedMetaData
+    _model: ModelInfo
+    _path: ID
+    _variation: String
+    _variations: [String]
+    activity: String
+    administrator: PersonModel
+    adventureType: String
+    description: MultiFormatString
+    difficulty: String
+    gearList: MultiFormatString
+    groupSize: String
+    instructorTeam: TeamModel
+    itinerary: MultiFormatString
+    location: LocationModel
+    price: String
+    primaryImage: Reference
+    title: String
+    tripLength: String
+}
+
+type AdventureModelResult {
+    _references: [Reference]
+    item: AdventureModel!
+}
+
+type AdventureModelResults {
+    _references: [Reference]
+    items: [AdventureModel]!
+}
+
+type AppModel {
+    _metadata: TypedMetaData
+    _model: ModelInfo
+    _path: ID
+    _variation: String
+    _variations: [String]
+    appHeroImage: Reference
+    appTitle: String
+}
+
+type AppModelResult {
+    _references: [Reference]
+    item: AppModel!
+}
+
+type AppModelResults {
+    _references: [Reference]
+    items: [AppModel]!
+}
+
+type ArchiveRef {
+    _authorUrl: String
+    _path: ID
+    _publishUrl: String
+    format: String
+    size: Int
+    type: String
+}
+
+type ArticleModel {
+    _metadata: TypedMetaData
+    _model: ModelInfo
+    _path: ID
+    _variation: String
+    _variations: [String]
+    author: String
+    main: MultiFormatString
+}
+
+type ArticleModelResult {
+    _references: [Reference]
+    item: ArticleModel!
+}
+
+type ArticleModelResults {
+    _references: [Reference]
+    items: [ArticleModel]!
+}
+
+type BooleanArrayMetadata {
+    name: String!
+    value: [Boolean]!
+}
+
+type BooleanMetadata {
+    name: String!
+    value: Boolean!
+}
+
+type CalendarArrayMetadata {
+    name: String!
+    value: [Calendar]!
+}
+
+type CalendarMetadata {
+    name: String!
+    value: Calendar!
+}
+
+type DocumentRef {
+    _authorUrl: String
+    _path: ID
+    _publishUrl: String
+    author: String
+    format: String
+    size: Int
+    type: String
+}
+
+type FloatArrayMetadata {
+    name: String!
+    value: [Float]!
+}
+
+type FloatMetadata {
+    name: String!
+    value: Float!
+}
+
+type ImageRef {
+    _authorUrl: String
+    _path: ID
+    _publishUrl: String
+    height: Int
+    mimeType: String
+    type: String
+    width: Int
+}
+
+type IntArrayMetadata {
+    name: String!
+    value: [Int]!
+}
+
+type IntMetadata {
+    name: String!
+    value: Int!
+}
+
+type LocationModel {
+    _metadata: TypedMetaData
+    _model: ModelInfo
+    _path: ID
+    _variation: String
+    _variations: [String]
+    address: AddressModel
+    description: MultiFormatString
+    locationImage: Reference
+    name: String
+    weatherBySeason: Json
+}
+
+type LocationModelResult {
+    _references: [Reference]
+    item: LocationModel!
+}
+
+type LocationModelResults {
+    _references: [Reference]
+    items: [LocationModel]!
+}
+
+type ModelInfo {
+    _path: ID
+    title: String
+}
+
+type MultiFormatString {
+    html: String
+    json: Json
+    markdown: String
+    plaintext: String
+}
+
+type MultimediaRef {
+    _authorUrl: String
+    _path: ID
+    _publishUrl: String
+    format: String
+    size: Int
+    type: String
+}
+
+type PageRef {
+    _authorUrl: String
+    _path: ID
+    _publishUrl: String
+    type: String
+}
+
+type PersonModel {
+    _metadata: TypedMetaData
+    _model: ModelInfo
+    _path: ID
+    _variation: String
+    _variations: [String]
+    administratorDetails: MultiFormatString
+    biography: MultiFormatString
+    fullName: String
+    instructorExperienceLevel: String
+    profilePicture: Reference
+    skills: [String]
+}
+
+type PersonModelResult {
+    _references: [Reference]
+    item: PersonModel!
+}
+
+type PersonModelResults {
+    _references: [Reference]
+    items: [PersonModel]!
+}
+
+type QueryType {
+    "Get a single `address`, specified by its path and optional variation"
+    addressByPath(_path: String!, variation: String): AddressModelResult!
+    "Get multiple `address` objects"
+    addressList(_locale: String, filter: AddressModelFilter, variation: String): AddressModelResults!
+    "Get a single `adventure`, specified by its path and optional variation"
+    adventureByPath(_path: String!, variation: String): AdventureModelResult!
+    "Get multiple `adventure` objects"
+    adventureList(_locale: String, filter: AdventureModelFilter, variation: String): AdventureModelResults!
+    "Get a single `app`, specified by its path and optional variation"
+    appByPath(_path: String!, variation: String): AppModelResult!
+    "Get multiple `app` objects"
+    appList(_locale: String, filter: AppModelFilter, variation: String): AppModelResults!
+    "Get a single `article`, specified by its path and optional variation"
+    articleByPath(_path: String!, variation: String): ArticleModelResult!
+    "Get multiple `article` objects"
+    articleList(_locale: String, filter: ArticleModelFilter, variation: String): ArticleModelResults!
+    "Get a single `location`, specified by its path and optional variation"
+    locationByPath(_path: String!, variation: String): LocationModelResult!
+    "Get multiple `location` objects"
+    locationList(_locale: String, filter: LocationModelFilter, variation: String): LocationModelResults!
+    "Get a single `person`, specified by its path and optional variation"
+    personByPath(_path: String!, variation: String): PersonModelResult!
+    "Get multiple `person` objects"
+    personList(_locale: String, filter: PersonModelFilter, variation: String): PersonModelResults!
+    "Get a single `team`, specified by its path and optional variation"
+    teamByPath(_path: String!, variation: String): TeamModelResult!
+    "Get multiple `team` objects"
+    teamList(_locale: String, filter: TeamModelFilter, variation: String): TeamModelResults!
+}
+
+type StringArrayMetadata {
+    name: String!
+    value: [String]!
+}
+
+type StringMetadata {
+    name: String!
+    value: String!
+}
+
+type TeamModel {
+    _metadata: TypedMetaData
+    _model: ModelInfo
+    _path: ID
+    _variation: String
+    _variations: [String]
+    description: MultiFormatString
+    teamFoundingDate: Date
+    teamMembers: [PersonModel]
+}
+
+type TeamModelResult {
+    _references: [Reference]
+    item: TeamModel!
+}
+
+type TeamModelResults {
+    _references: [Reference]
+    items: [TeamModel]!
+}
+
+type TypedMetaData {
+    booleanArrayMetadata: [BooleanArrayMetadata]!
+    booleanMetadata: [BooleanMetadata]!
+    calendarArrayMetadata: [CalendarArrayMetadata]!
+    calendarMetadata: [CalendarMetadata]!
+    floatArrayMetadata: [FloatArrayMetadata]!
+    floatMetadata: [FloatMetadata]!
+    intArrayMetadata: [IntArrayMetadata]!
+    intMetadata: [IntMetadata]!
+    stringArrayMetadata: [StringArrayMetadata]!
+    stringMetadata: [StringMetadata]!
+}
+
+enum ArrayMode {
+    ALL
+    ALL_OR_EMPTY
+    AT_LEAST_ONCE
+    INSTANCES
+}
+
+enum BooleanOperator {
+    EQUALS
+}
+
+enum CalendarOperator {
+    AFTER
+    AT
+    AT_OR_AFTER
+    AT_OR_BEFORE
+    BEFORE
+    NOT_AT
+}
+
+enum DateOperator {
+    AFTER
+    AT
+    AT_OR_AFTER
+    AT_OR_BEFORE
+    BEFORE
+    NOT_AT
+}
+
+enum FloatOperator {
+    EQUAL
+    GREATER
+    GREATER_EQUAL
+    LOWER
+    LOWER_EQUAL
+    UNEQUAL
+}
+
+enum IDOperator {
+    EQUALS
+    EQUALS_NOT
+    STARTS_WITH
+}
+
+enum IntOperator {
+    EQUAL
+    GREATER
+    GREATER_EQUAL
+    LOWER
+    LOWER_EQUAL
+    UNEQUAL
+}
+
+enum LogOp {
+    AND
+    OR
+}
+
+enum StringOperator {
+    CONTAINS
+    CONTAINS_NOT
+    EQUALS
+    EQUALS_NOT
+}
+
+enum TimeOperator {
+    AFTER
+    AT
+    AT_OR_AFTER
+    AT_OR_BEFORE
+    BEFORE
+    NOT_AT
+}
+
+"com.adobe.aem.graphql.sites.adapters.sling.ScalarComponentWrapper@5dee0f51"
+scalar Calendar
+
+"com.adobe.aem.graphql.sites.adapters.sling.ScalarComponentWrapper@36aa43ec"
+scalar Date
+
+"com.adobe.aem.graphql.sites.adapters.sling.ScalarComponentWrapper@6f3f1168"
+scalar Json
+
+"com.adobe.aem.graphql.sites.adapters.sling.ScalarComponentWrapper@a38135d"
+scalar Time
+
+input AddressModelArrayFilter {
+    _apply: ArrayMode
+    _instances: Int
+    _match: AddressModelFilter
+}
+
+input AddressModelFilter {
+    _logOp: LogOp = AND
+    _path: IDFilter
+    _variation: StringFilter
+    _variations: StringArrayFilter
+    city: StringFilter
+    country: StringFilter
+    state: StringFilter
+    streetAddress: StringFilter
+    zipCode: StringFilter
+}
+
+input AdventureModelArrayFilter {
+    _apply: ArrayMode
+    _instances: Int
+    _match: AdventureModelFilter
+}
+
+input AdventureModelFilter {
+    _logOp: LogOp = AND
+    _path: IDFilter
+    _variation: StringFilter
+    _variations: StringArrayFilter
+    activity: StringFilter
+    administrator: PersonModelFilter
+    adventureType: StringFilter
+    description: MultiFormatStringFilter
+    difficulty: StringFilter
+    gearList: MultiFormatStringFilter
+    groupSize: StringFilter
+    instructorTeam: TeamModelFilter
+    itinerary: MultiFormatStringFilter
+    location: LocationModelFilter
+    price: StringFilter
+    title: StringFilter
+    tripLength: StringFilter
+}
+
+input AppModelArrayFilter {
+    _apply: ArrayMode
+    _instances: Int
+    _match: AppModelFilter
+}
+
+input AppModelFilter {
+    _logOp: LogOp = AND
+    _path: IDFilter
+    _variation: StringFilter
+    _variations: StringArrayFilter
+    appTitle: StringFilter
+}
+
+input ArticleModelArrayFilter {
+    _apply: ArrayMode
+    _instances: Int
+    _match: ArticleModelFilter
+}
+
+input ArticleModelFilter {
+    _logOp: LogOp = AND
+    _path: IDFilter
+    _variation: StringFilter
+    _variations: StringArrayFilter
+    author: StringFilter
+    main: MultiFormatStringFilter
+}
+
+input BooleanArrayFilter {
+    _expressions: [BooleanArrayFilterExpression]!
+    _logOp: LogOp = AND
+}
+
+input BooleanArrayFilterExpression {
+    _apply: ArrayMode
+    _instances: Int
+    _operator: BooleanOperator = EQUALS
+    value: Boolean
+    values: [Boolean]
+}
+
+input BooleanFilter {
+    _expressions: [BooleanFilterExpression]!
+    _logOp: LogOp = AND
+}
+
+input BooleanFilterExpression {
+    _operator: BooleanOperator = EQUALS
+    value: Boolean
+}
+
+input CalendarArrayFilter {
+    _expressions: [CalendarArrayFilterExpression]!
+    _logOp: LogOp = AND
+}
+
+input CalendarArrayFilterExpression {
+    _apply: ArrayMode
+    _instances: Int
+    _operator: CalendarOperator = AT
+    value: Calendar
+    values: [Calendar]
+}
+
+input CalendarFilter {
+    _expressions: [CalendarFilterExpression]!
+    _logOp: LogOp = AND
+}
+
+input CalendarFilterExpression {
+    _operator: CalendarOperator = AT
+    value: Calendar
+}
+
+input DateArrayFilter {
+    _expressions: [DateArrayFilterExpression]!
+    _logOp: LogOp = AND
+}
+
+input DateArrayFilterExpression {
+    _apply: ArrayMode
+    _instances: Int
+    _operator: DateOperator = AT
+    value: Date
+    values: [Date]
+}
+
+input DateFilter {
+    _expressions: [DateFilterExpression]!
+    _logOp: LogOp = AND
+}
+
+input DateFilterExpression {
+    _operator: DateOperator = AT
+    value: Date
+}
+
+input FloatArrayFilter {
+    _expressions: [FloatArrayFilterExpression]!
+    _logOp: LogOp = AND
+}
+
+input FloatArrayFilterExpression {
+    _apply: ArrayMode
+    _instances: Int
+    _operator: FloatOperator = EQUAL
+    _sensitiveness: Float
+    value: Float
+    values: [Float]
+}
+
+input FloatFilter {
+    _expressions: [FloatFilterExpression]!
+    _logOp: LogOp = AND
+}
+
+input FloatFilterExpression {
+    _operator: FloatOperator = EQUAL
+    _sensitiveness: Float
+    value: Float
+}
+
+input IDArrayFilter {
+    _expressions: [IDArrayFilterExpression]!
+    _logOp: LogOp = AND
+}
+
+input IDArrayFilterExpression {
+    _apply: ArrayMode
+    _instances: Int
+    _operator: IDOperator = EQUALS
+    value: ID
+    values: [ID]
+}
+
+input IDFilter {
+    _expressions: [IDFilterExpression]!
+    _logOp: LogOp = AND
+}
+
+input IDFilterExpression {
+    _operator: IDOperator = EQUALS
+    value: ID
+}
+
+input IntArrayFilter {
+    _expressions: [IntArrayFilterExpression]!
+    _logOp: LogOp = AND
+}
+
+input IntArrayFilterExpression {
+    _apply: ArrayMode
+    _instances: Int
+    _operator: IntOperator = EQUAL
+    value: Int
+    values: [Int]
+}
+
+input IntFilter {
+    _expressions: [IntFilterExpression]!
+    _logOp: LogOp = AND
+}
+
+input IntFilterExpression {
+    _operator: IntOperator = EQUAL
+    value: Int
+}
+
+input LocationModelArrayFilter {
+    _apply: ArrayMode
+    _instances: Int
+    _match: LocationModelFilter
+}
+
+input LocationModelFilter {
+    _logOp: LogOp = AND
+    _path: IDFilter
+    _variation: StringFilter
+    _variations: StringArrayFilter
+    address: AddressModelFilter
+    description: MultiFormatStringFilter
+    name: StringFilter
+}
+
+input MultiFormatStringArrayFilter {
+    _apply: ArrayMode
+    _instances: Int
+    _match: MultiFormatStringFilter
+}
+
+input MultiFormatStringFilter {
+    _logOp: LogOp = AND
+    html: StringFilter
+    markdown: StringFilter
+    plaintext: StringFilter
+}
+
+input PersonModelArrayFilter {
+    _apply: ArrayMode
+    _instances: Int
+    _match: PersonModelFilter
+}
+
+input PersonModelFilter {
+    _logOp: LogOp = AND
+    _path: IDFilter
+    _variation: StringFilter
+    _variations: StringArrayFilter
+    administratorDetails: MultiFormatStringFilter
+    biography: MultiFormatStringFilter
+    fullName: StringFilter
+    instructorExperienceLevel: StringFilter
+    skills: StringArrayFilter
+}
+
+input StringArrayFilter {
+    _expressions: [StringArrayFilterExpression]!
+    _logOp: LogOp = AND
+}
+
+input StringArrayFilterExpression {
+    _apply: ArrayMode
+    _instances: Int
+    _operator: StringOperator = EQUALS
+    value: String
+    values: [String]
+}
+
+input StringFilter {
+    _expressions: [StringFilterExpression]!
+    _logOp: LogOp = AND
+}
+
+input StringFilterExpression {
+    _ignoreCase: Boolean
+    _operator: StringOperator = EQUALS
+    value: String
+}
+
+input TeamModelArrayFilter {
+    _apply: ArrayMode
+    _instances: Int
+    _match: TeamModelFilter
+}
+
+input TeamModelFilter {
+    _logOp: LogOp = AND
+    _path: IDFilter
+    _variation: StringFilter
+    _variations: StringArrayFilter
+    description: MultiFormatStringFilter
+    teamFoundingDate: DateFilter
+    teamMembers: PersonModelArrayFilter
+}
+
+input TimeArrayFilter {
+    _expressions: [TimeArrayFilterExpression]!
+    _logOp: LogOp = AND
+}
+
+input TimeArrayFilterExpression {
+    _apply: ArrayMode
+    _instances: Int
+    _operator: TimeOperator = AT
+    value: Time
+    values: [Time]
+}
+
+input TimeFilter {
+    _expressions: [TimeFilterExpression]!
+    _logOp: LogOp = AND
+}
+
+input TimeFilterExpression {
+    _operator: TimeOperator = AT
+    value: Time
+}
