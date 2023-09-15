@@ -34,7 +34,7 @@ export default async function Page({params: {lang}}) {
   return (
       <main className="">
         <div className="bg-white">
-          <div className="max-w-[1154px] mx-auto py-10 sm:py-16">
+          <div className="max-w-[1154px] mx-auto">
             <h1 className="">Magazine</h1>
             <HeroArticleCard article={heroArticle}/>
             <h1 className="">All Articles</h1>

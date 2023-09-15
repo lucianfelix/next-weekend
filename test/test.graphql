@@ -64,6 +64,34 @@ query adventureByPath {
     }
 }
 
+query getApps {
+    appList(_locale: "en") {
+        items {
+            _path,
+            _variation
+            _variations
+        }
+    }
+}
+
+query getApp {
+    appByPath(_path: "/content/dam/aem-demo-assets/en/app/wknd-adventures") {
+        item {
+            _path,
+            _variation
+            _variations
+            appHeroImage {
+                ... on ImageRef {
+                    _path
+                    mimeType
+                    width
+                    height
+                }
+            }
+            appTitle
+        }
+    }
+}
 
 query getArticles {
     articleList(_locale: "en") {

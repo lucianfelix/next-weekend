@@ -19,7 +19,7 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-        <body className={inter.className}>
+        <body className={inter.className + " px-4 md:px-0"}>
         <header>
             <Menu/>
         </header>

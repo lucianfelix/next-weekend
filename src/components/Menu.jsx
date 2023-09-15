@@ -16,7 +16,7 @@ import Image from 'next/image';
 
 function SearchBox() {
     return (
-        <input type="text" placeholder="Search" className="border-2 bg-gray-50 m-2"/>
+        <input type="text" placeholder="Search" className="hidden md:block border-2 bg-gray-50 p-1 mx-2"/>
     )
 }
 
@@ -26,19 +26,26 @@ export default async function Menu() {
             <div className="bg-black p-1 px-3">
                 <a href="https://www.adobe.com/" className="text-white uppercase text-s">Sign in</a>
             </div>
-            <div className="bg-white flex p-2">
-                <Link href="/en-US" className=""><Image
-                    src="https://wknd.site/content/experience-fragments/wknd/language-masters/en/site/header/master/_jcr_content/root/container/container_1195249223/image.coreimg.svg/1594412560447/wknd-logo-dk.svg"
-                    width={96}
-                    height={35}
-                    alt="WKND Logo"/>
+            <div className="bg-white flex px-4 items-center">
+                <Link
+                    href="/en-US"
+                    className="py-6">
+                    <Image
+                        src="https://wknd.site/content/experience-fragments/wknd/language-masters/en/site/header/master/_jcr_content/root/container/container_1195249223/image.coreimg.svg/1594412560447/wknd-logo-dk.svg"
+                        width={96}
+                        height={35}
+                        alt="WKND Logo"/>
                 </Link>
-                <div className="flex justify-between ml-auto">
-                    <Link href="/en-US" className="p-4 hover:bg-yellow uppercase" prefetch={true}>Home</Link>
-                    <Link href="/en-US/magazine" className="p-4 hover:bg-yellow uppercase" prefetch={true}>Magazine</Link>
-                    <Link href="/en-US/adventure-collection/all" className="p-4 hover:bg-yellow uppercase" prefetch={true}>Adventures</Link>
-                    <Link href="/en-US/faqs" className="p-4 hover:bg-yellow uppercase" prefetch={true}>Faqs</Link>
-                    <Link href="/en-US/aboutus" className="p-4 hover:bg-yellow uppercase" prefetch={true}>About Us</Link>
+                <div className="hidden md:flex justify-between ml-auto my-2">
+                    <Link href="/en-US" className="py-4 px-2 hover:bg-yellow uppercase" prefetch={true}>Home</Link>
+                    <Link href="/en-US/magazine" className="py-4 px-2 hover:bg-yellow uppercase"
+                          prefetch={true}>Magazine</Link>
+                    <Link href="/en-US/adventure-collection/all" className="py-4 px-2 hover:bg-yellow uppercase"
+                          prefetch={true}>Adventures</Link>
+                    <Link href="/en-US/faqs" className="py-4 px-2 hover:bg-yellow uppercase"
+                          prefetch={true}>Faqs</Link>
+                    <Link href="/en-US/aboutus" className="py-4 px-2 hover:bg-yellow uppercase"
+                          prefetch={true}>About</Link>
                 </div>
                 <SearchBox/>
             </div>

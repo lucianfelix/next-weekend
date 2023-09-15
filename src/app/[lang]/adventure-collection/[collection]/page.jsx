@@ -21,9 +21,9 @@ export async function generateStaticParams() {
 export default async function Page({params: {lang, collection}}) {
     return (
         <main className="">
-            <div className="bg-white md:px-0 px-5">
-                <div className="py-10 mx-0 sm:py-16">
-                    <h1 className="max-w-[1154px] mx-auto md:px-5">Adventures</h1>
+            <div className="bg-white md:px-0">
+                <div className="">
+                    <h1 className="max-w-[1154px] mx-auto">Adventures</h1>
                     <div className="mx-0 lg:relative">
                         <Image className="mx-auto h-full"
                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

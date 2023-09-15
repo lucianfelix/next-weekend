@@ -44,8 +44,8 @@ export async function generateStaticParams() {
 export default async function Page({params: {lang}}) {
     return (
         <main className="bg-white text-lg">
-            <div className="max-w-[1154px] mx-auto p-10 space-y-8">
-                <h1 className="w-[84px] border-5 border-b-yellow"><span className="my-10">FAQs</span></h1>
+            <div className="max-w-[1154px] mx-auto ">
+                <h1 className="w-[84px] border-5 border-b-yellow"><span className="">FAQs</span></h1>
                 <div>
                     <Image src="https://wknd.site/us/en/faqs/_jcr_content/root/container/container/image.coreimg.60.1600.jpeg/1660323785307/adobestock-277768563.jpeg"
                            width={708}
@@ -53,13 +53,13 @@ export default async function Page({params: {lang}}) {
                            alt="A woman facing away from the camera on top of the mountain, with hands extended to the side, looking at the deep valey filled with lakes"
                     />
                 </div>
-                <div>
+                <div className="mt-10">
                     WKND is a collective of outdoors, music, crafts, adventure sports, and travel enthusiasts that want to
                     share our experiences, connections, and expertise with the world. Our objective is create a community to
                     help like-minded adventure seekers find fun, engaging, and responsible ways to to enjoy life and create
                     lasting memories.
                 </div>
-                <div className="">
+                <div className="mt-10">
                     <Accordion items={items}/>
                 </div>
             </div>

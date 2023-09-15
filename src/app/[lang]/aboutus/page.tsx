@@ -51,9 +51,28 @@ const guides = [
 export default function AboutUs() {
     return (
         <main className="bg-white text-lg">
-            <div className="max-w-[1154px] mx-auto p-10 space-y-8">
+            <div className="max-w-[1154px] mx-auto space-y-8">
                 <h1 className="border-5 border-b-yellow">About Us</h1>
-                <h2 className="border-5 border-b-yellow">Our Contributors</h2>
+                We are a group of passionate travelers who love to share our experiences with others. We believe that a
+                vacation should be more than just a trip, it should be a cultural exchange. We love to learn about the
+                people and places we visit, and we want to share that knowledge with you.
+                <h2 id="contributors" className="border-5 border-b-yellow">Our Story</h2>
+                <div className="italic text-sm">
+                    WKND started as a passion project between friends. We wanted to create a place where we could share
+                    our travel stories and connect with other like-minded travelers. We started by sharing our own
+                    experiences, but we quickly realized that our stories were only a small part of the picture. We
+                    wanted to share the stories of others, so we started reaching out to the people we met along the
+                    way.
+                    We asked them to share their stories with us, and they were happy to oblige. We hope you enjoy
+                    reading their stories as much as we enjoyed collecting them.
+                </div>
+
+                <h2 className="border-5 border-b-yellow">Our Team</h2>
+                <div className="italic text-sm">
+                    Meet the team behind WKND. We are a group of passionate travelers who love to share our experiences
+                    with others.
+                </div>
+                <h3 className="border-5 border-b-yellow">Our Contributors</h3>
                 <div className="italic text-sm">
                     Meet the outstanding individuals responsible for bringing you the most compelling stories across the
                     globe.
@@ -70,13 +89,13 @@ export default function AboutUs() {
                     }
                 </div>
 
-                <h2 id="guides" className="border-5 border-b-yellow">WKND Guides</h2>
+                <h3 id="guides" className="border-5 border-b-yellow">Our WKND Guides</h3>
                 <div className="italic text-sm">
                     Meet our extraordinary travel guides. When you travel with a certified WKND guide you gain access to
                     attractions and perspectives not found on the pages of a guide book.
                 </div>
 
-                <div className="grid md:grid-cols-3 gap-4">
+                <div className="grid md:grid-cols-3 gap-4 pb-16">
                     {guides.map((guide, i) => (
                         <AvatarCard
                             key={i}
