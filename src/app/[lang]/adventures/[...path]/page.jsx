@@ -107,24 +107,19 @@ export default async function Page({params}) {
 
                     <div
                         className="py-10 lg:pt-6 lg:pb-16 lg:col-start-1 lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
-                        {/* Description and Itinerary */}
-                        <div>
-                            <h3 className="sr-only">Description</h3>
-                            <div className="space-y-6">
-                                <div className="text-base text-gray-900" dangerouslySetInnerHTML={{
-                                    __html: description.html,
-                                }}></div>
-                            </div>
+
+                        <div className="mt-10 prose lg:prose-l">
+                            <div className="mt-4" dangerouslySetInnerHTML={{
+                                __html: description.html,
+                            }}/>
                         </div>
 
-                        <div className="mt-10">
-                            <h2 className="text-base font-bold text-gray-900">Itinerary</h2>
+                        <div className="mt-10 prose lg:prose-l">
+                            <h2 className="">Itinerary</h2>
 
-                            <div className="mt-4 space-y-6">
-                                <div className="text-sm text-gray-600" dangerouslySetInnerHTML={{
+                            <div className="mt-4" dangerouslySetInnerHTML={{
                                     __html: itinerary.html,
-                                }}></div>
-                            </div>
+                                }}/>
                         </div>
                     </div>
                 </div>
