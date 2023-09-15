@@ -19,7 +19,7 @@ export default async function AdventureCard({eager, href, title, price, duration
         <div className="group relative">
             <Link href={href}>
                 <div
-                    className="min-h-32 aspect-w-2 aspect-h-1  overflow-hidden group-hover:contrast-125 h-52 md:h-80 lg:aspect-none text-white">
+                    className="min-h-32 aspect-w-2 aspect-h-1  overflow-hidden h-52 md:h-80 lg:aspect-none text-white">
                     <div className="absolute top-0 left-0 right-0 bottom-0">
                         <Image
                             src={imageSrc}
@@ -29,7 +29,7 @@ export default async function AdventureCard({eager, href, title, price, duration
                             priority={eager}
                             loading={eager ? 'eager' : 'lazy'}
                             sizes="50vw"
-                            className="rounded-md w-full h-full object-center object-cover lg:w-full lg:h-full"
+                            className="group-hover:contrast-125 rounded-md w-full h-full object-center object-cover lg:w-full lg:h-full"
                         />
                     </div>
                     <div className="absolute text-sm left-6 bottom-4">
@@ -38,8 +38,9 @@ export default async function AdventureCard({eager, href, title, price, duration
                     <div className="absolute text-sm right-6 bottom-4">
                         {price}
                     </div>
-                    <h2 className="absolute left-6 top-4 font-semibold text-gray-100 text-3xl inset-0">
-                        {title}
+                    <h2 className="absolute left-6 top-4 font-semibold text-gray-600 text-3xl inset-0"
+                        // style={{mixBlendMode:'overlay'}}
+                    ><span className="box-decoration-slice bg-gray-200">{title}</span>
                     </h2>
                 </div>
             </Link>
