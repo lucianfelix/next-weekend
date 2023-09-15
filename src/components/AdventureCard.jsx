@@ -29,6 +29,7 @@ export default async function AdventureCard({eager, href, title, price, duration
                             priority={eager}
                             loading={eager ? 'eager' : 'lazy'}
                             sizes="50vw"
+                            placeholder={'blur'}
                             className="group-hover:contrast-125 rounded-md w-full h-full object-center object-cover lg:w-full lg:h-full"
                         />
                     </div>
