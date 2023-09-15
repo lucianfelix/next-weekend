@@ -13,11 +13,8 @@
 
 import AdventureCard from "./AdventureCard";
 import Link from "next/link";
-import {adventureCollections, getAdventures} from "../lib/adventures";
+import {adventureCollections, getAdventures, NEXT_PUBLIC_AEM_HOST} from "../lib/adventures";
 
-const NEXT_PUBLIC_AEM_HOST = process.env.NEXT_PUBLIC_AEM_HOST;
-const NEXT_PUBLIC_AEM_ROOT = process.env.NEXT_PUBLIC_AEM_ROOT;
-``
 export default async function AdventuresList({lang = '', collectionSlug = 'all', showCategoryPicker = true}) {
     const adventures = await getAdventures(lang);
     const activeCollection = adventureCollections.find((collection) => collection.slug === collectionSlug);

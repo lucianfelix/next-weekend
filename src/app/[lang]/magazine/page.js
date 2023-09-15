@@ -9,9 +9,6 @@ export const dynamic = 'force-static';
 export const fetchCache = 'only-cache';
 export const preferredRegion = 'auto';
 
-const NEXT_PUBLIC_AEM_HOST = process.env.NEXT_PUBLIC_AEM_HOST;
-const NEXT_PUBLIC_AEM_ROOT = process.env.NEXT_PUBLIC_AEM_ROOT;
-
 const client = AdventureClient.fromEnv();
 
 const getAdventures = cache(async () => {
@@ -34,9 +31,6 @@ export async function generateStaticParams() {
 }
 
 export default async function Page({params: {lang}}) {
-
-  const adventures = await getAdventures(lang);
-
   return (
       <main className="">
         <div className="bg-white">

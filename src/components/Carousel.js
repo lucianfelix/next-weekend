@@ -18,60 +18,42 @@ import React, {useState} from 'react';
 const Carousel = ({children, className}) => {
     const [current, setCurrent] = useState(0);
     const size = children.length;
-    //h-[250px]
+
     return (
-        <div className={"relative overflow-clip " + className}>
-            <div
-                className="carousel m-0 p-0 snap-x snap-mandatory flex transition-transform duration-500 ease-in-out">
-                {children}
+        <div className={"relative " + className}>
+            <div className="relative overflow-clip w-full">
+                <div
+                    className="carousel m-0 p-0 snap-x snap-mandatory flex transition-transform duration-500 ease-in-out"
+                    style={{transform: `translateX(-${current * 100}%)`}}>
+                    {children}
+                </div>
             </div>
-            <div className="carousel-dots absolute bottom-4 left-1/2 transform -translate-x-1/2 space-x-3 flex">
-                {children.map((_, index) => (
+            <div className="flex p-2">
+                <div className="carousel-dots h-9 flex space-x-3 grow justify-center">
+                    {children.map((_, index) => (
+                        <button
+                            key={index}
+                            onClick={() => {
+                                setCurrent(index);
+                            }}
+                            className={`${index === current ? "bg-black" : "bg-gray-400"} block w-3 h-3 rounded-full focus:outline-none hover:bg-yellow`}
+                        ></button>
+                    ))}
+                </div>
+                <div className="h-5 flex space-x-1 flex-none w-25 hidden md:block">
+                    <button onClick={() => setCurrent(current === 0 ? size - 1 : current - 1)}
+                            className="w-9 h-9 flex-none bg-yellow hover:bg-black hover:text-yellow text-2xl">
+                        {"<"}
+                    </button>
                     <button
-                        key={index}
-                        onClick={() => {
-                            const carousel = document.querySelector('.carousel');
-                            carousel.style.transform = `translateX(-${index * 100}%)`;
-                            setCurrent(index);
-                        }}
-                        className="w-3 h-3 bg-gray-400 rounded-full focus:outline-none focus:bg-gray-600"
-                    ></button>
-                ))}
+                        onClick={() => setCurrent(current === size - 1 ? 0 : current + 1)}
+                        className="w-9 h-9 flex-none bg-yellow hover:bg-black hover:text-yellow text-2xl">
+                        {">"}
+                    </button>
+                </div>
             </div>
-            <button
-                onClick={() => {
-                    if (current === 0) {
-                        setCurrent(size - 1);
-                    } else {
-                        setCurrent(current - 1);
-                    }
-                    const carousel = document.querySelector('.carousel');
-                    carousel.style.transform = `translateX(-${current * 100}%)`;
 
-                    const carouselDots = document.querySelector('.carousel-dots');
-                    // focus on the current dot
-                    carouselDots.children[current].focus();
-                }}
-                className="absolute top-1/2 left-0 transform -translate-y-1/2 -translate-x-1/2 bg-gray-400 rounded-full focus:outline-none focus:bg-gray-600"
-            >back
-            </button>
-            <button
-                onClick={() => {
-                    if (current === size - 1) {
-                        setCurrent(0);
-                    } else {
-                        setCurrent(current + 1);
-                    }
-                    const carousel = document.querySelector('.carousel');
-                    carousel.style.transform = `translateX(-${current * 100}%)`;
 
-                    const carouselDots = document.querySelector('.carousel-dots');
-                    // focus on the current dot
-                    carouselDots.children[current].focus();
-                }}
-                className="absolute top-1/2 right-0 transform -translate-y-1/2 -translate-x-1/2 bg-gray-400 rounded-full focus:outline-none focus:bg-gray-600"
-            >next
-            </button>
         </div>
     );
 };

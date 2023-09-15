@@ -14,6 +14,9 @@
 import AEMHeadless from '@adobe/aem-headless-client-js';
 import {cache} from "react";
 
+export const NEXT_PUBLIC_AEM_HOST = process.env.NEXT_PUBLIC_AEM_HOST;
+export const NEXT_PUBLIC_AEM_ROOT = process.env.NEXT_PUBLIC_AEM_ROOT;
+
 export const adventureCollections = [
     {
         name: 'All',

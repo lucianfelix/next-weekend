@@ -13,7 +13,7 @@
 
 const CarouselItem = ({children}) => {
     return (
-        <div className="snap-center flex-none w-full">
+        <div className="snap-center flex-none w-full max-h-[650px]">
             {children}
         </div>
     );

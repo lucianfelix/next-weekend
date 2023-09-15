@@ -2,15 +2,12 @@
 
 import Image from 'next/image';
 import {cache} from 'react';
-import {AdventureClient} from "../../../../lib/adventures";
+import {AdventureClient, NEXT_PUBLIC_AEM_HOST} from "../../../../lib/adventures";
 
 export const revalidate = 43200; // 12 hours in seconds
 export const dynamic = 'force-static';
 export const fetchCache = 'only-cache';
 export const preferredRegion = 'auto';
-
-const NEXT_PUBLIC_AEM_HOST = process.env.NEXT_PUBLIC_AEM_HOST;
-const NEXT_PUBLIC_AEM_ROOT = process.env.NEXT_PUBLIC_AEM_ROOT;
 
 // Return a list of `params` to populate the [slug] dynamic segment
 export async function generateStaticParams() {
