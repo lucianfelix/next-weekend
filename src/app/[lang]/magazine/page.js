@@ -32,7 +32,7 @@ export async function generateStaticParams() {
 
 export default async function Page({params: {lang}}) {
   return (
-      <main className="bg-white px-4">
+      <main className=" px-4">
         <div className="">
           <div className="max-w-[1154px] mx-auto">
             <h1 className="">Magazine</h1>
@@ -55,7 +55,7 @@ export default async function Page({params: {lang}}) {
                        height={717}
                 />
                 <div
-                    className="lg:absolute lg:bottom-0 max-w-[1136px] m-auto left-0 right-0 mh-5 lg:p-10 p-2 bg-white">
+                    className="lg:absolute lg:bottom-0 max-w-[1136px] m-auto left-0 right-0 mh-5 lg:p-10 p-2 ">
                   <div className="text-xl">Experience the world with us</div>
                   <div className="pt-5 text-base">With WKND Adventures, you don&lsquo;t just see the world
                     -- you

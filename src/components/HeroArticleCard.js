@@ -15,12 +15,12 @@ export default function HeroArticleCard(props) {
                     src={props.article.imageUrl}
                     alt={props.article.title}/>
             </div>
-            <div className="col-span-1 bg-gray-200 p-6">
+            <div className="col-span-1 bg-gray-200 dark:bg-gray-600 p-6">
                 <h1>Featured Article</h1>
                 <h2>{props.article.title}</h2>
                 <p>{props.article.description}</p>
-                <div className="pt-10 pb-0">
-                    <Link href={props.article.href} className="p-4 bg-yellow uppercase">
+                <div className="pt-10 pb-10">
+                    <Link href={props.article.href} className="ml-0 p-5 btn-yellow">
                         Read more
                     </Link>
                 </div>

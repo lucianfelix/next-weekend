@@ -20,7 +20,7 @@ export async function generateStaticParams() {
 
 export default async function Page({params: {lang, collection}}) {
     return (
-        <main className="bg-white px-4">
+        <main className=" px-4">
             <div className="">
                 <div className="">
                     <h1 className="max-w-[1154px] mx-auto">Adventures</h1>
@@ -38,7 +38,7 @@ export default async function Page({params: {lang, collection}}) {
                         />
 
                         <div
-                            className="lg:absolute lg:bottom-0 max-w-[1136px] m-auto left-0 right-0 mh-5 lg:p-10 p-2 bg-white">
+                            className="lg:absolute lg:bottom-0 max-w-[1136px] m-auto left-0 right-0 mh-5 lg:p-10 p-2 ">
                             <h2>Experience the world with us</h2>
                             <div className="pt-5 text-base">With WKND Adventures, you don&lsquo;t just see the world
                                 -- you experience its cultures, flavors and wonders.
@@ -56,7 +56,7 @@ export default async function Page({params: {lang, collection}}) {
 
 
                     <div className="max-w-[1154px] mx-auto pb-12">
-                        <Link href="/en-US/aboutus" className="ml-5 p-5 bg-yellow hover:bg-black hover:text-yellow uppercase">Meet our guides</Link>
+                        <Link href="/en-US/aboutus" className="ml-5 p-5 btn-yellow">Meet our guides</Link>
                     </div>
                 </div>
             </div>

@@ -22,11 +22,11 @@ export default async function AdventuresList({lang = '', collectionSlug = 'all',
 
     return (<div className="mb-20">
             {showCategoryPicker &&
-            <ul className="flex p-2 max-w-[1154px] md:px-5 mx-auto ">
+            <ul className="flex-wrap flex p-2 max-w-[1154px] md:px-5 mx-auto ">
                 {adventureCollections.map((filter) => (
                     <li className="mr-3" key={filter.slug}>
                         <Link
-                            className={`${filter.slug === activeCollection.slug ? "bg-black text-white hover:text-yellow" : "bg-white text-black hover:bg-yellow"} inline-block uppercase py-3 px-4`}
+                            className={`${filter.slug === activeCollection.slug ? "bg-black text-white hover:text-yellow dark:bg-yellow dark:text-black dark:hover:text-black" : " text-black hover:bg-yellow dark:bg-black dark:text-white dark:hover:text-black dark:hover:bg-yellow"} inline-block uppercase py-3 px-4`}
                             href={`/adventure-collection/${filter.slug}`}
                             scroll={false}
                             prefetch={true}

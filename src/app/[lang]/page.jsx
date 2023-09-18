@@ -23,7 +23,7 @@ export default async function Page({params: {lang}}) {
     const featuredAdventure = adventures[9];
 
     return (
-        <main className="bg-white px-0 mx-0">
+        <main className=" px-0 mx-0">
             <div className="">
                 <Carousel className="">
                     <CarouselItem>
@@ -40,14 +40,16 @@ export default async function Page({params: {lang}}) {
                                    height={650}
                             />
                             <div
-                                className="md:absolute md:bottom-0 max-w-[1136px] m-auto left-0 right-0 mh-5 lg:p-10 p-2 backdrop-blur-sm bg-white/80">
+                                className="md:absolute md:bottom-0 max-w-[1136px] m-auto left-0 right-0 mh-5 md:p-10 p-2 backdrop-blur-sm /80">
                                 <div className="text-xl">WKND Adventures</div>
                                 <div className="pt-5 text-base">Join us on one of our next adventures. Browse our list
                                     of curated experiences and sign up for one when you&apos;re ready to explore with
                                     us.
                                 </div>
-                                <div className="pt-10 pb-0"><Link href="/en-US/adventure-collection/all" prefetch={true} className="p-4 bg-yellow uppercase">View
-                                    Trips</Link></div>
+                                <div className="pt-10 pb-0">
+                                    <Link href="/en-US/adventure-collection/all" prefetch={true} className="p-4 btn-yellow uppercase">
+                                        View Trips
+                                    </Link></div>
                             </div>
 
                         </div>
@@ -65,14 +67,15 @@ export default async function Page({params: {lang}}) {
                                    height={650}
                             />
                             <div
-                                className="md:absolute md:bottom-0 max-w-[1136px] m-auto left-0 right-0 mh-5 lg:p-10 p-2 backdrop-blur-sm bg-white/80">
-                                <div className="text-xl">San Diego Surf Spots</div>
-                                <div className="pt-5 text-base">From the hippie beaches of Ocean Beach to the ritzy
+                                className="md:absolute md:bottom-0 max-w-[1136px] m-auto left-0 right-0 mh-5 md:p-10 p-2 backdrop-blur-sm /80">
+                                <div className="text-xl text-black">San Diego Surf Spots</div>
+                                <div className="pt-5 text-base text-black">From the hippie beaches of Ocean Beach to the ritzy
                                     shores of La Jolla and everywhere in between. Discover the San Diego surf scene.
                                 </div>
                                 <div className="pt-10 pb-0">
-                                    <Link href="/en-US/adventures/riverside-camping-australia/riverside-camping-australia" className="p-4 bg-yellow uppercase">Full
-                                    Article</Link></div>
+                                    <Link href="/en-US/adventures/riverside-camping-australia/riverside-camping-australia" className="p-4 btn-yellow uppercase">
+                                        Full Article
+                                    </Link></div>
                             </div>
                         </div>
                     </CarouselItem>
@@ -89,14 +92,14 @@ export default async function Page({params: {lang}}) {
                                    height={650}
                             />
                             <div
-                                className="md:absolute md:bottom-0 max-w-[1136px] m-auto left-0 right-0 mh-5 lg:p-10 p-2 backdrop-blur-sm bg-white/80">
+                                className="md:absolute md:bottom-0 max-w-[1136px] m-auto left-0 right-0 mh-5 md:p-10 p-2 backdrop-blur-md /80">
                                 <div className="text-xl">Downhill Skiing Wyoming</div>
                                 <div className="pt-5 text-base">Experience wild untamed, rolling, wide-open terrain of
                                     Wyoming in the winter.
                                 </div>
                                 <div className="pt-10 pb-0"><Link
                                     href="adventures/downhill-skiing-wyoming/downhill-skiing-wyoming"
-                                    className="p-4 bg-yellow uppercase">Full Article</Link></div>
+                                    className="p-4 btn-yellow uppercase">Full Article</Link></div>
                             </div>
                         </div>
                     </CarouselItem>
@@ -117,7 +120,7 @@ export default async function Page({params: {lang}}) {
             <AdventuresList lang={lang} collectionSlug={"popular"} showCategoryPicker={false}/>
 
             <div className="max-w-[1154px] mx-auto py-12">
-                <Link href="/en-US/adventure-collection/all" className="ml-5 p-5 bg-yellow hover:bg-black hover:text-yellow uppercase">See All adventures</Link>
+                <Link href="/en-US/adventure-collection/all" className="ml-5 p-5 btn-yellow">See All adventures</Link>
             </div>
 
         </main>)

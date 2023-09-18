@@ -1,5 +1,3 @@
-// import '#/styles/globals.css';
-
 import Image from 'next/image';
 import {cache} from 'react';
 import {AdventureClient, NEXT_PUBLIC_AEM_HOST} from "../../../../lib/adventures";
@@ -50,7 +48,7 @@ export default async function Page({params}) {
         itinerary,
     } = adventure;
     return (<article>
-        <div className="bg-white">
+        <div className="">
             <div className="pt-6">
 
                 <div
@@ -70,33 +68,33 @@ export default async function Page({params}) {
                 <div
                     className="max-w-2xl mx-auto pt-10 pb-16 px-4 sm:px-6 lg:max-w-7xl lg:pt-16 lg:pb-24 lg:px-8 lg:grid lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8">
                     <div className="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
-                        <h1 className="text-2xl font-extrabold tracking-tight text-gray-900 sm:text-3xl">{title}</h1>
+                        <h1 className="text-2xl font-extrabold tracking-tight sm:text-3xl">{title}</h1>
                     </div>
 
                     {/* Options */}
                     <div className="mt-4 lg:mt-0 lg:row-span-3">
                         <h2 className="sr-only">Product information</h2>
-                        <p className="text-3xl text-gray-900 mb-10">{price}</p>
+                        <p className="text-3xl mb-10">{price}</p>
                         <dl>
                             <div className="py-5 sm:grid sm:grid-cols-3 sm:gap-4">
-                                <dt className="text-sm font-medium text-gray-500">Activity</dt>
-                                <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{activity}</dd>
+                                <dt className="text-sm font-medium">Activity</dt>
+                                <dd className="mt-1 text-sm sm:mt-0 sm:col-span-2">{activity}</dd>
                             </div>
                             <div className="py-5 sm:grid sm:grid-cols-3 sm:gap-4">
-                                <dt className="text-sm font-medium text-gray-500">Type</dt>
-                                <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{adventureType}</dd>
+                                <dt className="text-sm font-medium">Type</dt>
+                                <dd className="mt-1 text-sm sm:mt-0 sm:col-span-2">{adventureType}</dd>
                             </div>
                             <div className="py-5 sm:grid sm:grid-cols-3 sm:gap-4">
-                                <dt className="text-sm font-medium text-gray-500">Trip Length</dt>
-                                <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{tripLength}</dd>
+                                <dt className="text-sm font-medium">Trip Length</dt>
+                                <dd className="mt-1 text-sm sm:mt-0 sm:col-span-2">{tripLength}</dd>
                             </div>
                             <div className="py-5 sm:grid sm:grid-cols-3 sm:gap-4">
-                                <dt className="text-sm font-medium text-gray-500">Group Size</dt>
-                                <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{groupSize}</dd>
+                                <dt className="text-sm font-medium">Group Size</dt>
+                                <dd className="mt-1 text-sm sm:mt-0 sm:col-span-2">{groupSize}</dd>
                             </div>
                             <div className="py-5 sm:grid sm:grid-cols-3 sm:gap-4">
-                                <dt className="text-sm font-medium text-gray-500">Difficulty</dt>
-                                <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{difficulty}</dd>
+                                <dt className="text-sm font-medium">Difficulty</dt>
+                                <dd className="mt-1 text-sm sm:mt-0 sm:col-span-2">{difficulty}</dd>
                             </div>
                         </dl>
 
@@ -105,13 +103,13 @@ export default async function Page({params}) {
                     <div
                         className="py-10 lg:pt-6 lg:pb-16 lg:col-start-1 lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
 
-                        <div className="mt-10 prose lg:prose-l">
+                        <div className="mt-10 prose lg:prose-l dark:prose-invert">
                             <div className="mt-4" dangerouslySetInnerHTML={{
                                 __html: description.html,
                             }}/>
                         </div>
 
-                        <div className="mt-10 prose lg:prose-l">
+                        <div className="mt-10 prose lg:prose-l dark:prose-invert">
                             <h2 className="">Itinerary</h2>
 
                             <div className="mt-4" dangerouslySetInnerHTML={{

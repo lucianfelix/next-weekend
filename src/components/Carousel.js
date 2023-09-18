@@ -49,7 +49,7 @@ const Carousel = ({children, className}) => {
                             onClick={() => {
                                 setCurrent(index);
                             }}
-                            className={`${index === current ? "bg-black" : "bg-gray-400"} block w-3 h-3 rounded-full focus:outline-none hover:bg-yellow`}
+                            className={`${index === current ? "bg-black dark:bg-yellow" : "bg-gray-400"} block w-3 h-3 rounded-full focus:outline-none hover:bg-yellow`}
                         ></button>
                     ))}
                 </div>
@@ -57,13 +57,13 @@ const Carousel = ({children, className}) => {
                     <button
                         aria-label="Go to previous slide"
                         onClick={() => setCurrent(current === 0 ? size - 1 : current - 1)}
-                        className={wkndIconFont.className + " w-9 h-9 flex-none bg-yellow hover:bg-black hover:text-yellow text-2xl"}>
+                        className={wkndIconFont.className + " w-9 h-9 flex-none btn-yellow text-xl"}>
                         {""}
                     </button>
                     <button
                         aria-label="Go to next slide"
                         onClick={() => setCurrent(current === size - 1 ? 0 : current + 1)}
-                        className={wkndIconFont.className + " w-9 h-9 flex-none bg-yellow hover:bg-black hover:text-yellow text-2xl"}>
+                        className={wkndIconFont.className + " w-9 h-9 flex-none btn-yellow text-xl"}>
                         {""}
                     </button>
                 </div>

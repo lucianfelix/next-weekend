@@ -31,8 +31,15 @@
   }
 }
 
+@layer components {
+  .btn-yellow {
+    @apply bg-yellow hover:bg-black hover:text-yellow dark:bg-black dark:border-4 dark:border-yellow dark:hover:text-black dark:hover:bg-yellow uppercase
+  }
+}
+
 body {
   color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-start-rgb));
   /*background: linear-gradient(*/
   /*    to bottom,*/
   /*    transparent,*/
@@ -42,7 +49,6 @@ body {
 }
 
 h1 {
-  color: rgb(32, 32, 32);
   font-family: "Asar", Georgia, "Times New Roman", Times, serif;
   font-size: 40px;
   font-weight: 400;
@@ -53,7 +59,6 @@ h1 {
 }
 
 h2 {
-  color: rgb(32, 32, 32);
   font-family: "Asar", Georgia, "Times New Roman", Times, serif;
   font-size: 36px;
   font-weight: 400;
@@ -63,6 +68,6 @@ h2 {
   text-align: left
 }
 
-.main {
-  background: white;
-}
+/*a {*/
+/*  color: rgb(var(--background-start-rgb));*/
+/*}*/

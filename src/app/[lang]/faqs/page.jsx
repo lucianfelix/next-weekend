@@ -43,7 +43,7 @@ export async function generateStaticParams() {
 
 export default async function Page({params: {lang}}) {
     return (
-        <main className="bg-white text-lg px-4">
+        <main className=" text-lg px-4">
             <div className="max-w-[1154px] mx-auto ">
                 <h1 className="w-[84px] border-5 border-b-yellow"><span className="">FAQs</span></h1>
                 <div>
