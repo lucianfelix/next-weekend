@@ -16,7 +16,7 @@ import {wkndIconFont} from "@/lib/fonts";
 
 export default function Sidebar({isOpen, toggle}) {
     return (
-        <nav className="touch-none overscroll-none no-scrollbar bg-white dark:bg-gray-800 transition-all md:hidden fixed w-full h-full overflow-hidden  pt-[135px] left-0 z-10"
+        <nav className="touch-none overscroll-none no-scrollbar bg-white dark:bg-gray-800 transition-all duration-400 md:hidden fixed w-full h-full overflow-hidden  pt-[135px] left-0 z-10"
              style={{
                  opacity: `${isOpen ? "1" : "0"}`,
                  top: ` ${isOpen ? "0" : "-100%"}`,

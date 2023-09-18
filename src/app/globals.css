@@ -33,7 +33,7 @@
 
 @layer components {
   .btn-yellow {
-    @apply bg-yellow hover:bg-black hover:text-yellow dark:bg-black dark:border-4 dark:border-yellow dark:hover:text-black dark:hover:bg-yellow uppercase
+    @apply bg-yellow hover:bg-black hover:text-yellow dark:bg-black dark:border-4 dark:border-yellow dark:hover:text-black dark:hover:bg-yellow uppercase transition-all duration-200 ease-in-out;
   }
 }
 
