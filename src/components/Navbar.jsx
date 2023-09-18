@@ -17,9 +17,9 @@ import {wkndIconFont} from "@/lib/fonts";
 function SearchBox() {
     return (
         <>
-            <input type="text" placeholder="Search" className="border-2 bg-gray-50 mx-2 p-1 hidden lg:block"/>
+            <input type="text" placeholder="Search" className="border-2 bg-gray-50 ml-2 mr-4 p-1 hidden lg:block"/>
             <Link href={"#/en-US/search"}
-                  className={wkndIconFont.className + " p-4 hover:bg-yellow uppercase block lg:hidden"}></Link>
+                  className={wkndIconFont.className + " py-4 px-5 mr-3 text-3xl md:text-xl hover:bg-yellow uppercase block lg:hidden"}></Link>
         </>
     )
 }
@@ -32,12 +32,12 @@ export default function Navbar({isOpen, toggle}) {
             </div>
             <div className="bg-white flex items-center h-[80px]">
                 <button
-                    onClick={toggle} className={wkndIconFont.className + " text-4xl p-0 block md:hidden w-[60px] h-[60px]"}>
+                    onClick={toggle} className={wkndIconFont.className + " text-4xl px-3flex items-center text-center md:hidden w-[60px] h-[60px] mr-4"}>
                     {isOpen? "X" : ""}
                 </button>
                 {!isOpen && <Link
                     href="/en-US"
-                    className="py-6 md:px-6">
+                    className="py-6 md:px-4">
                     <Image
                         src="https://wknd.site/content/experience-fragments/wknd/language-masters/en/site/header/master/_jcr_content/root/container/container_1195249223/image.coreimg.svg/1594412560447/wknd-logo-dk.svg"
                         width={96}

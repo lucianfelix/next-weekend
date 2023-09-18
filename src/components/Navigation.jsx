@@ -4,7 +4,7 @@ import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
 
 const Navigation = () => {
-    const [isOpen, setIsOpen] = useState(true);
+    const [isOpen, setIsOpen] = useState(false);
     const toggle = () => {
         setIsOpen(!isOpen);
     };

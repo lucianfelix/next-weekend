@@ -16,7 +16,7 @@ import {wkndIconFont} from "@/lib/fonts";
 
 export default function Sidebar({isOpen, toggle}) {
     return (
-        <nav className="md:hidden fixed w-full h-full overflow-hidden bg-white pt-[135px] left-0 z-10"
+        <nav className="transition-all md:hidden fixed w-full h-full overflow-hidden bg-white pt-[135px] left-0 z-10"
              style={{
                  opacity: `${isOpen ? "1" : "0"}`,
                  top: ` ${isOpen ? "0" : "-100%"}`,
