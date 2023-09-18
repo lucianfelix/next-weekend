@@ -10,13 +10,16 @@
  * governing permissions and limitations under the License.
  *
  */
-
 import Link from 'next/link'
 import Image from 'next/image';
+import {wkndIconFont} from "@/lib/fonts";
 
 function SearchBox() {
     return (
-        <input type="text" placeholder="Search" className="hidden md:block border-2 bg-gray-50 p-1 mx-2"/>
+        <>
+            <input type="text" placeholder="Search" className="border-2 bg-gray-50 mx-2 p-1 hidden lg:block"/>
+            <Link href={"#/en-US/search"} className={wkndIconFont.className + " p-4 hover:bg-yellow uppercase block lg:hidden"}></Link>
+        </>
     )
 }
 
@@ -27,6 +30,9 @@ export default async function Menu() {
                 <a href="https://www.adobe.com/" className="text-white uppercase text-s">Sign in</a>
             </div>
             <div className="bg-white flex px-4 items-center">
+                <Link href="/en-US" className={wkndIconFont.className + " py-1 px-3 text-xl"}>
+                    
+                </Link>
                 <Link
                     href="/en-US"
                     className="py-6">
@@ -36,6 +42,8 @@ export default async function Menu() {
                         height={35}
                         alt="WKND Logo"/>
                 </Link>
+                <div className="justify-between ml-auto flex md:hidden">
+                </div>
                 <div className="hidden md:flex justify-between ml-auto my-2">
                     <Link href="/en-US" className="py-4 px-2 hover:bg-yellow uppercase" prefetch={true}>Home</Link>
                     <Link href="/en-US/magazine" className="py-4 px-2 hover:bg-yellow uppercase"

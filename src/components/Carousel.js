@@ -14,6 +14,7 @@
  */
 
 import React, {useState} from 'react';
+import {wkndIconFont} from "../lib/fonts";
 
 const Carousel = ({children, className}) => {
     const [current, setCurrent] = useState(0);
@@ -45,14 +46,14 @@ const Carousel = ({children, className}) => {
                     <button
                         aria-label="Go to previous slide"
                         onClick={() => setCurrent(current === 0 ? size - 1 : current - 1)}
-                            className="w-9 h-9 flex-none bg-yellow hover:bg-black hover:text-yellow text-2xl">
-                        {"<"}
+                        className={wkndIconFont.className + " w-9 h-9 flex-none bg-yellow hover:bg-black hover:text-yellow text-2xl"}>
+                        {""}
                     </button>
                     <button
                         aria-label="Go to next slide"
                         onClick={() => setCurrent(current === size - 1 ? 0 : current + 1)}
-                        className="w-9 h-9 flex-none bg-yellow hover:bg-black hover:text-yellow text-2xl">
-                        {">"}
+                        className={wkndIconFont.className + " w-9 h-9 flex-none bg-yellow hover:bg-black hover:text-yellow text-2xl"}>
+                        {""}
                     </button>
                 </div>
             </div>

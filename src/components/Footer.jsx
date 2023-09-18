@@ -13,6 +13,7 @@
 
 import Link from 'next/link'
 import Image from 'next/image';
+import Social from "@/components/Social";
 
 export default async function Footer() {
     return (
@@ -31,9 +32,7 @@ export default async function Footer() {
                 </div>
                 <div className="flex justify-between md:ml-auto">
                     <div className="p-4">Follow Us</div>
-                    <Link href="#facebookwknd" className="p-4 hover:bg-yellow hover:text-black uppercase">Facebook</Link>
-                    <Link href="#twitter/" className="p-4 hover:bg-yellow hover:text-black uppercase">Twitter</Link>
-                    <Link href="#instagram/" className="p-4 hover:bg-yellow hover:text-black uppercase">Instagram</Link>
+                    <Social/>
                 </div>
             </div>
             <div className="text-xs">

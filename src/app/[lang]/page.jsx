@@ -31,7 +31,7 @@ export default async function Page({params: {lang}}) {
                             <Image className="mx-0 w-full"
                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                    quality={75}
-                                   eager={true}
+                                   eager={"true"}
                                    priority={true}
                                    loading={'eager'}
                                    alt={'hero'}
@@ -57,7 +57,7 @@ export default async function Page({params: {lang}}) {
                             <Image className="mx-0 w-full"
                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                    quality={75}
-                                   eager={false}
+                                   eager={"false"}
                                    priority={false}
                                    alt={'hero'}
                                    src="https://wknd.site/us/en/_jcr_content/root/container/carousel/item_1572035298405.coreimg.60.1600.jpeg/1660323822923/beach-walking.jpeg"
@@ -81,7 +81,7 @@ export default async function Page({params: {lang}}) {
                             <Image className="mx-0 w-full"
                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                    quality={75}
-                                   eager={false}
+                                   eager={"false"}
                                    priority={false}
                                    alt={'hero'}
                                    src="https://wknd.site/us/en/adventures/downhill-skiing-wyoming/_jcr_content/root/container/carousel/image.coreimg.60.1600.jpeg/1660323784078/adobestock-185234795.jpeg"
