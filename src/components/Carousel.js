@@ -31,9 +31,9 @@ const Carousel = ({children, className}) => {
     }, [current]);
 
     return (
-        <div className={"relative " + className}>
+        <div className={"touch-pan-y relative " + className}>
             <div
-                className="carousel relative overflow-y-clip overflow-x-scroll w-full sstouch-pan-x snap-x snap-mandatory no-scrollbar transition-transform duration-500 ease-in-out"
+                className="carousel relative overflow-y-clip overflow-x-scroll w-full touch-pan-x snap-x snap-mandatory no-scrollbar transition-transform duration-500 ease-in-out"
             >
                 <div
                     className="m-0 p-0 flex">
