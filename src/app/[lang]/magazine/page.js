@@ -32,8 +32,8 @@ export async function generateStaticParams() {
 
 export default async function Page({params: {lang}}) {
   return (
-      <main className="">
-        <div className="bg-white">
+      <main className="bg-white px-4">
+        <div className="">
           <div className="max-w-[1154px] mx-auto">
             <h1 className="">Magazine</h1>
             <HeroArticleCard article={heroArticle}/>

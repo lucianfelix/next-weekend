@@ -19,14 +19,14 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-        <body className={inter.className + " px-4 md:px-0"}>
-        <header>
-            <Menu/>
-        </header>
-        {children}
-        <Footer/>
-        <Analytics/>
-        </body>
+            <body className={inter.className + ""}>
+                <header>
+                    <Menu/>
+                </header>
+                {children}
+                <Footer/>
+                <Analytics/>
+            </body>
         </html>
     )
 }

@@ -13,19 +13,30 @@
  *
  */
 
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {wkndIconFont} from "../lib/fonts";
 
 const Carousel = ({children, className}) => {
     const [current, setCurrent] = useState(0);
     const size = children.length;
 
+    //scroll to current
+    useEffect(() => {
+        const scroll = document.querySelector(".carousel.overflow-x-scroll");
+        scroll.scroll({
+            left: current * scroll.clientWidth,
+            top: 0,
+            behavior: 'smooth'
+        })
+    }, [current]);
+
     return (
         <div className={"relative " + className}>
-            <div className="relative overflow-x-scroll w-full touch-pan-x">
+            <div
+                className="carousel relative overflow-y-clip overflow-x-scroll w-full touch-pan-x snap-x snap-mandatory no-scrollbar transition-transform duration-500 ease-in-out"
+            >
                 <div
-                    className="carousel m-0 p-0 snap-x snap-mandatory flex transition-transform duration-500 ease-in-out"
-                    style={{transform: `translateX(-${current * 100}%)`}}>
+                    className="m-0 p-0 flex">
                     {children}
                 </div>
             </div>

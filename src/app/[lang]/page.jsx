@@ -103,8 +103,6 @@ export default async function Page({params: {lang}}) {
                 </Carousel>
             </div>
 
-
-
             <div className="max-w-[1154px] mx-auto pt-8">
                 <h2>Featured Adventure</h2>
                 The Australian West coast is a camper’s heaven. Endless miles of desert roads leading to secret beaches, vast canyons and crystal clear rivers, and the very few people you are likely to meet on your journey will be some of the most easy-going characters you’ll find anywhere in the world.
@@ -112,7 +110,7 @@ export default async function Page({params: {lang}}) {
 
             <HeroAdventureCard adventure={featuredAdventure}/>
 
-            <div className="max-w-[1154px] mx-auto pt-8">
+            <div className="max-w-[1154px] mx-auto pt-8 px-4">
                 <h2>Our Most Popular Adventures</h2>
             </div>
 

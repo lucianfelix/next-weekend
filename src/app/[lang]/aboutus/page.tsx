@@ -50,7 +50,7 @@ const guides = [
 
 export default function AboutUs() {
     return (
-        <main className="bg-white text-lg">
+        <main className="bg-white text-lg px-4">
             <div className="max-w-[1154px] mx-auto space-y-8">
                 <h1 className="border-5 border-b-yellow">About Us</h1>
                 We are a group of passionate travelers who love to share our experiences with others. We believe that a
