@@ -27,7 +27,7 @@ function SearchBox() {
 export default function Navbar({isOpen, toggle}) {
     return (
         <nav className="sticky top-0 z-50 shadow-md">
-            <div className="bg-black dark:bg-gray-600 p-1 px-3">
+            <div className="bg-black dark:bg-gray-900 p-1 px-3">
                 <a href="https://www.adobe.com/" className="text-white uppercase text-s">Sign in</a>
             </div>
             <div className="bg-white dark:bg-gray-800 flex items-center h-[80px]">

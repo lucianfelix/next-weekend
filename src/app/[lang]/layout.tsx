@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     title: 'Your Next Weekend',
     description: 'Find the best places to visit this weekend',
     viewport: "width=device-width, initial-scale=1.0, viewport-fit=cover",
+    themeColor: "#000000",
 }
 
 export default function RootLayout({
