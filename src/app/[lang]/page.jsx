@@ -67,9 +67,9 @@ export default async function Page({params: {lang}}) {
                                    height={650}
                             />
                             <div
-                                className="md:absolute md:bottom-0 max-w-[1136px] m-auto left-0 right-0 mh-5 md:p-10 p-2 backdrop-blur-sm /80">
-                                <div className="text-xl text-black">San Diego Surf Spots</div>
-                                <div className="pt-5 text-base text-black">From the hippie beaches of Ocean Beach to the ritzy
+                                className="md:absolute md:bottom-0 max-w-[1136px] m-auto left-0 right-0 my-5 md:p-10 p-2 backdrop-blur-sm">
+                                <div className="text-xl dark:md:text-black">San Diego Surf Spots</div>
+                                <div className="pt-5 text-base dark:md:text-black">From the hippie beaches of Ocean Beach to the ritzy
                                     shores of La Jolla and everywhere in between. Discover the San Diego surf scene.
                                 </div>
                                 <div className="pt-10 pb-0">
