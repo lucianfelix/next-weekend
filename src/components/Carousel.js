@@ -22,7 +22,7 @@ const Carousel = ({children, className}) => {
 
     return (
         <div className={"relative " + className}>
-            <div className="relative overflow-clip w-full touch-pan-x">
+            <div className="relative overflow-x-scroll w-full touch-pan-x">
                 <div
                     className="carousel m-0 p-0 snap-x snap-mandatory flex transition-transform duration-500 ease-in-out"
                     style={{transform: `translateX(-${current * 100}%)`}}>
