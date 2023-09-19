@@ -31,7 +31,7 @@ export default async function Page({params: {lang}}) {
                     <CarouselItem>
                         <div className="h-full mx-0 md:relative">
                             <Image className="mx-0 w-full"
-                                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                   sizes="(max-width: 768px) 656w, (max-width: 1200px) 50vw, 33vw"
                                    quality={75}
                                    eager={"true"}
                                    priority={true}
