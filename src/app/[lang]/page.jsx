@@ -19,7 +19,9 @@ export async function generateStaticParams() {
 
 export default async function Page({params: {lang}}) {
 
+    const renderTime = new Date().toISOString();
     const adventures = await getAdventures(lang);
+    const fetchDuration = new Date().getTime() - new Date(renderTime).getTime();
     const featuredAdventure = adventures[9];
 
     return (
@@ -122,6 +124,8 @@ export default async function Page({params: {lang}}) {
             <div className="max-w-[1154px] mx-auto py-12">
                 <Link href="/en-US/adventure-collection/all" className="ml-5 p-5 btn-yellow">See All adventures</Link>
             </div>
+
+            <div className="text-xs">{"renderTime: " + renderTime + ", fetchDuration:" + fetchDuration}</div>
 
         </main>)
 }
