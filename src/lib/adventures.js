@@ -15,7 +15,7 @@ import AEMHeadless from '@adobe/aem-headless-client-js';
 import {cache} from "react";
 
 export const NEXT_PUBLIC_AEM_HOST = process.env.NEXT_PUBLIC_AEM_HOST;
-export const NEXT_PUBLIC_AEM_ROOT = process.env.NEXT_PUBLIC_AEM_ROOT;
+// export const NEXT_PUBLIC_AEM_ROOT = process.env.NEXT_PUBLIC_AEM_ROOT;
 
 export const adventureCollections = [
     {
@@ -63,6 +63,7 @@ export class AdventureClient {
     static fromEnv(env = process.env) {
         if (!this.__envClient) {
             const {NEXT_PUBLIC_AEM_HOST, NEXT_GRAPHQL_ENDPOINT} = env;
+            console.log('Using AEM host: ' + NEXT_PUBLIC_AEM_HOST + ' and GraphQL endpoint: ' + NEXT_GRAPHQL_ENDPOINT);
             this.__envClient = new AdventureClient({
                 serviceURL: NEXT_PUBLIC_AEM_HOST,
                 endpoint: NEXT_GRAPHQL_ENDPOINT,
