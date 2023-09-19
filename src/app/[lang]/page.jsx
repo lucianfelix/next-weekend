@@ -40,9 +40,9 @@ export default async function Page({params: {lang}}) {
                                    height={650}
                             />
                             <div
-                                className="md:absolute md:bottom-0 max-w-[1136px] m-auto left-0 right-0 mh-5 md:p-10 p-2 backdrop-blur-sm /80">
-                                <div className="text-xl">WKND Adventures</div>
-                                <div className="pt-5 text-base">Join us on one of our next adventures. Browse our list
+                                className="md:absolute md:bottom-0 max-w-[1136px] m-auto left-0 right-0 mh-5 md:p-10 p-2 backdrop-blur-sm">
+                                <div className="text-xl md:text-white">WKND Adventures</div>
+                                <div className="pt-5 text-base md:text-white">Join us on one of our next adventures. Browse our list
                                     of curated experiences and sign up for one when you&apos;re ready to explore with
                                     us.
                                 </div>
