@@ -10,7 +10,7 @@ export default function HeroArticleCard(props) {
                     // width="1313" height="739"
                     width="0"
                     height="0"
-                    sizes="100vw"
+                    sizes="(max-width: 768px) 300w, 100vw"
                     className="w-full h-auto lg:w-auto lg:h-full"
                     src={props.article.imageUrl}
                     alt={props.article.title}/>

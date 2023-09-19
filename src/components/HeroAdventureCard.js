@@ -13,7 +13,7 @@ export default function HeroAdventureCard({adventure}) {
                 <Image
                     width="0"
                     height="0"
-                    sizes="100vw"
+                    sizes="(max-width: 768px) 300w, 100vw"
                     className="w-full h-auto lg:h-full"
                     src={`${NEXT_PUBLIC_AEM_HOST}${adventure.primaryImage._path}`}
                     alt={adventure.title}/>

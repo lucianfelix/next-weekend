@@ -27,7 +27,7 @@ export default async function ArticleCard({ _path, href, title, imageSrc }) {
           height={605}
           priority={aboveFold}
           loading={aboveFold ? 'eager' : 'lazy'}
-          sizes="50vw"
+          sizes="(max-width: 768px) 300w, 50vw"
           className="w-full h-full object-center object-cover lg:w-full lg:h-full"
         />
       </div>

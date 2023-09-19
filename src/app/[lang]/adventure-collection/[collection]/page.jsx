@@ -26,7 +26,7 @@ export default async function Page({params: {lang, collection}}) {
                     <h1 className="max-w-[1154px] mx-auto">Adventures</h1>
                     <div className="mx-0 lg:relative">
                         <Image className="mx-auto h-full"
-                               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                               sizes="(max-width: 768px) 656w, (max-width: 1200px) 50vw, 33vw"
                                quality={75}
                                eager={"true"}
                                priority={true}
