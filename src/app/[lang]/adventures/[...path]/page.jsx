@@ -59,7 +59,7 @@ export default async function Page({params}) {
                         width={1680}
                         height={320}
                         loading='eager'
-                        sizes="(max-width: 768px) 300w, 50vw"
+                        sizes="(max-width: 768px) 656w, (max-width: 1200px) 100vw, 1200w"
                         className="w-full h-full object-center object-cover lg:w-full lg:h-full"
                     />
                 </div>

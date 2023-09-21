@@ -27,8 +27,10 @@ export default async function AdventuresList({lang = '', collectionSlug = 'all',
                     <li className="mr-3" key={filter.slug}>
                         <Link
                             className={`${filter.slug === activeCollection.slug ? "bg-black text-white hover:text-yellow dark:bg-yellow dark:text-black dark:hover:text-black" : " text-black hover:bg-yellow dark:bg-black dark:text-white dark:hover:text-black dark:hover:bg-yellow"} inline-block uppercase py-3 px-4`}
-                            href={`/adventure-collection/${filter.slug}`}
+                            href={`/en-US/adventure-collection/${filter.slug}`}
+                            as={`/adventure-collection/${filter.slug}`}
                             scroll={false}
+                            shallow={true}
                             prefetch={true}
                         >{filter.name}</Link>
                     </li>

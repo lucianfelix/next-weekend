@@ -38,7 +38,7 @@ export default async function Page({params: {lang, collection}}) {
                         />
 
                         <div
-                            className="lg:absolute lg:bottom-0 max-w-[1136px] m-auto left-0 right-0 mh-5 lg:p-10 p-2 ">
+                            className="lg:absolute lg:bottom-0 lg:text-white max-w-[1136px] m-auto left-0 right-0 mh-5 lg:p-10 p-2 ">
                             <h2>Experience the world with us</h2>
                             <div className="pt-5 text-base">With WKND Adventures, you don&lsquo;t just see the world
                                 -- you experience its cultures, flavors and wonders.
