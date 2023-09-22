@@ -5,6 +5,7 @@ import Link from "next/link";
 import AdventuresList from "../../components/AdventuresList";
 import HeroAdventureCard from "../../components/HeroAdventureCard";
 import {getAdventures} from "../../lib/adventures";
+import dynamicmediaImageLoader from "../../lib/image/loader";
 
 export const revalidate = 43200; // 12 hours in seconds
 export const dynamic = 'force-static';
@@ -22,7 +23,7 @@ export default async function Page({params: {lang}}) {
     const renderTime = new Date().toISOString();
     const adventures = await getAdventures(lang);
     const fetchDuration = new Date().getTime() - new Date(renderTime).getTime();
-    const featuredAdventure = adventures[9];
+    const featuredAdventure = adventures[7];
 
     return (
         <main className=" px-0 mx-0">
@@ -37,9 +38,10 @@ export default async function Page({params: {lang}}) {
                                    priority={true}
                                    loading={'eager'}
                                    alt={'hero'}
-                                   src="https://wknd.site/us/en/adventures/_jcr_content/root/container/teaser.coreimg.60.1600.jpeg/1660323801921/adobestock-216674449.jpeg"
-                                   width={1275}
-                                   height={650}
+                                   loader={dynamicmediaImageLoader}
+                                   src="https://publish-p64257-e147834-cmstg.adobeaemcloud.com/adobe/dynamicmedia/deliver/dm-aid--e96f1714-9c9e-422c-be61-60ed41d065d1/adobestock_216674449.jpg?width=3840&quality=75"
+                                   width={1600}
+                                   height={900}
                             />
                             <div
                                 className="md:absolute md:bottom-0 max-w-[1136px] m-auto left-0 right-0 mh-5 md:p-10 p-2 backdrop-blur-sm">
