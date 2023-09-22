@@ -32,9 +32,9 @@ export default async function Page({params: {lang, collection}}) {
                                priority={true}
                                loading={'eager'}
                                alt={'hero'}
-                               src="https://publish-p64257-e147834-cmstg.adobeaemcloud.com/adobe/dynamicmedia/deliver/dm-aid--e96f1714-9c9e-422c-be61-60ed41d065d1/adobestock_216674449.jpg?width=3840&quality=75"
-                               width={1275}
-                               height={717}
+                               src="https://publish-p64257-e147834-cmstg.adobeaemcloud.com/adobe/dynamicmedia/deliver/dm-aid--83976ce1-089b-4f4d-ab3e-1be2f72eb0ad/AdobeStock_261097343.jpg?width=3840&quality=75"
+                               width={1688}
+                               height={1125}
                         />
 
                         <div
