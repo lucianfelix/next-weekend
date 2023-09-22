@@ -2,16 +2,26 @@
 import { useState } from "react";
 import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
+import {LoginModal} from "@/components/LoginModal";
+
+
 
 const Navigation = () => {
-    const [isOpen, setIsOpen] = useState(false);
-    const toggle = () => {
-        setIsOpen(!isOpen);
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+    const [isLoginOpen, setIsLoginOpen] = useState(false);
+    const toggleSidebarOpen = () => {
+        setIsSidebarOpen(!isSidebarOpen);
+    };
+
+    const toggleLoginOpen = () => {
+        setIsLoginOpen(!isLoginOpen);
     };
     return (
         <>
-            <Sidebar isOpen={isOpen} toggle={toggle} />
-            <Navbar isOpen={isOpen} toggle={toggle} />
+            <LoginModal isOpen={isLoginOpen} toggle={toggleLoginOpen} />
+            <Sidebar isOpen={isSidebarOpen} toggle={toggleSidebarOpen} />
+            <Navbar isOpen={isSidebarOpen} toggle={toggleSidebarOpen} toggleLogin={toggleLoginOpen}/>
+
         </>
     );
 };
