@@ -14,7 +14,10 @@
 import Link from 'next/link'
 import Image from 'next/image';
 
-export default async function AdventureCard({eager, href, title, price, duration, imageSrc}) {
+export default async function AdventureCard({eager, href, title, price, duration, imgWidth, imgHeight, imageSrc}) {
+    imgWidth = imgWidth === "undefined" ? 600 : imgWidth || 600;
+    imgHeight = imgHeight === "undefined" ? 300 : imgHeight || 300;
+
     return (
         <div className="group relative">
             <Link href={href}>
@@ -24,8 +27,8 @@ export default async function AdventureCard({eager, href, title, price, duration
                         <Image
                             src={imageSrc}
                             alt={title}
-                            width={542}
-                            height={605}
+                            width={imgWidth}
+                            height={imgHeight}
                             priority={eager}
                             loading={eager ? 'eager' : 'lazy'}
                             sizes="(max-width: 768px) 300w, 30vw"

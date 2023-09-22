@@ -102,7 +102,7 @@ function fetchAndSetData(hostConfig, setStates, fetchVariations) {
     fetch: window.fetch,
   });
 
-  console.log('fetchAndSetData', hostConfig, setStates, fetchVariations);
+  // console.log('fetchAndSetData', hostConfig, setStates, fetchVariations);
 
   // get queryparams and replace with default if it's not present
   // const urlParams = new URLSearchParams(window.location.search);

@@ -1,11 +1,14 @@
 import Link from 'next/link'
 import Image from 'next/image';
 import {NEXT_PUBLIC_AEM_HOST} from "../lib/adventures";
+import dynamicmediaImageLoader from "../lib/image/loader";
 
 export default function HeroAdventureCard({adventure}) {
     const pathItems = adventure._path.split('/');
     const cfPath = pathItems.slice(Math.max(pathItems.length - 2, 0)).join('/');
     const href = `/adventures/${cfPath}`;
+
+    // TODO image sizes
 
     return (
         <div className="max-w-[1154px] mx-auto grid grid-cols-1 mt-6 lg:grid-cols-3">
@@ -15,7 +18,8 @@ export default function HeroAdventureCard({adventure}) {
                     height="0"
                     sizes="(max-width: 768px) 300w, 100vw"
                     className="w-full h-auto lg:h-full"
-                    src={`${NEXT_PUBLIC_AEM_HOST}${adventure.primaryImage._path}`}
+                    loader={dynamicmediaImageLoader}
+                    src={`${NEXT_PUBLIC_AEM_HOST}${adventure.primaryImage._dynamicUrl}`}
                     alt={adventure.title}/>
             </div>
             <div className="col-span-1 bg-gray-200 dark:bg-gray-600 p-6">

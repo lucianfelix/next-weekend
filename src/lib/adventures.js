@@ -63,7 +63,7 @@ export class AdventureClient {
     static fromEnv(env = process.env) {
         if (!this.__envClient) {
             const {NEXT_PUBLIC_AEM_HOST, NEXT_GRAPHQL_ENDPOINT} = env;
-            console.log('Using AEM host: ' + NEXT_PUBLIC_AEM_HOST + ' and GraphQL endpoint: ' + NEXT_GRAPHQL_ENDPOINT);
+            // console.log('Using AEM host: ' + NEXT_PUBLIC_AEM_HOST + ' and GraphQL endpoint: ' + NEXT_GRAPHQL_ENDPOINT);
             this.__envClient = new AdventureClient({
                 serviceURL: NEXT_PUBLIC_AEM_HOST,
                 endpoint: NEXT_GRAPHQL_ENDPOINT,
@@ -82,7 +82,7 @@ export class AdventureClient {
     }
 
     async getAllAdventures() {
-        const queryAdventuresAll = 'aem-demo-assets/adventures-all';
+        const queryAdventuresAll = 'aem-demo-assets/adventures-all?a=1';
         // const res1 = await this.aemHeadlessClient.listPersistedQueries()
         // console.log('res1', res1);
         const res = await this.aemHeadlessClient.runPersistedQuery(queryAdventuresAll);
@@ -114,10 +114,14 @@ export class AdventureClient {
             difficulty
             primaryImage {
               ... on ImageRef {
-                _path
-                mimeType
-                width
-                height
+                    _authorUrl
+                    _dynamicUrl
+                    _path
+                    _publishUrl
+                    height
+                    mimeType
+                    type
+                    width
               }
             }
             description {

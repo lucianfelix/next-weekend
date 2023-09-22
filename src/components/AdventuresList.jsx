@@ -14,6 +14,7 @@
 import AdventureCard from "./AdventureCard";
 import Link from "next/link";
 import {adventureCollections, getAdventures, NEXT_PUBLIC_AEM_HOST} from "../lib/adventures";
+import dynamicmediaImageLoader from "../lib/image/loader";
 
 export default async function AdventuresList({lang = '', collectionSlug = 'all', showCategoryPicker = true}) {
     const adventures = await getAdventures(lang);
@@ -51,7 +52,10 @@ export default async function AdventuresList({lang = '', collectionSlug = 'all',
                                 title={title}
                                 price={price}
                                 duration={tripLength}
-                                imageSrc={`${NEXT_PUBLIC_AEM_HOST}${primaryImage._path}`}
+                                loader={dynamicmediaImageLoader}
+                                imgWidth={`${primaryImage.width}`}
+                                imgHeight={`${primaryImage.height}`}
+                                imageSrc={`${NEXT_PUBLIC_AEM_HOST}${primaryImage._dynamicUrl}`}
                             />
                         );
                     }

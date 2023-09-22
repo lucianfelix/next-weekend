@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import {cache} from 'react';
 import {AdventureClient, NEXT_PUBLIC_AEM_HOST} from "../../../../lib/adventures";
+import dynamicmediaImageLoader from "../../../../lib/image/loader";
 
 export const revalidate = 43200; // 12 hours in seconds
 export const dynamic = 'force-static';
@@ -30,7 +31,7 @@ const getAdventureByPath = cache(async (path) => {
 });
 
 export default async function Page({params}) {
-    console.log("Rendering "+ params.path[0] + "/" + params.path[1] + "/page.jsx");
+    // console.log("Rendering "+ params.path[0] + "/" + params.path[1] + "/page.jsx");
     const cfPath = `/content/dam/aem-demo-assets/en/adventures/${params.path.join('/')}`;
     const adventure = await getAdventureByPath(cfPath);
     if (!adventure) return (<>Adventure not found</>);
@@ -54,11 +55,12 @@ export default async function Page({params}) {
                 <div
                     className="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 overflow-hidden lg:h-80 lg:aspect-none">
                     <Image
-                        src={`${NEXT_PUBLIC_AEM_HOST}${primaryImage._path}`}
+                        src={`${NEXT_PUBLIC_AEM_HOST}${primaryImage._dynamicUrl}`}
                         alt={title}
-                        width={1680}
-                        height={320}
+                        width={`${primaryImage.width}`}
+                        height={`${primaryImage.height}`}
                         loading='eager'
+                        loader={dynamicmediaImageLoader}
                         sizes="(max-width: 768px) 656w, (max-width: 1200px) 100vw, 1200w"
                         className="w-full h-full object-center object-cover lg:w-full lg:h-full"
                     />
