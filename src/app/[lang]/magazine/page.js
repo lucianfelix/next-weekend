@@ -20,7 +20,7 @@ const getAdventures = cache(async () => {
 const heroArticle = {
   title: 'Camping in Western Australia ',
   description: "The Australian West coast is a camper’s heaven. Endless miles of desert roads leading to secret beaches, vast canyons and crystal clear rivers, and the very few people you are likely to meet on your journey will be some of the most easy-going characters you’ll find anywhere in the world. ",
-  imageUrl: "https://wknd.site/us/en/magazine/_jcr_content/root/container/teaser_main.coreimg.60.1600.jpeg/1660323792132/adobestock-156407519.jpeg",
+  imageUrl: "https://publish-p64257-e147834-cmstg.adobeaemcloud.com/adobe/dynamicmedia/deliver/dm-aid--784d1ecd-ab6f-4468-a8b6-acfecdcd37db/adobestock_151584995.jpg?width=1920&quality=75",
   href: '/en-US/adventures/beervana-portland/beervana-in-portland'
 }
 
@@ -45,12 +45,12 @@ export default async function Page({params: {lang}}) {
             <div>
               <div className="mx-0 lg:relative">
                 <Image className="mx-0 w-full"
-                       sizes="(max-width: 768px) 656w, (max-width: 1200px) 50vw, 33vw"
+                       sizes="(max-width: 768px) 656w, 80vw"
                        quality={75}
                        eager={"true"}
                        priority={true}
                        loading={'eager'}
-                       src="https://wknd.site/us/en/adventures/_jcr_content/root/container/teaser.coreimg.60.1600.jpeg/1660323801921/adobestock-216674449.jpeg"
+                       src="https://publish-p64257-e147834-cmstg.adobeaemcloud.com/adobe/dynamicmedia/deliver/dm-aid--236d4ad1-1b91-42d2-a9f7-9becd0d42fc3/adobestock_196967522.jpg?width=3840&quality=75"
                        width={1275}
                        height={717}
                 />

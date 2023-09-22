@@ -32,7 +32,7 @@ export default async function Page({params: {lang, collection}}) {
                                priority={true}
                                loading={'eager'}
                                alt={'hero'}
-                               src="https://wknd.site/us/en/adventures/_jcr_content/root/container/teaser.coreimg.60.1600.jpeg/1660323801921/adobestock-216674449.jpeg"
+                               src="https://publish-p64257-e147834-cmstg.adobeaemcloud.com/adobe/dynamicmedia/deliver/dm-aid--e96f1714-9c9e-422c-be61-60ed41d065d1/adobestock_216674449.jpg?width=3840&quality=75"
                                width={1275}
                                height={717}
                         />
