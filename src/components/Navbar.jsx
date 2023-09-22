@@ -13,6 +13,7 @@
 import Link from 'next/link'
 import Image from 'next/image';
 import {wkndIconFont} from "@/lib/fonts";
+import {usePathname} from "next/navigation";
 
 function SearchBox() {
     return (
@@ -24,7 +25,32 @@ function SearchBox() {
     )
 }
 
+const navLinks = [
+    {
+        name: "Home",
+        url: "/en-US"
+    },
+    {
+        name: "Magazine",
+        url: "/en-US/magazine"
+    },
+    {
+        name: "Adventures",
+        url: "/en-US/adventure-collection/all"
+    },
+    {
+        name: "Faqs",
+        url: "/en-US/faqs"
+    },
+    {
+        name: "About",
+        url: "/en-US/aboutus"
+    },
+];
+
 export default function Navbar({isOpen, toggle}) {
+    const pathname = usePathname();
+
     return (
         <nav className="sticky top-0 z-50 shadow-md">
             <div className="bg-black dark:bg-gray-900 p-1 px-3">
@@ -35,7 +61,7 @@ export default function Navbar({isOpen, toggle}) {
                     onClick={toggle} className={wkndIconFont.className + " text-4xl px-3flex items-center text-center md:hidden w-[60px] h-[60px] mr-4"}>
                     {isOpen? "X" : ""}
                 </button>
-                {!isOpen && <Link
+                <Link
                     href="/en-US"
                     className="py-6 md:px-4">
                     <Image
@@ -45,19 +71,19 @@ export default function Navbar({isOpen, toggle}) {
                         height={35}
                         alt="WKND Logo"/>
                 </Link>
-                }
+
                 <div className="justify-between ml-auto flex md:hidden">
                 </div>
                 <div className="hidden md:flex justify-between ml-auto my-2">
-                    <Link href="/en-US" className="py-4 px-2 hover:bg-yellow dark:hover:text-black uppercase" prefetch={true}>Home</Link>
-                    <Link href="/en-US/magazine" className="py-4 px-2 hover:bg-yellow dark:hover:text-black uppercase"
-                          prefetch={true}>Magazine</Link>
-                    <Link href="/en-US/adventure-collection/all" className="py-4 px-2 hover:bg-yellow dark:hover:text-black uppercase"
-                          prefetch={true}>Adventures</Link>
-                    <Link href="/en-US/faqs" className="py-4 px-2 hover:bg-yellow dark:hover:text-black uppercase"
-                          prefetch={true}>Faqs</Link>
-                    <Link href="/en-US/aboutus" className="py-4 px-2 hover:bg-yellow dark:hover:text-black uppercase"
-                          prefetch={true}>About</Link>
+                    {navLinks.map((link) => (
+                        <Link key={link.url}
+                              href={link.url}
+                              className={"py-4 px-4 hover:bg-yellow dark:hover:text-black uppercase" +
+                                (pathname === link.url ? " underline decoration-4 underline-offset-8 decoration-yellow hover:decoration-black" : "")}
+                              prefetch={true}>
+                            {link.name}
+                        </Link>
+                    ))}
                 </div>
                 <SearchBox/>
             </div>

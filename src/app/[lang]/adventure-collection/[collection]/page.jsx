@@ -19,34 +19,36 @@ export async function generateStaticParams() {
 }
 
 export default async function Page({params: {lang, collection}}) {
+    const activeCollection = adventureCollections.find((collectionIter) => collectionIter.slug === collection);
     return (
         <main className=" px-4">
             <div className="">
                 <div className="">
-                    <h1 className="max-w-[1154px] mx-auto">Adventures</h1>
+                    {/*<h1 className="max-w-[1154px] mx-auto">Adventures</h1>*/}
                     <div className="mx-0 lg:relative">
-                        <Image className="mx-auto h-full"
+                        <Image className="mx-auto h-56 object-center object-cover "
                                sizes="(max-width: 768px) 656w, (max-width: 1200px) 50vw, 33vw"
                                quality={75}
                                eager={"true"}
                                priority={true}
                                loading={'eager'}
                                alt={'hero'}
-                               src="https://publish-p64257-e147834-cmstg.adobeaemcloud.com/adobe/dynamicmedia/deliver/dm-aid--83976ce1-089b-4f4d-ab3e-1be2f72eb0ad/AdobeStock_261097343.jpg?width=3840&quality=75"
+                               src={activeCollection.imageUrl}
                                width={1688}
                                height={1125}
                         />
 
-                        <div
-                            className="lg:absolute lg:bottom-0 lg:text-white max-w-[1136px] m-auto left-0 right-0 mh-5 lg:p-10 p-2 ">
-                            <h2>Experience the world with us</h2>
-                            <div className="pt-5 text-base">With WKND Adventures, you don&lsquo;t just see the world
-                                -- you experience its cultures, flavors and wonders.
-                            </div>
+                        <div className="lg:absolute lg:top-0 lg:text-white max-w-[1136px] m-auto left-0 right-0 mh-5 lg:p-10 p-0 ">
+                            <h2 className="font-semibold lg:text-gray-600 text-3xl inset-0">
+                                <span className="box-decoration-slice lg:bg-gray-200">Experience the world with us</span>
+                            </h2>
+                            <span className="text-base lg:text-gray-600 inset-0 box-decoration-slice lg:bg-gray-200">
+                                With WKND Adventures, you don&lsquo;t just see the world -- you experience its cultures, flavors and wonders.
+                            </span>
                         </div>
                     </div>
 
-                    <h1 className="max-w-[1154px] mx-auto pt-9 md:px-5">Our Current Adventures</h1>
+                    <h1 className="max-w-[1154px] mx-auto pt-4 md:px-5">Our Current Adventures</h1>
 
                     <AdventuresList lang={lang} collectionSlug={collection}/>
 

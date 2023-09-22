@@ -21,31 +21,37 @@ export const adventureCollections = [
     {
         name: 'All',
         slug: 'all',
+        imageUrl: 'https://publish-p64257-e147834-cmstg.adobeaemcloud.com/adobe/dynamicmedia/deliver/dm-aid--b9ef1d9a-4716-4e5e-be53-2c246df97cbd/surfing_5.jpg?width=3840&quality=75',
         predicate: (adventure) => true,
     },
     {
         name: 'One Day',
         slug: 'one-day',
+        imageUrl: "https://publish-p64257-e147834-cmstg.adobeaemcloud.com/adobe/dynamicmedia/deliver/dm-aid--98b83ffc-1739-46ed-a837-b3662067499f/adobestock_277654931.jpg?width=3840&quality=75",
         predicate: (adventure) => adventure.tripLength === '1 Day',
     },
     {
         name: 'Sport',
         slug: 'sport',
+        imageUrl: "https://publish-p64257-e147834-cmstg.adobeaemcloud.com/adobe/dynamicmedia/deliver/dm-aid--70afb5ab-c32b-4574-be75-4cc001101e39/adobestock_185234795.jpg?width=3840&quality=75",
         predicate: (adventure) => adventure.title.includes('Ski') || adventure.title.includes('Cycling') || adventure.title.includes('Surf'),
     },
     {
         name: 'Summer',
         slug: 'summer',
+        imageUrl: "https://publish-p64257-e147834-cmstg.adobeaemcloud.com/adobe/dynamicmedia/deliver/dm-aid--236d4ad1-1b91-42d2-a9f7-9becd0d42fc3/adobestock_196967522.jpg?width=3840&quality=75",
         predicate: (adventure) => !adventure.title.includes('Ski'),
     },
     {
         name: 'Winter',
         slug: 'winter',
+        imageUrl: "https://publish-p64257-e147834-cmstg.adobeaemcloud.com/adobe/dynamicmedia/deliver/dm-aid--58eac022-f1e8-4fec-b0bd-636cba2aae67/adobestock_222643220.jpg?width=3840&quality=75",
         predicate: (adventure) => adventure.title.includes('Ski'),
     },
     {
         name: 'Most Popular',
         slug: 'popular',
+        imageUrl: "https://publish-p64257-e147834-cmstg.adobeaemcloud.com/adobe/dynamicmedia/deliver/dm-aid--fcdbbc12-8057-4d1f-aff8-9325e25dda32/adobestock_270835979.jpg?width=3840&quality=75",
         predicate: (adventure) => adventure.title.includes('surf')
             || adventure.title.includes('Tour')
             || adventure.title.includes('Cycling'),
