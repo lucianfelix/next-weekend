@@ -1,6 +1,6 @@
 export function LoginModal({isOpen, toggle}) {
     return (
-        <div className="block touch-none overscroll-none no-scrollbar bg-white dark:bg-black bg-opacity-80 transition-all duration-600 fixed w-full h-full overflow-hidden pt-[135px] left-0 z-[60]"
+        <div className="block touch-none overscroll-none no-scrollbar bg-gray-400 bg-opacity-80 transition-all duration-600 fixed w-full h-full overflow-hidden pt-[135px] left-0 z-[60]"
              style={{
                  opacity: `${isOpen ? "1" : "0"}`,
                  top: ` ${isOpen ? "0" : "-100%"}`,
@@ -9,7 +9,12 @@ export function LoginModal({isOpen, toggle}) {
             role="dialog"
         >
             <div className="w-full max-w-md mx-auto">
-                <form className=" bg-white dark:bg-gray-800 shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                <form className=" bg-white dark:bg-gray-800 shadow-md rounded px-8 pt-3 pb-8 mb-4">
+                    <div className="mb-6">
+                        <h2 className="block" htmlFor="username">
+                            Login
+                        </h2>
+                    </div>
                     <div className="mb-4">
                         <label className="block text-sm mb-2" htmlFor="username">
                             Username
@@ -25,7 +30,9 @@ export function LoginModal({isOpen, toggle}) {
                     </div>
                     <div className="flex items-center justify-between">
                         <button className="btn-yellow py-2 px-4 rounded"
-                                type="button">
+                                type="button"
+                                onClick={toggle}
+                        >
                             Sign In
                         </button>
                         <button
