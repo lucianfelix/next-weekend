@@ -19,7 +19,7 @@ export default function HeroAdventureCard({adventure}) {
                     sizes="(max-width: 768px) 300w, 100vw"
                     className="w-full h-auto lg:h-full"
                     loader={dynamicmediaImageLoader}
-                    src={`${NEXT_PUBLIC_AEM_HOST}${adventure.primaryImage._dynamicUrl}`}
+                    src={`${NEXT_PUBLIC_AEM_HOST}${adventure.primaryImage?._dynamicUrl}`}
                     alt={adventure.title}/>
             </div>
             <div className="col-span-1 bg-gray-200 dark:bg-gray-600 p-6">

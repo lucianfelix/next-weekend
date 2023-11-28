@@ -13,8 +13,9 @@
 
 import AdventureCard from "./AdventureCard";
 import Link from "next/link";
-import {adventureCollections, getAdventures, NEXT_PUBLIC_AEM_HOST} from "../lib/adventures";
+import {adventureCollections, NEXT_PUBLIC_AEM_HOST} from "../lib/adventures";
 import dynamicmediaImageLoader from "../lib/image/loader";
+import {getAdventures} from "../lib/headless_openai";
 
 export default async function AdventuresList({lang = '', collectionSlug = 'all', showCategoryPicker = true}) {
     const adventures = await getAdventures(lang);

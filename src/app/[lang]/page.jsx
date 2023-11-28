@@ -4,7 +4,7 @@ import CarouselItem from "../../components/CarouselItem";
 import Link from "next/link";
 import AdventuresList from "../../components/AdventuresList";
 import HeroAdventureCard from "../../components/HeroAdventureCard";
-import {getAdventures} from "../../lib/adventures";
+import {getAdventures} from "../../lib/headless_openai";
 import dynamicmediaImageLoader from "../../lib/image/loader";
 
 export const revalidate = 43200; // 12 hours in seconds
@@ -23,7 +23,7 @@ export default async function Page({params: {lang}}) {
     const renderTime = new Date().toISOString();
     const adventures = await getAdventures(lang);
     const fetchDuration = new Date().getTime() - new Date(renderTime).getTime();
-    const featuredAdventure = adventures[7];
+    const featuredAdventure = adventures[2];
 
     return (
         <main className=" px-0 mx-0">
