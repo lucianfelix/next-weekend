@@ -2,38 +2,42 @@ import Image from 'next/image';
 import {cache} from 'react';
 import {AdventureClient, NEXT_PUBLIC_AEM_HOST} from "../../../../lib/adventures";
 import dynamicmediaImageLoader from "../../../../lib/image/loader";
+import {oaiGetAdventureByPath} from "../../../../lib/headless_openai";
 
-export const revalidate = 43200; // 12 hours in seconds
-export const dynamic = 'force-static';
-export const fetchCache = 'only-cache';
-export const preferredRegion = 'auto';
+// export const revalidate = 43200; // 12 hours in seconds
+// export const dynamic = 'force-static';
+// export const fetchCache = 'only-cache';
+// export const preferredRegion = 'auto';
+
+// export const dynamic = 'force-dynamic'
 
 // Return a list of `params` to populate the [slug] dynamic segment
-export async function generateStaticParams() {
-    const client = AdventureClient.fromEnv();
-    const res = await client.getAllAdventures();
-    const adventures = res?.data?.adventureList?.items;
+// export async function generateStaticParams() {
+//     const client = AdventureClient.fromEnv();
+//     const res = await client.getAllAdventures();
+//     const adventures = res?.data?.adventureList?.items;
+//
+//     return adventures.map((adventure) => {
+//         const pathItems = adventure._path.split('/');
+//         return {
+//             lang: 'en-US',
+//             path: [pathItems[pathItems.length - 2], pathItems[pathItems.length - 1]],
+//         }
+//     })
+// }
 
-    return adventures.map((adventure) => {
-        const pathItems = adventure._path.split('/');
-        return {
-            lang: 'en-US',
-            path: [pathItems[pathItems.length - 2], pathItems[pathItems.length - 1]],
-        }
-    })
-}
-
-const getAdventureByPath = cache(async (path) => {
-    const client = AdventureClient.fromEnv();
-    const res = await client.getAdventureByPath(path);
-    const adventure = res?.data?.adventureByPath?.item;
-    return adventure;
-});
+// const getAdventureByPath = cache(async (path) => {
+//     const client = AdventureClient.fromEnv();
+//     const res = await getAdventureByPath(path);
+//     const adventure = res?.data?.adventureByPath?.item;
+//     return adventure;
+// });
 
 export default async function Page({params}) {
     // console.log("Rendering "+ params.path[0] + "/" + params.path[1] + "/page.jsx");
     const cfPath = `/content/dam/aem-demo-assets/en/adventures/${params.path.join('/')}`;
-    const adventure = await getAdventureByPath(cfPath);
+    // const adventure = await getAdventureByPath(cfPath);
+    const adventure = await oaiGetAdventureByPath(cfPath);
     if (!adventure) return (<>Adventure not found</>);
 
     const {
@@ -54,16 +58,16 @@ export default async function Page({params}) {
 
                 <div
                     className="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 overflow-hidden lg:h-80 lg:aspect-none">
-                    <Image
-                        src={`${NEXT_PUBLIC_AEM_HOST}${primaryImage._dynamicUrl}`}
-                        alt={title}
-                        width={`${primaryImage.width}`}
-                        height={`${primaryImage.height}`}
-                        loading='eager'
-                        loader={dynamicmediaImageLoader}
-                        sizes="(max-width: 768px) 656w, (max-width: 1200px) 100vw, 1200w"
-                        className="w-full h-full object-center object-cover lg:w-full lg:h-full"
-                    />
+                    {/*<Image*/}
+                    {/*    src={`${NEXT_PUBLIC_AEM_HOST}${primaryImage._dynamicUrl}`}*/}
+                    {/*    alt={title}*/}
+                    {/*    width={`${primaryImage.width}`}*/}
+                    {/*    height={`${primaryImage.height}`}*/}
+                    {/*    loading='eager'*/}
+                    {/*    loader={dynamicmediaImageLoader}*/}
+                    {/*    sizes="(max-width: 768px) 656w, (max-width: 1200px) 100vw, 1200w"*/}
+                    {/*    className="w-full h-full object-center object-cover lg:w-full lg:h-full"*/}
+                    {/*/>*/}
                 </div>
 
                 {/* Product info */}
@@ -107,7 +111,7 @@ export default async function Page({params}) {
 
                         <div className="mt-10 prose lg:prose-l dark:prose-invert">
                             <div className="mt-4" dangerouslySetInnerHTML={{
-                                __html: description.html,
+                                __html: description,
                             }}/>
                         </div>
 
@@ -115,7 +119,7 @@ export default async function Page({params}) {
                             <h2 className="">Itinerary</h2>
 
                             <div className="mt-4" dangerouslySetInnerHTML={{
-                                    __html: itinerary.html,
+                                    __html: itinerary,
                                 }}/>
                         </div>
                     </div>

@@ -1,17 +1,31 @@
 export async function getAdventures() {
 
     const data = await fetchAdventureData();
-    const adventures = extractAndConvertAdventures(data);
-    console.log("getAdventures", adventures);
+    const adventures = extractAndConvertOaiCFArray(data);
+    // console.log("getAdventures", adventures);
     return adventures;
 }
 
-function fetchAdventureData() {
-    const endpoint = "https://dev.wknd.site/adobe/sites/cf/fragments/9f254d74-90c0-47a1-b6f4-cc38d86f2739?references=all-hydrated";
+export function oaiGetAdventureByPath(path) {
+    // replace / with _ in path
+    path = path.replace(/\//g, "_");
+
+    // console.log("oaiGetAdventureByPath", path)
+    const endpoint = `http://localhost:8080/aem-sites-test4/wknd/prod/cf/fragments/${path}`;
     return fetch(endpoint)
         .then(response => response.json())
         .then(data => {
-            return data;
+            return extractOaiCF(data);
+        });
+}
+
+function fetchAdventureData() {
+    const endpoint = "http://localhost:8080/aem-sites-test4/wknd/prod/cf/fragments?filter=difficulty=Beginner";
+    return fetch(endpoint)
+        .then(response => response.json())
+        .then(data => {
+            // console.log("data", data);
+            return data._embedded.contentFragmentDtoList;
         });
 }
 
@@ -26,8 +40,47 @@ function convertFieldsToObject(fieldsArray) {
     return fieldsObject;
 }
 
+function extractOaiCF(oaiCF) {
+    // console.log("Converting: ", oaiCF);
+    const adventureWithFields = {
+        ...convertFieldsToObject(oaiCF.fields)
+    };
+
+    adventureWithFields._path = oaiCF.path;
+    adventureWithFields.title = oaiCF.title
+
+    // console.log("adventureWithFields", adventureWithFields);
+
+    // Add a primaryImage object to the adventure
+    const imageRef = adventureWithFields.primaryImage;
+    if (adventureWithFields) {
+        adventureWithFields.primaryImage = {
+            width: imageRef["tiff:ImageWidth"],
+            height: imageRef["tiff:ImageHeight"],
+            assetId: imageRef.assetId,
+            _dynamicUrl: imageRef.path,
+            url: imageRef.path,
+        }
+    }
+
+    // console.log("Adventure:", adventureWithFields);
+    return adventureWithFields;
+}
+
 // Function to extract and convert adventures
-function extractAndConvertAdventures(data) {
+function extractAndConvertOaiCFArray(data) {
+    const adventures = [];
+    if (data && Array.isArray(data)) {
+        data.forEach((oaiCF) => {
+            adventures.push(extractOaiCF(oaiCF));
+
+        });
+    }
+    return adventures;
+}
+
+
+function extractAndConvertAdventures2(data) {
     const adventures = [];
     if (data.references && Array.isArray(data.references)) {
         data.references.forEach((reference) => {
@@ -59,7 +112,7 @@ function extractAndConvertAdventures(data) {
                             }
                         }
 
-                        console.log("adventureWithFields", adventureWithFields);
+                        // console.log("adventureWithFields", adventureWithFields);
                         adventures.push(adventureWithFields);
                     }
                 });

@@ -3,10 +3,12 @@ import Link from "next/link";
 import AdventuresList from "../../../../components/AdventuresList";
 import {adventureCollections} from "../../../../lib/adventures";
 
-export const revalidate = 43200; // 12 hours in seconds
-export const dynamic = 'force-static';
-export const fetchCache = 'only-cache';
-export const preferredRegion = 'auto';
+// export const revalidate = 43200; // 12 hours in seconds
+// export const dynamic = 'force-static';
+// export const fetchCache = 'only-cache';
+// export const preferredRegion = 'auto';
+
+// export const dynamic = 'force-dynamic'
 
 export async function generateStaticParams() {
     return ["en-US"].map((lang) => {
