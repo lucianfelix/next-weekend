@@ -39,7 +39,7 @@ export default async function AdventuresList({lang = '', collectionSlug = 'all',
                 ))}
             </ul>}
             <div
-                className="p-2 max-w-[1154px] md:px-5 mx-auto grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+                 className="p-2 max-w-[1154px] md:px-5 mx-auto grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
                 {filteredAdventures.map(
                     ({_path, title, price, tripLength, primaryImage}, index) => {
                         const pathItems = _path.split('/');
@@ -56,7 +56,7 @@ export default async function AdventuresList({lang = '', collectionSlug = 'all',
                                 loader={dynamicmediaImageLoader}
                                 imgWidth={`${primaryImage.width}`}
                                 imgHeight={`${primaryImage.height}`}
-                                imageSrc={`${NEXT_PUBLIC_AEM_HOST}${primaryImage._dynamicUrl}`}
+                                imageSrc={`${primaryImage._dynamicUrl}`}
                             />
                         );
                     }

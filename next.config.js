@@ -1,5 +1,22 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    async headers() {
+        return [
+            {
+                source: '/',
+                headers: [
+                    {
+                        key: 'frame-ancestors',
+                        value: '*.adobe.com'
+                    },
+                    {
+                        key: 'X-Frame-Options',
+                        value: 'ALLOW-FROM *.adobe.com'
+                    }
+                ],
+            },
+        ]
+    },
     images: {
         loader: 'custom',
         loaderFile: './src/lib/image/loader.js',
