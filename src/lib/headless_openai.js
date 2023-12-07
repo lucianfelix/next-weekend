@@ -42,7 +42,7 @@ export function oaiGetAdventureByPath(path) {
 function fetchAdventureData() {
     const endpoint = allAdventuresUrl;
     return fetch(endpoint, {
-        next: { revalidate: 0 },
+        next: { revalidate: 10000 },
     })
         .then(response => response.json())
         .then(data => {
@@ -50,6 +50,10 @@ function fetchAdventureData() {
                 return [];
             }
             return data._embedded.contentFragmentDtoList;
+        })
+        .catch(error => {
+            console.error('Error while reading adventures from path' + endpoint, error);
+            return undefined;
         });
 }
 
