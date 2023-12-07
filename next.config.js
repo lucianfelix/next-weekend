@@ -19,7 +19,7 @@ const nextConfig = {
     },
     images: {
         loader: 'custom',
-        loaderFile: './src/lib/image/loader.js',
+        // loaderFile: './src/lib/image/loader.js',
         formats: ['image/avif', 'image/webp'],
         minimumCacheTTL: 600000,
         deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
@@ -34,6 +34,12 @@ const nextConfig = {
             {
                 protocol: 'https',
                 hostname: 'publish-p64257-e147834-cmstg.adobeaemcloud.com',
+                // port: '',
+                pathname: '/**',
+            },
+            {
+                protocol: 'https',
+                hostname: 'publish-p91957-e809713.adobeaemcloud.com',
                 // port: '',
                 pathname: '/**',
             },
