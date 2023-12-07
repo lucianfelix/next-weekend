@@ -1,5 +1,6 @@
 
-const fragmentsUrl = "https://palma-dev-public.ethos14-stage-va7.ethos.adobe.net/aem-sites/wknd/gw/cf/fragments";
+const singleAdventureUrlBase = "https://palma-dev-public.ethos14-stage-va7.ethos.adobe.net/aem-sites/wknd/gw/cf/fragments";
+const allAdventuresUrl = "https://palma-dev-public.ethos14-stage-va7.ethos.adobe.net/aem-sites/wknd/gw/cf/models/L2NvbmYvd2tuZC1zaGFyZWQvc2V0dGluZ3MvZGFtL2NmbS9tb2RlbHMvYWR2ZW50dXJl/fragments";
 const publishImageBase = "https://publish-p91957-e809713.adobeaemcloud.com";
 
 export async function getAdventures() {
@@ -13,7 +14,7 @@ export function oaiGetAdventureByPath(path) {
     // replace / with _ in path
     path = path.replace(/\//g, "_");
 
-    const endpoint = fragmentsUrl + "/" + path;
+    const endpoint = singleAdventureUrlBase + "/" + path;
     console.log("Adventure URL: ", endpoint)
     return fetch(endpoint,
         {
@@ -27,17 +28,27 @@ export function oaiGetAdventureByPath(path) {
         .then(response =>
             response.json())
         .then(data => {
+            if(!data) {
+                return {};
+            }
             return extractOaiCF(data);
+        })
+        .catch(error => {
+            console.error('Error while reading adventure from path:' + path, error);
+            return undefined;
         });
 }
 
 function fetchAdventureData() {
-    const endpoint = fragmentsUrl;
+    const endpoint = allAdventuresUrl;
     return fetch(endpoint, {
         next: { revalidate: 0 },
     })
         .then(response => response.json())
         .then(data => {
+            if(!data) {
+                return [];
+            }
             return data._embedded.contentFragmentDtoList;
         });
 }

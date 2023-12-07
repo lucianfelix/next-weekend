@@ -3,6 +3,11 @@
 const NEXT_PUBLIC_AEM_HOST = process.env.NEXT_PUBLIC_AEM_HOST;
 
 export default function dynamicmediaImageLoader({ src, width, quality }) {
+
+    if(true) {
+        return src;
+    }
+
     // if it doesn't contain 'dynamicmedia' then it's a local image
     if (!src.includes('dynamicmedia')) {
         return src
