@@ -1,12 +1,11 @@
 
-const fragmentsUrl = "https://hound-absolute-bear.ngrok-free.app/aem-sites/wknd/gw/cf/fragments";
-
+const fragmentsUrl = "https://palma-dev-public.ethos14-stage-va7.ethos.adobe.net/aem-sites/wknd/gw/cf/fragments";
+const publishImageBase = "https://publish-p91957-e809713.adobeaemcloud.com";
 
 export async function getAdventures() {
 
     const data = await fetchAdventureData();
     const adventures = extractAndConvertOaiCFArray(data);
-    // console.log("getAdventures", adventures);
     return adventures;
 }
 
@@ -14,8 +13,6 @@ export function oaiGetAdventureByPath(path) {
     // replace / with _ in path
     path = path.replace(/\//g, "_");
 
-    // console.log("oaiGetAdventureByPath", path)
-    // https://palma-dev.corp.ethos05-stage-va7.ethos.adobe.net/aem-sites/wknd/gw/cf/fragments/_content_dam_wknd-shared_en_adventures_bali-surf-camp_bali-surf-camp?references=direct
     const endpoint = fragmentsUrl + "/" + path;
     console.log("Adventure URL: ", endpoint)
     return fetch(endpoint,
@@ -36,7 +33,9 @@ export function oaiGetAdventureByPath(path) {
 
 function fetchAdventureData() {
     const endpoint = fragmentsUrl;
-    return fetch(endpoint)
+    return fetch(endpoint, {
+        next: { revalidate: 0 },
+    })
         .then(response => response.json())
         .then(data => {
             return data._embedded.contentFragmentDtoList;
@@ -52,7 +51,7 @@ function convertFieldsToObject(fieldsArray) {
                 return;
             }
 
-            console.log("field", field);
+            //console.log("field", field);
             // If it's not multiple, just take the first value.
             fieldsObject[field.name] = field.multiple ? field.values : field.values[0];
         }
@@ -73,13 +72,13 @@ function extractOaiCF(oaiCF) {
 
     // Add a primaryImage object to the adventure
     const imageRef = adventureWithFields.primaryImage;
-    console.log("description", adventureWithFields.description);
+    //console.log("description", adventureWithFields.description);
     if (adventureWithFields && imageRef) {
         adventureWithFields.primaryImage = {
             // width: imageRef["tiff:ImageWidth"],
             // height: imageRef["tiff:ImageHeight"],
             // assetId: imageRef.assetId,
-            _dynamicUrl: "https://publish-p7452-e12433.adobeaemcloud.com" + imageRef,
+            _dynamicUrl: publishImageBase + imageRef,
             url: imageRef,
         }
     } else {
