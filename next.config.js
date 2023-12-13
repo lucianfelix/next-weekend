@@ -18,7 +18,7 @@ const nextConfig = {
         ]
     },
     images: {
-        loader: 'custom',
+        // loader: 'custom',
         // loaderFile: './src/lib/image/loader.js',
         formats: ['image/avif', 'image/webp'],
         minimumCacheTTL: 600000,

@@ -15,10 +15,15 @@ export function oaiGetAdventureByPath(path) {
     path = path.replace(/\//g, "_");
 
     const endpoint = singleAdventureUrlBase + "/" + path;
-    console.log("Adventure URL: ", endpoint)
+    console.log("fetching and tagging with " + path + " the adventure from URL: ", endpoint)
+    // measure the time it takes to fetch the adventure
+    const startTime = Date.now();
     return fetch(endpoint,
         {
-            next: { revalidate: 0 },
+            next: {
+                tags: [path],
+                // revalidate: 0
+            },
             headers: {
                 "Accept": "application/json",
                 "Content-Type": "application/json",
@@ -31,6 +36,8 @@ export function oaiGetAdventureByPath(path) {
             if(!data) {
                 return {};
             }
+            const endTime = Date.now();
+            console.log("Fetched adventure in " + (endTime - startTime) + "ms");
             return extractOaiCF(data);
         })
         .catch(error => {

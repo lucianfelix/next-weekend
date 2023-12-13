@@ -1,0 +1,4 @@
+GET http://localhost:3000/en-US/api/revalidate?tag=_content_dam_wknd-shared_en_adventures_riverside-camping-australia_riverside-camping-australia
+Accept: application/json
+
+###
