@@ -78,7 +78,7 @@ export default async function Page({params}) {
                             // height={`${primaryImage.height}`}
                             loading='eager'
                             // loader={dynamicmediaImageLoader}
-                            // sizes="(max-width: 768px) 656w, (max-width: 1200px) 100vw, 1200w"
+                            sizes="(max-width: 768px) 656w, (max-width: 1200px) 100vw, 1200w"
                             className="w-full h-full object-center object-cover lg:w-full lg:h-full"
                         />
                     </div>
