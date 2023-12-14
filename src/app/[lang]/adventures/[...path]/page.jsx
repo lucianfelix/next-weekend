@@ -4,6 +4,12 @@ import {AdventureClient, NEXT_PUBLIC_AEM_HOST} from "../../../../lib/adventures"
 import dynamicmediaImageLoader from "../../../../lib/image/loader";
 import {oaiGetAdventureByPath} from "../../../../lib/headless_openai";
 
+
+// CDN cache currently only works on nodejs runtime
+export const runtime = "nodejs";
+
+export const dynamic = "force-static";
+
 export const revalidate = 43200; // 12 hours in seconds
 // export const dynamic = 'force-static';
 // export const fetchCache = 'only-cache';
