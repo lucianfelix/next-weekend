@@ -1,4 +1,4 @@
-export function LoginModal({isOpen, toggle}) {
+export default function LoginModal({isOpen, toggle}) {
     return (
         <div className="block touch-none overscroll-none no-scrollbar bg-gray-400 bg-opacity-80 transition-all duration-600 fixed w-full h-full overflow-hidden pt-[135px] left-0 z-[60]"
              style={{

@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import {oaiGetAdventureByPath} from "../../../../lib/headless_openai";
-
+import Script from 'next/script';
 
 // CDN cache currently only works on nodejs runtime
 export const runtime = "nodejs";
@@ -59,6 +59,12 @@ export default async function Page({params}) {
     } = adventure;
     return (
         <article itemScope itemID={adventure.id} itemType="reference">
+            {/*<script src="https://cdn.jsdelivr.net/gh/adobe/universal-editor-cors/dist/universal-editor-embedded.js"*/}
+            {/*        async></script>*/}
+            <Script
+                strategy="lazyOnload"
+                src="https://cdn.jsdelivr.net/gh/adobe/universal-editor-cors/dist/universal-editor-embedded.js"
+            />
             <div className="">
                 <div className="pt-6">
                     <div className="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 overflow-hidden lg:h-80 lg:aspect-none">

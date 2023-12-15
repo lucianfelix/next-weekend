@@ -28,8 +28,6 @@ export default function RootLayout({
     return (
         <html lang="en">
         <body className={inter.className + "bg-white dark:bg-black"}>
-        <script src="https://cdn.jsdelivr.net/gh/adobe/universal-editor-cors/dist/universal-editor-embedded.js"
-                async></script>
         <Navigation/>
         {children}
         <Footer/>

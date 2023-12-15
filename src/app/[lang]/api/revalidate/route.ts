@@ -7,5 +7,6 @@ export async function GET(request: NextRequest) {
     console.log('invalidating tag:', tag)
     // @ts-ignore
     revalidateTag(tag)
+    console.log('invalidated tag:', tag)
     return Response.json({ revalidated: true, now: Date.now() })
 }

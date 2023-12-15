@@ -22,7 +22,7 @@ export function oaiGetAdventureByPath(path) {
         {
             next: {
                 tags: [path],
-                // revalidate: 0
+                //revalidate: 0
             },
             headers: {
                 "Accept": "application/json",
