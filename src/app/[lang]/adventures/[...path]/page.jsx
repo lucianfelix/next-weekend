@@ -1,7 +1,4 @@
 import Image from 'next/image';
-import {cache} from 'react';
-import {AdventureClient, NEXT_PUBLIC_AEM_HOST} from "../../../../lib/adventures";
-import dynamicmediaImageLoader from "../../../../lib/image/loader";
 import {oaiGetAdventureByPath} from "../../../../lib/headless_openai";
 
 
@@ -40,12 +37,10 @@ export const revalidate = 43200; // 12 hours in seconds
 // });
 
 export default async function Page({params}) {
-    // console.log("Rendering "+ params.path[0] + "/" + params.path[1] + "/page.jsx");
     const cfPath = `/content/dam/wknd-shared/en/adventures/${params.path.join('/')}`;
-    // const adventure = await getAdventureByPath(cfPath);
-
-
+    // the url looks like this:
     // https://palma-dev.corp.ethos05-stage-va7.ethos.adobe.net/aem-sites/wknd/gw/cf/fragments/_content_dam_wknd-shared_en_adventures_bali-surf-camp_bali-surf-camp?references=direct
+    // double / is intentional
 
     const adventure = await oaiGetAdventureByPath(cfPath);
     if (!adventure) return (<>Adventure not found</>);
@@ -66,9 +61,7 @@ export default async function Page({params}) {
         <article itemScope itemID={adventure.id} itemType="reference">
             <div className="">
                 <div className="pt-6">
-
-                    <div
-                        className="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 overflow-hidden lg:h-80 lg:aspect-none">
+                    <div className="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 overflow-hidden lg:h-80 lg:aspect-none">
                         <Image
                             src={`${primaryImage._dynamicUrl}`}
                             alt={title}
@@ -77,12 +70,12 @@ export default async function Page({params}) {
                             // width={`${primaryImage.width}`}
                             // height={`${primaryImage.height}`}
                             loading='eager'
+                            priority={true}
                             // loader={dynamicmediaImageLoader}
-                            sizes="(max-width: 768px) 450w, (max-width: 1200px) 100vw, 1200w"
+                            sizes="(max-width: 768px) 350w, (max-width: 1200px) 100vw, 1200w"
                             className="w-full h-full object-center object-cover lg:w-full lg:h-full"
                         />
                     </div>
-
                     {/* Product info */}
                     <div
                         className="max-w-2xl mx-auto pt-10 pb-16 px-4 sm:px-6 lg:max-w-7xl lg:pt-16 lg:pb-24 lg:px-8 lg:grid lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8">
@@ -117,9 +110,7 @@ export default async function Page({params}) {
                                     <dd itemProp="difficulty" itemType="text" className="mt-1 text-sm sm:mt-0 sm:col-span-2">{difficulty}</dd>
                                 </div>
                             </dl>
-
                         </div>
-
                         <div
                             className="py-10 lg:pt-6 lg:pb-16 lg:col-start-1 lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
 
@@ -140,6 +131,5 @@ export default async function Page({params}) {
                     </div>
                 </div>
             </div>
-
         </article>)
 }
