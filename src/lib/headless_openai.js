@@ -56,7 +56,7 @@ function fetchAdventureData() {
             if(!data) {
                 return [];
             }
-            return data._embedded.contentFragmentDtoList;
+            return data.items;
         })
         .catch(error => {
             console.error('Error while reading adventures from path' + endpoint, error);
