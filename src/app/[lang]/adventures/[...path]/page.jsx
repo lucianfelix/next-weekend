@@ -58,7 +58,7 @@ export default async function Page({params}) {
         itinerary,
     } = adventure;
     return (
-        <article data-aue-resource={adventure.id} data-aue-type="component">
+        <article data-aue-resource={adventure.id} data-aue-type="reference">
             {/*<script src="https://cdn.jsdelivr.net/gh/adobe/universal-editor-cors/dist/universal-editor-embedded.js"*/}
             {/*        async></script>*/}
             <Script
