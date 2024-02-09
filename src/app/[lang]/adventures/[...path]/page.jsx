@@ -97,7 +97,7 @@ export default async function Page({params}) {
                             <dl>
                                 <div className="py-5 sm:grid sm:grid-cols-3 sm:gap-4">
                                     <dt className="text-sm font-medium">Activity</dt>
-                                    <dd data-aue-prop="activity" data-aue-type="text" className="mt-1 text-sm sm:mt-0 sm:col-span-2">{activity}</dd>
+                                    <dd data-aue-prop="activity" data-aue-label="activity" data-aue-type="text" className="mt-1 text-sm sm:mt-0 sm:col-span-2">{activity}</dd>
                                 </div>
                                 <div className="py-5 sm:grid sm:grid-cols-3 sm:gap-4">
                                     <dt className="text-sm font-medium">Type</dt>
