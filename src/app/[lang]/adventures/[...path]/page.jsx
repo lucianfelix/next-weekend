@@ -86,14 +86,14 @@ export default async function Page({params}) {
                     <div
                         className="max-w-2xl mx-auto pt-10 pb-16 px-4 sm:px-6 lg:max-w-7xl lg:pt-16 lg:pb-24 lg:px-8 lg:grid lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8">
                         <div className="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
-                            <h1 data-aue-prop="title" data-aue-type="text" className="text-2xl font-extrabold tracking-tight sm:text-3xl">{title}</h1>
+                            <h1 data-aue-prop="title" data-aue-label="Title" data-aue-type="text" className="text-2xl font-extrabold tracking-tight sm:text-3xl">{title}</h1>
                         </div>
 
                         {/* Options */}
                         <div className="mt-4 lg:mt-0 lg:row-span-3">
                             <h2 className="sr-only">Product information</h2>
 
-                            <p data-aue-prop="price" data-aue-type="text" className="text-3xl mb-10">{price}</p>
+                            <p data-aue-prop="price" data-aue-label="Price" data-aue-type="text" className="text-3xl mb-10">{price}</p>
                             <dl>
                                 <div className="py-5 sm:grid sm:grid-cols-3 sm:gap-4">
                                     <dt className="text-sm font-medium">Activity</dt>
@@ -109,11 +109,11 @@ export default async function Page({params}) {
                                 </div>
                                 <div className="py-5 sm:grid sm:grid-cols-3 sm:gap-4">
                                     <dt  className="text-sm font-medium">Group Size</dt>
-                                    <dd data-aue-prop="groupSize" data-aue-label=">Group Size" data-aue-type="text" className="mt-1 text-sm sm:mt-0 sm:col-span-2">{groupSize}</dd>
+                                    <dd data-aue-prop="groupSize" data-aue-label="Group Size" data-aue-type="text" className="mt-1 text-sm sm:mt-0 sm:col-span-2">{groupSize}</dd>
                                 </div>
                                 <div className="py-5 sm:grid sm:grid-cols-3 sm:gap-4">
                                     <dt className="text-sm font-medium">Difficulty</dt>
-                                    <dd data-aue-prop="difficulty" data-aue-label=">Difficulty" data-aue-type="text" className="mt-1 text-sm sm:mt-0 sm:col-span-2">{difficulty}</dd>
+                                    <dd data-aue-prop="difficulty" data-aue-label="Difficulty" data-aue-type="text" className="mt-1 text-sm sm:mt-0 sm:col-span-2">{difficulty}</dd>
                                 </div>
                             </dl>
                         </div>
@@ -121,7 +121,7 @@ export default async function Page({params}) {
                             className="py-10 lg:pt-6 lg:pb-16 lg:col-start-1 lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
 
                             <div className="mt-10 prose lg:prose-l dark:prose-invert">
-                                <div data-aue-prop="description" data-aue-label=">Description" data-aue-type="text" className="mt-4" dangerouslySetInnerHTML={{
+                                <div data-aue-prop="description" data-aue-label="Description" data-aue-type="text" className="mt-4" dangerouslySetInnerHTML={{
                                     __html: description,
                                 }}/>
                             </div>
