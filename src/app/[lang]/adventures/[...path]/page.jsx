@@ -59,8 +59,6 @@ export default async function Page({params}) {
     } = adventure;
     return (
         <article data-aue-resource={adventure.id} data-aue-label="Adventure" data-aue-type="reference">
-            {/*<script src="https://cdn.jsdelivr.net/gh/adobe/universal-editor-cors/dist/universal-editor-embedded.js"*/}
-            {/*        async></script>*/}
             <Script
                 strategy="lazyOnload"
                 src="https://cdn.jsdelivr.net/gh/adobe/universal-editor-cors/dist/universal-editor-embedded.js"
@@ -75,10 +73,12 @@ export default async function Page({params}) {
                             height={400}
                             // width={`${primaryImage.width}`}
                             // height={`${primaryImage.height}`}
-                            loading='eager'
+                            quality={75}
+                            eager={"true"}
                             priority={true}
+                            loading={'eager'}
                             // loader={dynamicmediaImageLoader}
-                            sizes="(max-width: 768px) 350w, (max-width: 1200px) 100vw, 1200w"
+                            sizes="(max-width: 768px) 350w, (max-width: 1200px) 70vw, 1200w"
                             className="w-full h-full object-center object-cover lg:w-full lg:h-full"
                         />
                     </div>
