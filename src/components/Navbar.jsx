@@ -78,7 +78,7 @@ export default function Navbar({isOpen, toggle, toggleLogin}) {
                     {navLinks.map((link) => (
                         <Link key={link.url}
                               href={link.url}
-                              className={"py-4 px-4 hover:bg-yellow dark:hover:text-black uppercase" +
+                              className={"py-4 px-4 hover:bg-yellow dark:hover:text-black uppercase active:underline active:decoration-4 active:underline-offset-8 active:decoration-yellow-300" +
                                 (pathname === link.url ? " underline decoration-4 underline-offset-8 decoration-yellow hover:decoration-black" : "")}
                               prefetch={true}>
                             {link.name}
