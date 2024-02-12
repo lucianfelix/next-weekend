@@ -91,29 +91,38 @@ export default async function Page({params}) {
 
                         {/* Options */}
                         <div className="mt-4 lg:mt-0 lg:row-span-3">
-                            <h2 className="sr-only">Product information</h2>
+                            <h2 className="text-xl font-extrabold tracking-tight sm:text-3xl">Product information</h2>
 
-                            <p data-aue-prop="price" data-aue-label="Price" data-aue-type="text" className="text-3xl mb-10">{price}</p>
                             <dl>
                                 <div className="py-5 sm:grid sm:grid-cols-3 sm:gap-4">
                                     <dt className="text-sm font-medium">Activity</dt>
-                                    <dd data-aue-prop="activity" data-aue-label="Activity" data-aue-type="text" className="mt-1 text-sm sm:mt-0 sm:col-span-2">{activity}</dd>
+                                    <dd data-aue-prop="activity" data-aue-label="Activity" data-aue-type="text"
+                                        className="mt-1 text-sm sm:mt-0 sm:col-span-2">{activity}</dd>
                                 </div>
                                 <div className="py-5 sm:grid sm:grid-cols-3 sm:gap-4">
                                     <dt className="text-sm font-medium">Type</dt>
-                                    <dd data-aue-prop="type" data-aue-type="text" data-aue-label="Type" className="mt-1 text-sm sm:mt-0 sm:col-span-2">{adventureType}</dd>
+                                    <dd data-aue-prop="type" data-aue-type="text" data-aue-label="Type"
+                                        className="mt-1 text-sm sm:mt-0 sm:col-span-2">{adventureType}</dd>
                                 </div>
                                 <div className="py-5 sm:grid sm:grid-cols-3 sm:gap-4">
-                                    <dt  className="text-sm font-medium">Trip Length</dt>
-                                    <dd data-aue-prop="tripLength" data-aue-type="text" data-aue-label="Trip Length" className="mt-1 text-sm sm:mt-0 sm:col-span-2">{tripLength}</dd>
+                                    <dt className="text-sm font-medium">Trip Length</dt>
+                                    <dd data-aue-prop="tripLength" data-aue-type="text" data-aue-label="Trip Length"
+                                        className="mt-1 text-sm sm:mt-0 sm:col-span-2">{tripLength}</dd>
                                 </div>
                                 <div className="py-5 sm:grid sm:grid-cols-3 sm:gap-4">
-                                    <dt  className="text-sm font-medium">Group Size</dt>
-                                    <dd data-aue-prop="groupSize" data-aue-label="Group Size" data-aue-type="text" className="mt-1 text-sm sm:mt-0 sm:col-span-2">{groupSize}</dd>
+                                    <dt className="text-sm font-medium">Group Size</dt>
+                                    <dd data-aue-prop="groupSize" data-aue-label="Group Size" data-aue-type="text"
+                                        className="mt-1 text-sm sm:mt-0 sm:col-span-2">{groupSize}</dd>
                                 </div>
                                 <div className="py-5 sm:grid sm:grid-cols-3 sm:gap-4">
                                     <dt className="text-sm font-medium">Difficulty</dt>
-                                    <dd data-aue-prop="difficulty" data-aue-label="Difficulty" data-aue-type="text" className="mt-1 text-sm sm:mt-0 sm:col-span-2">{difficulty}</dd>
+                                    <dd data-aue-prop="difficulty" data-aue-label="Difficulty" data-aue-type="text"
+                                        className="mt-1 text-sm sm:mt-0 sm:col-span-2">{difficulty}</dd>
+                                </div>
+                                <div className="py-5 sm:grid sm:grid-cols-3 sm:gap-4">
+                                    <dt className="text-sm font-medium">Price</dt>
+                                    <dd data-aue-prop="price" data-aue-label="Price" data-aue-type="text"
+                                        className="mt-1 text-sm sm:mt-0 sm:col-span-2">{price}</dd>
                                 </div>
                             </dl>
                         </div>
@@ -121,7 +130,8 @@ export default async function Page({params}) {
                             className="py-10 lg:pt-6 lg:pb-16 lg:col-start-1 lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
 
                             <div className="mt-10 prose lg:prose-l dark:prose-invert">
-                                <div data-aue-prop="description" data-aue-label="Description" data-aue-type="text" className="mt-4" dangerouslySetInnerHTML={{
+                                <div data-aue-prop="description" data-aue-label="Description" data-aue-type="text"
+                                     className="mt-4" dangerouslySetInnerHTML={{
                                     __html: description,
                                 }}/>
                             </div>
