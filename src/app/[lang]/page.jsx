@@ -38,7 +38,7 @@ export default async function Page({params: {lang}}) {
                                    priority={true}
                                    loading={'eager'}
                                    alt={'hero'}
-                                   loader={dynamicmediaImageLoader}
+                                   // loader={dynamicmediaImageLoader}
                                    src="https://publish-p64257-e147834-cmstg.adobeaemcloud.com/adobe/dynamicmedia/deliver/dm-aid--e96f1714-9c9e-422c-be61-60ed41d065d1/adobestock_216674449.jpg?width=3840&quality=75"
                                    width={1600}
                                    height={900}
