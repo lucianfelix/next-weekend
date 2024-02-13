@@ -58,7 +58,12 @@ export default async function Page({params}) {
         itinerary,
     } = adventure;
     return (
-        <article data-aue-resource={"palma:palma:" + adventure.id} data-aue-label="Adventure" data-aue-type="reference">
+        <article
+            data-aue-resource={"urn:palma:" + adventure.id}
+            data-aue-label="Adventure"
+            data-aue-type="reference"
+            data-aue-filter="cf"
+        >
             <Script
                 strategy="lazyOnload"
                 src="https://cdn.jsdelivr.net/gh/adobe/universal-editor-cors/dist/universal-editor-embedded.js"
@@ -96,32 +101,32 @@ export default async function Page({params}) {
                             <dl>
                                 <div className="py-5 sm:grid sm:grid-cols-3 sm:gap-4">
                                     <dt className="text-sm font-medium">Activity</dt>
-                                    <dd data-aue-prop="activity" data-aue-label="Activity" data-aue-type="text"
+                                    <dd data-aue-prop="activity" data-aue-label="activity" data-aue-type="text"
                                         className="mt-1 text-sm sm:mt-0 sm:col-span-2">{activity}</dd>
                                 </div>
                                 <div className="py-5 sm:grid sm:grid-cols-3 sm:gap-4">
                                     <dt className="text-sm font-medium">Type</dt>
-                                    <dd data-aue-prop="type" data-aue-type="text" data-aue-label="Type"
+                                    <dd data-aue-prop="adventureType"
                                         className="mt-1 text-sm sm:mt-0 sm:col-span-2">{adventureType}</dd>
                                 </div>
                                 <div className="py-5 sm:grid sm:grid-cols-3 sm:gap-4">
                                     <dt className="text-sm font-medium">Trip Length</dt>
-                                    <dd data-aue-prop="tripLength" data-aue-type="text" data-aue-label="Trip Length"
+                                    <dd data-aue-prop="tripLength"
                                         className="mt-1 text-sm sm:mt-0 sm:col-span-2">{tripLength}</dd>
                                 </div>
                                 <div className="py-5 sm:grid sm:grid-cols-3 sm:gap-4">
                                     <dt className="text-sm font-medium">Group Size</dt>
-                                    <dd data-aue-prop="groupSize" data-aue-label="Group Size" data-aue-type="text"
+                                    <dd data-aue-prop="groupSize" data-aue-label="groupSize"
                                         className="mt-1 text-sm sm:mt-0 sm:col-span-2">{groupSize}</dd>
                                 </div>
                                 <div className="py-5 sm:grid sm:grid-cols-3 sm:gap-4">
                                     <dt className="text-sm font-medium">Difficulty</dt>
-                                    <dd data-aue-prop="difficulty" data-aue-label="Difficulty" data-aue-type="text"
+                                    <dd data-aue-prop="difficulty" data-aue-label="difficulty"
                                         className="mt-1 text-sm sm:mt-0 sm:col-span-2">{difficulty}</dd>
                                 </div>
                                 <div className="py-5 sm:grid sm:grid-cols-3 sm:gap-4">
                                     <dt className="text-sm font-medium">Price</dt>
-                                    <dd data-aue-prop="price" data-aue-label="Price" data-aue-type="text"
+                                    <dd data-aue-prop="price" data-aue-label="price" data-aue-type="text"
                                         className="mt-1 text-sm sm:mt-0 sm:col-span-2">{price}</dd>
                                 </div>
                             </dl>
@@ -130,7 +135,7 @@ export default async function Page({params}) {
                             className="py-10 lg:pt-6 lg:pb-16 lg:col-start-1 lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
 
                             <div className="mt-10 prose lg:prose-l dark:prose-invert">
-                                <div data-aue-prop="description" data-aue-label="Description" data-aue-type="text"
+                                <div data-aue-prop="description" data-aue-label="description" data-aue-type="richtext"
                                      className="mt-4" dangerouslySetInnerHTML={{
                                     __html: description,
                                 }}/>
@@ -139,7 +144,7 @@ export default async function Page({params}) {
                             <div className="mt-10 prose lg:prose-l dark:prose-invert">
                                 <h2 className="">Itinerary</h2>
 
-                                <div data-aue-prop="itinerary" data-aue-label="Itinerary" data-aue-type="text" className="mt-4" dangerouslySetInnerHTML={{
+                                <div data-aue-prop="itinerary" data-aue-label="itinerary" data-aue-type="richtext" className="mt-4" dangerouslySetInnerHTML={{
                                     __html: itinerary,
                                 }}/>
                             </div>
