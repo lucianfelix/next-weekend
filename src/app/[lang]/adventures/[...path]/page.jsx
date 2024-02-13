@@ -110,22 +110,22 @@ export default async function Page({params}) {
                                 </div>
                                 <div className="py-5 sm:grid sm:grid-cols-3 sm:gap-4">
                                     <dt className="text-sm font-medium">Type</dt>
-                                    <dd data-aue-prop="adventureType" data-aue-label="adventureType" data-aue-type="select"
+                                    <dd data-aue-prop="adventureType" data-aue-label="adventureType" data-aue-type="text"
                                         className="mt-1 text-sm sm:mt-0 sm:col-span-2">{adventureType}</dd>
                                 </div>
                                 <div className="py-5 sm:grid sm:grid-cols-3 sm:gap-4">
                                     <dt className="text-sm font-medium">Trip Length</dt>
-                                    <dd data-aue-prop="tripLength" data-aue-label="tripLength"
+                                    <dd data-aue-prop="tripLength" data-aue-label="tripLength" data-aue-type="text"
                                         className="mt-1 text-sm sm:mt-0 sm:col-span-2">{tripLength}</dd>
                                 </div>
                                 <div className="py-5 sm:grid sm:grid-cols-3 sm:gap-4">
                                     <dt className="text-sm font-medium">Group Size</dt>
-                                    <dd data-aue-prop="groupSize" data-aue-label="groupSize"
+                                    <dd data-aue-prop="groupSize" data-aue-label="groupSize" data-aue-type="text"
                                         className="mt-1 text-sm sm:mt-0 sm:col-span-2">{groupSize}</dd>
                                 </div>
                                 <div className="py-5 sm:grid sm:grid-cols-3 sm:gap-4">
                                     <dt className="text-sm font-medium">Difficulty</dt>
-                                    <dd data-aue-prop="difficulty" data-aue-label="difficulty" data-aue-type="select"
+                                    <dd data-aue-prop="difficulty" data-aue-label="difficulty" data-aue-type="text"
                                         className="mt-1 text-sm sm:mt-0 sm:col-span-2">{difficulty}</dd>
                                 </div>
                                 <div className="py-5 sm:grid sm:grid-cols-3 sm:gap-4">
