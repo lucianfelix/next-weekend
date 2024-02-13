@@ -91,7 +91,11 @@ export default async function Page({params}) {
                     <div
                         className="max-w-2xl mx-auto pt-10 pb-16 px-4 sm:px-6 lg:max-w-7xl lg:pt-16 lg:pb-24 lg:px-8 lg:grid lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8">
                         <div className="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
-                            <h1 data-aue-prop="title" data-aue-label="Title" data-aue-type="text" className="text-2xl font-extrabold tracking-tight sm:text-3xl">{title}</h1>
+                            <h1
+                                data-aue-prop="title"
+                                data-aue-label="title"
+                                data-aue-type="text"
+                                className="text-2xl font-extrabold tracking-tight sm:text-3xl">{title}</h1>
                         </div>
 
                         {/* Options */}
