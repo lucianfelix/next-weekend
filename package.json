@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@adobe/aem-headless-client-js": "github:adobe/aem-headless-client-js",
-    "@adobe/universal-editor-cors": "^1.4.4",
+    "@adobe/universal-editor-cors": "^2.2.7",
     "@formatjs/intl-localematcher": "^0.4.0",
     "@types/node": "20.5.9",
     "@types/react": "18.2.21",
