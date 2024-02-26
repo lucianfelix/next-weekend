@@ -24,7 +24,7 @@ export function middleware(request) {
     )
 
     // Redirect if there is no locale
-    if (pathnameIsMissingLocale) {
+    if (pathnameIsMissingLocale && !pathname.startsWith('/projection')) {
         const locale = getLocale(request)
 
         // e.g. incoming request is /products
