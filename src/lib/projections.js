@@ -12,8 +12,8 @@
  */
 
 import AEMHeadless from '@adobe/aem-headless-client-js';
-// const baseUrl = 'http://localhost:8080/';
-const baseUrl = 'https://palma-dev-public.ethos14-stage-va7.ethos.adobe.net/';
+const baseUrl = 'http://localhost:8080/';
+//const baseUrl = 'https://palma-dev-public.ethos14-stage-va7.ethos.adobe.net/';
 const cfApiPath = 'aem-sites/hlx/dev/cf/graphql';
 
 export class ProjectionsClient {
@@ -41,17 +41,22 @@ export class ProjectionsClient {
     async getPageFragment(path) {
         const query = `{
           Page(rootId: "${path}") {
+            _id
             title
             description
             sections {
+              _id
               __typename
               blocks {
                 __typename
                 ... on TextBlock {
+                  _id
                   content
                 }
                 ... on CardsBlock {
+                  _id
                   cards {
+                    _id
                     title
                     content
                   }

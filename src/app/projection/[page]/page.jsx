@@ -71,20 +71,47 @@ export default async function Page({params}) {
     // render each block depending on its type in __typename
 
     return (
-        <main>
+        <main
+            data-aue-resource={"urn:palma:" + page}
+            data-aue-label="Page"
+            data-aue-type="reference"
+            data-aue-filter="cf"
+        >
+            <Script
+                strategy="lazyOnload"
+                src="https://cdn.jsdelivr.net/gh/adobe/universal-editor-cors/dist/universal-editor-embedded.js"
+            />
+
             {fragment.data.Page.sections.map((section, index) => (
                 <div key={index}>
                     {section.blocks.map((block, index) => (
-                        <div key={index}>
+                        <div
+                            data-aue-resource={"urn:palma:" + block._id}
+                            data-aue-label="Page"
+                            data-aue-type="reference"
+                            data-aue-filter="cf"
+                            key={block._id}>
                             {block.__typename === 'TextBlock' && (
-                                <p>{block.content}</p>
+                                <p
+                                    data-aue-prop="content"
+                                    data-aue-label="content"
+                                    data-aue-type="text"
+                                >{block.content}</p>
                             )}
                             {block.__typename === 'CardsBlock' && (
                                 <div>
                                     {block.cards.map((card, index) => (
                                         <div key={index}>
-                                            <h2>{card.title}</h2>
-                                            <p>{card.content}</p>
+                                            <h2
+                                                data-aue-prop="title"
+                                                data-aue-label="title"
+                                                data-aue-type="text"
+                                            >{card.title}</h2>
+                                            <p
+                                                data-aue-prop="content"
+                                                data-aue-label="content"
+                                                data-aue-type="text"
+                                            >{card.content}</p>
                                         </div>
                                     ))}
                                 </div>
