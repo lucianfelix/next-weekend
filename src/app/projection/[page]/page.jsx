@@ -113,13 +113,13 @@ export default async function Page({params}) {
                             {block.__typename === 'CardsBlock' && (
                                 <div
                                     data-aue-prop="cards"
-                                    data-aue-label="Cards"
+                                    data-aue-label="cards"
                                     data-aue-type="container"
                                 >
                                     {block.cards.map((card, index) => (
                                         <div
                                             data-aue-resource={"urn:palma:" + card._id}
-                                            data-aue-label={card.__typename}
+                                            data-aue-label="Card"
                                             data-aue-type="reference"
                                             data-aue-filter="cf"
                                             key={index}>
