@@ -77,6 +77,11 @@ export default async function Page({params}) {
             data-aue-type="reference"
             data-aue-filter="cf"
         >
+            <h
+                data-aue-prop="title"
+                data-aue-label="title"
+                data-aue-type="text"
+            >{fragment.data.Page.title}</h>
             <Script
                 strategy="lazyOnload"
                 src="https://cdn.jsdelivr.net/gh/adobe/universal-editor-cors/dist/universal-editor-embedded.js"
@@ -87,12 +92,9 @@ export default async function Page({params}) {
                     data-aue-resource={"urn:palma:" + section._id}
                     data-aue-label={section.__typename}
                     data-aue-type="reference"
+                    data-aue-prop="sections"
                     data-aue-filter="cf"
                     key={index}>
-                    <div
-                        data-aue-type="reference"
-                        data-aue-prop="blocks"
-                        >
                     {section.blocks.map((block, index) => (
                         <div
                             data-aue-resource={"urn:palma:" + block._id}
@@ -109,7 +111,11 @@ export default async function Page({params}) {
                                 >{block.content}</p>
                             )}
                             {block.__typename === 'CardsBlock' && (
-                                <div>
+                                <div
+                                    data-aue-prop="cards"
+                                    data-aue-label="Cards"
+                                    data-aue-type="container"
+                                >
                                     {block.cards.map((card, index) => (
                                         <div
                                             data-aue-resource={"urn:palma:" + card._id}
@@ -133,7 +139,6 @@ export default async function Page({params}) {
                             )}
                         </div>
                     ))}
-                    </div>
                 </div>
             ))}
         </main>)
