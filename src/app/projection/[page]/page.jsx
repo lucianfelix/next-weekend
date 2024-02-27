@@ -83,11 +83,16 @@ export default async function Page({params}) {
             />
 
             {fragment.data.Page.sections.map((section, index) => (
-                <div key={index}>
+                <div
+                    data-aue-resource={"urn:palma:" + section._id}
+                    data-aue-label={section.__typename}
+                    data-aue-type="reference"
+                    data-aue-filter="cf"
+                    key={index}>
                     {section.blocks.map((block, index) => (
                         <div
                             data-aue-resource={"urn:palma:" + block._id}
-                            data-aue-label="Page"
+                            data-aue-label={block.__typename}
                             data-aue-type="reference"
                             data-aue-filter="cf"
                             key={block._id}>
