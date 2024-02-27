@@ -131,7 +131,7 @@ export default async function Page({params}) {
                                             <p
                                                 data-aue-prop="content"
                                                 data-aue-label="content"
-                                                data-aue-type="text"
+                                                data-aue-type="richtext"
                                             >{card.content}</p>
                                         </div>
                                     ))}
