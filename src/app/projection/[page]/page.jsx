@@ -94,6 +94,7 @@ export default async function Page({params}) {
                             data-aue-resource={"urn:palma:" + block._id}
                             data-aue-label={block.__typename}
                             data-aue-type="reference"
+                            data-aue-prop="blocks"
                             data-aue-filter="cf"
                             key={block._id}>
                             {block.__typename === 'TextBlock' && (
@@ -106,7 +107,12 @@ export default async function Page({params}) {
                             {block.__typename === 'CardsBlock' && (
                                 <div>
                                     {block.cards.map((card, index) => (
-                                        <div key={index}>
+                                        <div
+                                            data-aue-resource={"urn:palma:" + card._id}
+                                            data-aue-label={card.__typename}
+                                            data-aue-type="reference"
+                                            data-aue-filter="cf"
+                                            key={index}>
                                             <h2
                                                 data-aue-prop="title"
                                                 data-aue-label="title"
