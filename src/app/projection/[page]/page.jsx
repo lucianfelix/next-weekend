@@ -89,6 +89,10 @@ export default async function Page({params}) {
                     data-aue-type="reference"
                     data-aue-filter="cf"
                     key={index}>
+                    <div
+                        data-aue-type="reference"
+                        data-aue-prop="blocks"
+                        >
                     {section.blocks.map((block, index) => (
                         <div
                             data-aue-resource={"urn:palma:" + block._id}
@@ -129,6 +133,7 @@ export default async function Page({params}) {
                             )}
                         </div>
                     ))}
+                    </div>
                 </div>
             ))}
         </main>)
