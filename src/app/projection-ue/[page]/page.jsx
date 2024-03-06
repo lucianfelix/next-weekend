@@ -71,8 +71,17 @@ export default async function Page({params}) {
     // render each block depending on its type in __typename
 
     return (
-        <main>
-            <h>{fragment.data.Page.title}</h>
+        <main
+            data-aue-resource={"urn:palma:" + page}
+            data-aue-label="Page"
+            data-aue-type="reference"
+            data-aue-filter="cf"
+        >
+            <h
+                data-aue-prop="title"
+                data-aue-label="title"
+                data-aue-type="text"
+            >{fragment.data.Page.title}</h>
             <Script
                 strategy="lazyOnload"
                 src="https://cdn.jsdelivr.net/gh/adobe/universal-editor-cors/dist/universal-editor-embedded.js"
@@ -80,20 +89,50 @@ export default async function Page({params}) {
 
             {fragment.data.Page.sections.map((section, index) => (
                 <div
+                    data-aue-resource={"urn:palma:" + section._id}
+                    data-aue-label={section.__typename}
+                    data-aue-type="reference"
+                    data-aue-prop="sections"
+                    data-aue-filter="cf"
                     key={index}>
                     {section.blocks.map((block, index) => (
                         <div
+                            data-aue-resource={"urn:palma:" + block._id}
+                            data-aue-label={block.__typename}
+                            data-aue-type="reference"
+                            data-aue-prop="blocks"
+                            data-aue-filter="cf"
                             key={block._id}>
                             {block.__typename === 'TextBlock' && (
-                                <p>{block.content}</p>
+                                <p
+                                    data-aue-prop="content"
+                                    data-aue-label="content"
+                                    data-aue-type="text"
+                                >{block.content}</p>
                             )}
                             {block.__typename === 'CardsBlock' && (
-                                <div>
+                                <div
+                                    data-aue-prop="cards"
+                                    data-aue-label="cards"
+                                    data-aue-type="container"
+                                >
                                     {block.cards.map((card, index) => (
                                         <div
+                                            data-aue-resource={"urn:palma:" + card._id}
+                                            data-aue-label="Card"
+                                            data-aue-type="reference"
+                                            data-aue-filter="cf"
                                             key={index}>
-                                            <h2 >{card.title}</h2>
-                                            <p >{card.content}</p>
+                                            <h2
+                                                data-aue-prop="title"
+                                                data-aue-label="title"
+                                                data-aue-type="text"
+                                            >{card.title}</h2>
+                                            <p
+                                                data-aue-prop="content"
+                                                data-aue-label="content"
+                                                data-aue-type="richtext"
+                                            >{card.content}</p>
                                         </div>
                                     ))}
                                 </div>
