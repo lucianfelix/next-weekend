@@ -75,7 +75,7 @@ export default async function Page({params}) {
                             data-aue-prop="primaryImage"
                             data-aue-label="primaryImage"
                             data-aue-type="media"
-                            data-aue-resource={`urn:palma:${primaryImage._dynamicUrl}`}
+                            // data-aue-resource={`urn:palma:${primaryImage._dynamicUrl}`}
                             src={`${primaryImage._dynamicUrl}`}
                             alt={title}
                             width={600}
