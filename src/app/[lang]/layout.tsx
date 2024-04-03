@@ -24,7 +24,7 @@ const inter = Inter({subsets: ['latin']})
 
 export const metadata: Metadata = {
     title: 'Your Next Weekend',
-    description: 'Find the best places to visit this weekend',
+    description: 'Find the best places to visit next weekend',
     other: {
         viewport: "width=device-width, initial-scale=1.0, viewport-fit=cover",
         themeColor: "#000002",
