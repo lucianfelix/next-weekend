@@ -72,7 +72,10 @@ export default async function Page({params}) {
                 <div className="pt-6">
                     <div className="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 overflow-hidden lg:h-80 lg:aspect-none">
                         <Image
-                            data-aue-prop="primaryImage" data-aue-label="primaryImage" data-aue-type="media"
+                            data-aue-prop="primaryImage"
+                            data-aue-label="primaryImage"
+                            data-aue-type="media"
+                            data-aue-resource={`urn:palma:${primaryImage._dynamicUrl}`}
                             src={`${primaryImage._dynamicUrl}`}
                             alt={title}
                             width={600}
