@@ -1,8 +1,12 @@
-POST https://admin.hlx.page/preview/lucianfelix/sidewalk-demo/projection/page1
+POST https://admin.hlx.page/preview/lucianfelix/sidewalk-demo/main/page1
 Content-Type: application/json
 
 {}
 
 ###
+
+GET https://whatisthis--sidewalk-demo--lucianfelix.hlx.page/page1
+
+
 
 

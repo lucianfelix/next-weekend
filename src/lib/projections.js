@@ -14,7 +14,7 @@
 import AEMHeadless from '@adobe/aem-headless-client-js';
 // const baseUrl = 'http://localhost:8080/';
 const baseUrl = 'https://palma-dev-public.ethos14-stage-va7.ethos.adobe.net/';
-const cfApiPath = 'aem-sites/hlx/dev/cf/graphql';
+const cfApiPath = 'aem-sites/wknd/gw/cf/graphql';
 
 export class ProjectionsClient {
     static fromEnv(env = process.env) {
