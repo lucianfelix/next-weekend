@@ -12,7 +12,11 @@ export const revalidate = 1; // 12 hours in seconds
 const projectionClient = ProjectionsClient.fromEnv();
 
 export default async function Page({params}) {
-    const page = params.page;
+    let page = params.page;
+
+    //remove the suffix from the page
+    page = page.replace(/\.md$/, '');
+    page = page.replace(/\.html$/, '');
 
     const fragment = await projectionClient.getPageFragment(page);
 
