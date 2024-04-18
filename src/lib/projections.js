@@ -39,8 +39,10 @@ export class ProjectionsClient {
     }
 
     async getPageFragment(path) {
+
+        const fullPath = "/content/dam/hlx/pages/" + path;
         const query = `{
-          Page(rootId: "${path}") {
+          Page(rootId: "${fullPath}") {
             _id
             title
             description
