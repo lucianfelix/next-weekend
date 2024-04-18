@@ -114,8 +114,7 @@ export default async function Page({params}) {
                                     data-aue-resource={"urn:palma:_content_dam_wknd-shared_en_adventures_bali-surf-camp_bali-surf-camp"}
                                 >
                                     <tr key={"card" + index}>
-                                        <th>a</th>
-                                        <th>3</th>
+                                        <th colSpan={2}>Cards</th>
                                     </tr>
                                     {block.cards.map((card, index) => (
                                         <tr
@@ -124,7 +123,6 @@ export default async function Page({params}) {
                                             data-aue-type="reference"
                                             data-aue-filter="cf"
                                             key={"card" + index}>
-                                            <data-aue-resource>data-aue-resource1</data-aue-resource>
                                             <td>
                                                 <img loading="lazy" alt="A fast-moving Tunnel"
                                                      src="https://main--sidewalk-demo--lucianfelix.hlx.page/media_1d3cc6942b4098c8e408f3cab760f05cc489488db.jpeg#width=1180&height=787"
