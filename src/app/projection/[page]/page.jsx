@@ -90,13 +90,13 @@ export default async function Page({params}) {
                                 <div class="cards">
                                     {block.cards.map((card, index) => (
                                         <div key={"card" + index}>
-                                            <div>
-                                                <picture>
-                                                    <img loading="lazy" alt="A fast-moving Tunnel"
-                                                         src="./media_16582eee85490fbfe6b27c6a92724a81646c2e649.jpeg?width=750&#x26;format=jpeg&#x26;optimize=medium"
-                                                         width="1600" height="909"/>
-                                                </picture>
-                                            </div>
+                                            {/*<div>*/}
+                                            {/*    <picture>*/}
+                                            {/*        <img loading="lazy" alt="A fast-moving Tunnel"*/}
+                                            {/*             src="./media_16582eee85490fbfe6b27c6a92724a81646c2e649.jpeg?width=750&#x26;format=jpeg&#x26;optimize=medium"*/}
+                                            {/*             width="1600" height="909"/>*/}
+                                            {/*    </picture>*/}
+                                            {/*</div>*/}
                                             <div>
                                                 <p><strong>{card.title}</strong></p>
                                                 <p>{card.content}</p>
