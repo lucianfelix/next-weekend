@@ -77,11 +77,6 @@ export default async function Page({params}) {
     return (
         <main>
             <h>{fragment.data.Page.title}</h>
-            <Script
-                strategy="lazyOnload"
-                src="https://cdn.jsdelivr.net/gh/adobe/universal-editor-cors/dist/universal-editor-embedded.js"
-            />
-
             {fragment.data.Page.sections.map((section, index) => (
                 <div
                     key={index}>
@@ -92,14 +87,22 @@ export default async function Page({params}) {
                                 <p>{block.content}</p>
                             )}
                             {block.__typename === 'CardsBlock' && (
-                                <div>
+                                <div class="cards">
                                     {block.cards.map((card, index) => (
-                                        <div
-                                            key={index}>
-                                            <h2 >{card.title}</h2>
-                                            <p >{card.content}</p>
-                                        </div>
-                                    ))}
+                                        <div key={"card" + index}>
+                                            <div>
+                                                <picture>
+                                                    <img loading="lazy" alt="A fast-moving Tunnel"
+                                                         src="./media_16582eee85490fbfe6b27c6a92724a81646c2e649.jpeg?width=750&#x26;format=jpeg&#x26;optimize=medium"
+                                                         width="1600" height="909"/>
+                                                </picture>
+                                            </div>
+                                            <div>
+                                                <p><strong>{card.title}</strong></p>
+                                                <p>{card.content}</p>
+                                            </div>
+                                        </div>))
+                                    }
                                 </div>
                             )}
                         </div>
