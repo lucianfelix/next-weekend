@@ -114,7 +114,7 @@ export default async function Page({params}) {
                                     data-aue-resource={"urn:palma:_content_dam_wknd-shared_en_adventures_bali-surf-camp_bali-surf-camp"}
                                 >
                                     <tr key={"card" + index}>
-                                        <td colSpan={2}>Cards, a=b, c</td>
+                                        <td colSpan={2}>Cards<br/> a=b<br/> c</td>
                                     </tr>
                                     {block.cards.map((card, index) => (
                                         <tr
