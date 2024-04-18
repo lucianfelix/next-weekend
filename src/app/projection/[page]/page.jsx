@@ -87,24 +87,25 @@ export default async function Page({params}) {
                                 <p>{block.content}</p>
                             )}
                             {block.__typename === 'CardsBlock' && (
-                                <div class="cards">
-                                    {block.cards.map((card, index) => (
-                                        <div key={"card" + index}>
-                                            {/*<div>*/}
-                                            {/*    <picture>*/}
-                                            {/*        <img loading="lazy" alt="A fast-moving Tunnel"*/}
-                                            {/*             src="./media_16582eee85490fbfe6b27c6a92724a81646c2e649.jpeg?width=750&#x26;format=jpeg&#x26;optimize=medium"*/}
-                                            {/*             width="1600" height="909"/>*/}
-                                            {/*    </picture>*/}
-                                            {/*</div>*/}
-                                            <div>
-                                                <p><strong>{card.title}</strong></p>
-                                                <p>{card.content}</p>
-                                            </div>
-                                        </div>))
-                                    }
-                                </div>
-                            )}
+                                <table class="cards">
+                                    <tr key={"card" + index}>
+                                        <td colSpan={2}>Cards</td>
+                                    </tr>
+                                        {block.cards.map((card, index) => (
+                                            <tr key={"card" + index}>
+                                                <td>
+                                                        <img loading="lazy" alt="A fast-moving Tunnel"
+                                                             src="https://main--sidewalk-demo--lucianfelix.hlx.page/media_1d3cc6942b4098c8e408f3cab760f05cc489488db.jpeg#width=1180&height=787"
+                                                             width="1600" height="909"/>
+                                                </td>
+                                                <td>
+                                                    <p><strong>{card.title}</strong></p>
+                                                    <p>{card.content}</p>
+                                                </td>
+                                            </tr>))
+                                        }
+                                </table>
+                                )}
                         </div>
                     ))}
                 </div>
