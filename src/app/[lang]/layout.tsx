@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import Navigation from "@/components/Navigation";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from '@vercel/analytics/react';
+import {ueApiUrl} from "@/lib/headless_openai";
 
 const inter = Inter({subsets: ['latin']})
 
@@ -24,12 +25,12 @@ const inter = Inter({subsets: ['latin']})
 
 export const metadata: Metadata = {
     title: 'Your Next Weekend',
-    description: 'Find the best places to visit next weekend',
+    description: 'Find the best places to visit this weekend',
     other: {
         viewport: "width=device-width, initial-scale=1.0, viewport-fit=cover",
         themeColor: "#000002",
-        'urn:adobe:aue:config:service': "https://palma-dev-public.ethos14-stage-va7.ethos.adobe.net/api/aem-sites/wknd/gw/ue",
-        'urn:adobe:aue:system:palma': "aem:https://author-p92452-e211791-cmstg.adobeaemcloud.com",
+        'urn:adobe:aue:config:service': ueApiUrl,
+        'urn:adobe:aue:system:palma': "https://author-p92452-e211791-cmstg.adobeaemcloud.com",
     }
 }
 

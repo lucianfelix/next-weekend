@@ -1,13 +1,20 @@
 
-const singleAdventureUrlBase = "https://palma-dev-public.ethos14-stage-va7.ethos.adobe.net/aem-sites/wknd/gw/cf/fragments";
-const allAdventuresUrl = "https://palma-dev-public.ethos14-stage-va7.ethos.adobe.net/aem-sites/wknd/gw/cf/models/L2NvbmYvd2tuZC1zaGFyZWQvc2V0dGluZ3MvZGFtL2NmbS9tb2RlbHMvYWR2ZW50dXJl/fragments";
+const palmaUrl = "https://palma-dev-public.ethos14-stage-va7.ethos.adobe.net";
+const tenant = "aem-sites-engineering";
+const program = "wknd";
+const environment = "gw";
+const site = "eds";
+
+export const ueApiUrl = `${palmaUrl}/api/${tenant}/${program}/${environment}/ue`;
+const singleAdventureUrlBase = `${palmaUrl}/${tenant}/${program}/${environment}/cf/fragments`;
+const allAdventuresUrl = `${palmaUrl}/${tenant}/${program}/${environment}/cf/models/L2NvbmYvd2tuZC1zaGFyZWQvc2V0dGluZ3MvZGFtL2NmbS9tb2RlbHMvYWR2ZW50dXJl/fragments`;
+
 const publishImageBase = "https://publish-p91957-e809713.adobeaemcloud.com";
 
 export async function getAdventures() {
 
     const data = await fetchAdventureData();
-    const adventures = extractAndConvertOaiCFArray(data);
-    return adventures;
+    return extractAndConvertOaiCFArray(data);
 }
 
 export function oaiGetAdventureByPath(path) {
