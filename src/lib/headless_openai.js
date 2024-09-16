@@ -1,6 +1,7 @@
 
 // const palmaUrl = "https://palma-dev-public.ethos14-stage-va7.ethos.adobe.net";
-const palmaUrl = "https://palma-dev-public.ethos701-stage-va6.ethos.adobe.net";
+// const palmaUrl = "https://palma-dev-public.ethos701-stage-va6.ethos.adobe.net";
+const palmaUrl = "https://experience-platform-palma-deploy-ethos102-stage-va-123649.stage.cloud.adobe.io";
 const tenant = "aem-sites-engineering";
 const program = "wknd";
 const environment = "gw";
