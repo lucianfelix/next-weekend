@@ -43,8 +43,9 @@ export default async function AdventuresList({lang = '', collectionSlug = 'all',
                 {filteredAdventures.map(
                     ({_path, title, price, tripLength, primaryImage}, index) => {
                         const pathItems = _path.split('/');
-                        const cfPath = pathItems.slice(Math.max(pathItems.length - 2, 0)).join('/');
-                        const href = `/adventures/${cfPath}`;
+                        //const cfPath = pathItems.slice(Math.max(pathItems.length - 2, 0)).join('/');
+                        const adventureName = pathItems[pathItems.length - 1];
+                        const href = `/adventures/${adventureName}/${adventureName}`;
                         return (
                             <AdventureCard
                                 eager={index < 0}
